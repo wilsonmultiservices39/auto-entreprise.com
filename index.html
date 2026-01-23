@@ -1,79 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom de l'Entreprise - Accueil</title>
-    <style>
-        /* Styles de base */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* En-tête */
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        /* Section Contenu */
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        
-        .service-card {
-            background: #f9f9f9;
-            border-left: 5px solid #3498db;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        
-        /* Bouton d'action pour smartphone */
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #27ae60;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 50px;
-            font-weight: bold;
-            margin: 10px;
-            transition: background 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: #229954;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wilson-multi-services - Travaux & Rénovation</title>
+<style>
+:root {
+--bleu-royal: #002060; /* Le bleu de ta carte */
+--or: #D4AF37; /* Le doré de ton logo */
+--blanc: #ffffff;
+}
+
+body {
+font-family: 'Segoe UI', Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: var(--bleu-royal);
+color: var(--blanc);
+text-align: center;
+}
+
+header {
+padding: 40px 20px;
+border-bottom: 3px solid var(--or);
+}
+
+.logo-w {
+font-size: 80px;
+font-weight: bold;
+color: var(--or);
+margin-bottom: 10px;
+font-family: 'Times New Roman', serif;
+}
+
+h1 { margin: 0; font-size: 1.8rem; }
+.devis-gratuit {
+color: var(--or);
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.container { padding: 30px 20px; }
+
+.services-list {
+text-align: left;
+display: inline-block;
+margin: 20px 0;
+font-size: 1.1rem;
+}
+
+.services-list li {
+list-style: none;
+margin-bottom: 10px;
+}
+
+.services-list li::before {
+content: "✦ ";
+color: var(--or);
+}
+
+.contact-box {
+background: rgba(255, 255, 255, 0.1);
+padding: 20px;
+border-radius: 10px;
+border: 1px solid var(--or);
+margin-top: 30px;
+}
+
+.btn {
+display: block;
+background-color: var(--or);
+color: var(--bleu-royal);
+padding: 15px;
+margin: 10px 0;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+footer {
+padding: 20px;
+font-size: 0.9rem;
+opacity: 0.8;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Wilson-Multi-Service</h1>
-        <p>service a la demande</p>
-    </header>
 
-    <div class="container">
-        <h2>Nos Services</h2>
-        <div class="service-card">
-            <h3>travaux</h3>
-        </div> 
-        <div class="service-card">
-            <h3>peinture</h3>
-        </div>
+<header>
+<div class="logo-w">W</div>
+<h1>Wilson-multi-services</h1>
+<p class="devis-gratuit">Devis Gratuit</p>
+</header>
 
-        <h2>Nous contacter</h2>
-        <p>Besoin d'un devis ou d'une information ?</p>
-        <a href="tel:+33652240507" class="cta-button">Appelez-nous</a>
-    </div>
+<div class="container">
+<h2>Nos Services</h2>
+<ul class="services-list">
+<li>Travaux</li>
+<li>Peinture</li>
+<li>Jardinage</li>
+<li>Petite Plomberie</li>
+<li>Petite Bricole</li>
+<li>Agencement meuble</li>
+<li>Autre Services à La Demande</li>
+</ul>
+
+<div class="contact-box">
+<h3>Contactez-nous</h3>
+<a href="tel:0652240507" class="btn">📞 06.52.24.05.07</a>
+<a href="mailto:wilson.multi.services39@gmail.com" class="btn">📧 Envoyer un Mail</a>
+</div>
+</div>
+
+<footer>
+&copy; 2026 Wilson-multi-services
+</footer>
+
 </body>
 </html>
