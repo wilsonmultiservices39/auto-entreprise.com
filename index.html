@@ -23,22 +23,47 @@ text-align: center;
 padding-bottom: 120px;
 }
 
-/* --- EN-TÊTE ÉTENDU --- */
+/* --- HEADER ADAPTATIF --- */
 .header-container {
 display: flex;
-flex-wrap: wrap;
-/* C'est ici que l'on pousse les éléments aux extrémités */
-justify-content: space-between;
+flex-direction: column; /* Ordre vertical par défaut (Mobile) */
 align-items: center;
-padding: 20px 40px; /* 40px de marge sur les côtés */
-gap: 20px;
+padding: 20px;
+gap: 15px;
 }
 
 .logo-img {
-max-width: 180px; /* Taille légèrement réduite pour l'équilibre */
+max-width: 180px;
 height: auto;
+margin-bottom: 10px;
 }
 
+/* --- TITRE --- */
+h1 {
+font-family: 'Great Vibes', cursive;
+color: var(--or-carte);
+font-size: 3.5rem; /* Taille mobile par défaut */
+margin: 0;
+font-weight: normal;
+}
+
+.devis {
+font-weight: bold;
+text-transform: uppercase;
+font-size: 1.8rem;
+color: var(--or-carte);
+margin: 5px 0;
+}
+
+.separator-bar {
+height: 1.5px;
+background-color: var(--or-carte);
+width: 85%;
+max-width: 700px;
+margin: 10px auto 20px auto;
+}
+
+/* --- HORAIRES --- */
 .horaires-box {
 background: rgba(255, 255, 255, 0.1);
 border: 1px solid var(--or-carte);
@@ -46,7 +71,8 @@ padding: 15px;
 border-radius: 10px;
 font-size: 0.9rem;
 text-align: left;
-min-width: 220px;
+width: 90%;
+max-width: 250px;
 }
 
 .horaires-box h3 {
@@ -63,31 +89,6 @@ justify-content: space-between;
 margin-bottom: 3px;
 }
 
-/* --- TITRE --- */
-h1 {
-font-family: 'Great Vibes', cursive;
-color: var(--or-carte);
-font-size: 5rem;
-margin: 0px 0 5px 0;
-font-weight: normal;
-}
-
-.devis {
-font-weight: bold;
-text-transform: uppercase;
-font-size: 2rem;
-color: var(--or-carte);
-margin: 0;
-}
-
-.separator-bar {
-height: 1.5px;
-background-color: var(--or-carte);
-width: 85%;
-max-width: 700px;
-margin: 15px auto 25px auto;
-}
-
 /* --- SERVICES --- */
 .services-container {
 text-align: left;
@@ -96,31 +97,17 @@ background: rgba(255, 255, 255, 0.1);
 padding: 20px;
 border-radius: 15px;
 border-left: 5px solid var(--or-carte);
-margin-bottom: 25px;
+margin-top: 20px;
 }
 
 .services-container div {
 margin: 10px 0;
-font-size: 1.2rem;
+font-size: 1.1rem;
 }
 
-/* --- BOUTONS --- */
-.fixed-left {
-position: fixed;
-bottom: 20px;
-left: 20px;
-display: flex;
-flex-direction: column;
-gap: 12px;
-z-index: 1000;
-}
-
-.fixed-right {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 1000;
-}
+/* --- BOUTONS FIXES --- */
+.fixed-left { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+.fixed-right { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
 
 .btn-float {
 background-color: var(--or-carte);
@@ -149,20 +136,15 @@ gap: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-footer {
-padding: 20px;
-font-size: 0.8rem;
-color: var(--or-carte);
-}
-
-@media (max-width: 768px) {
-h1 { font-size: 3.5rem; }
+/* --- AJUSTEMENT ORDINATEUR --- */
+@media (min-width: 800px) {
 .header-container {
-flex-direction: column;
-padding: 20px;
-justify-content: center;
+flex-direction: row; /* Côte à côte sur ordi */
+justify-content: space-between;
+padding: 20px 50px;
 }
-.logo-img { margin-bottom: 10px; }
+h1 { font-size: 5rem; }
+.horaires-box { order: 3; } /* Envoie les horaires à droite sur ordi */
 }
 </style>
 </head>
@@ -170,6 +152,12 @@ justify-content: center;
 
 <div class="header-container">
 <img src="logo.png" alt="Wilson Multi Services" class="logo-img">
+
+<div>
+<h1>Wilson-multi-services</h1>
+<p class="devis">Devis Gratuit</p>
+<div class="separator-bar"></div>
+</div>
 
 <div class="horaires-box">
 <h3>🕒 Horaires d'ouverture</h3>
@@ -182,10 +170,6 @@ justify-content: center;
 <div><span>Dimanche :</span> <span>Fermé</span></div>
 </div>
 </div>
-
-<h1>Wilson-multi-services</h1>
-<p class="devis">Devis Gratuit</p>
-<div class="separator-bar"></div>
 
 <div class="services-container">
 <div>✦ Travaux</div>
@@ -207,10 +191,6 @@ justify-content: center;
 <i class="fab fa-facebook-f"></i> Facebook
 </a>
 </div>
-
-<footer>
-Wilson-multi-services &copy; 2026
-</footer>
 
 </body>
 </html>
