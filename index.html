@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root {
---bleu-vif: #020596;
+--bleu-vif: #020596; /* Ton bleu Canva #020596 */
 --or-carte: #efd382;
 --bleu-facebook: #1877F2;
 }
@@ -20,7 +20,7 @@ color: white;
 margin: 0;
 padding: 0;
 text-align: center;
-padding-bottom: 150px; /* Plus d'espace pour les 3 boutons */
+padding-bottom: 120px;
 }
 
 header { padding: 20px 10px; }
@@ -31,6 +31,7 @@ height: auto;
 margin-bottom: 5px;
 }
 
+/* Wilson-multi-services en écriture manuscrite agrandie */
 h1 {
 font-family: 'Great Vibes', cursive;
 color: var(--or-carte);
@@ -62,15 +63,22 @@ margin: 10px 0;
 font-size: 1.2rem;
 }
 
-/* --- COLONNE DE BOUTONS À DROITE --- */
-.fixed-buttons {
+/* --- BOUTONS À GAUCHE (TÉLÉPHONE ET EMAIL) --- */
+.fixed-left {
+position: fixed;
+bottom: 20px;
+left: 20px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+z-index: 1000;
+}
+
+/* --- BOUTON À DROITE (FACEBOOK) --- */
+.fixed-right {
 position: fixed;
 bottom: 20px;
 right: 20px;
-display: flex;
-flex-direction: column;
-align-items: flex-end; /* Aligne les boutons contre le bord droit */
-gap: 12px;
 z-index: 1000;
 }
 
@@ -86,7 +94,6 @@ display: flex;
 align-items: center;
 gap: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-transition: 0.3s;
 }
 
 .btn-fb {
@@ -131,12 +138,15 @@ h1 { font-size: 3.5rem; }
 <div>✦ Autres services à la demande</div>
 </div>
 
-<div class="fixed-buttons">
+<div class="fixed-left">
+<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
+<a href="mailto:wilson.multi.services39@gmail.com" class="btn-float">📧 E-mail</a>
+</div>
+
+<div class="fixed-right">
 <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-fb" target="_blank">
 <i class="fab fa-facebook-f"></i> Facebook
 </a>
-<a href="mailto:wilson.multi.services39@gmail.com" class="btn-float">📧 E-mail</a>
-<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
 </div>
 
 <footer>
