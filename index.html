@@ -23,21 +23,53 @@ text-align: center;
 padding-bottom: 120px;
 }
 
-header { padding: 20px 10px; }
-
-.logo-img {
-max-width: 250px;
-height: auto;
-margin-bottom: 5px;
+/* --- NOUVELLE STRUCTURE EN-TÊTE --- */
+.header-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+gap: 20px;
 }
 
+.logo-img {
+max-width: 200px;
+height: auto;
+}
+
+/* --- BLOC HORAIRES --- */
+.horaires-box {
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid var(--or-carte);
+padding: 15px;
+border-radius: 10px;
+font-size: 0.9rem;
+text-align: left;
+min-width: 200px;
+}
+
+.horaires-box h3 {
+margin: 0 0 8px 0;
+color: var(--or-carte);
+font-size: 1rem;
+text-align: center;
+text-transform: uppercase;
+}
+
+.horaires-box div {
+display: flex;
+justify-content: space-between;
+margin-bottom: 3px;
+}
+
+/* --- TITRE ET DEVIS --- */
 h1 {
 font-family: 'Great Vibes', cursive;
 color: var(--or-carte);
 font-size: 5rem;
-margin: 5px 0;
+margin: 10px 0 5px 0;
 font-weight: normal;
-display: inline-block; /* Pour que la barre dessous s'ajuste au texte */
 }
 
 .devis {
@@ -45,17 +77,15 @@ font-weight: bold;
 text-transform: uppercase;
 font-size: 2rem;
 color: var(--or-carte);
-margin: 5px 0 10px 0;
+margin: 0;
 }
 
-/* --- LA BARRE DORÉE --- */
 .separator-bar {
-height: 1.5px; /* Fine bar */
+height: 1.5px;
 background-color: var(--or-carte);
-width: 80%; /* Largeur ajustée pour mobile/desktop */
-max-width: 600px; /* Aligné sur la longueur du titre */
-margin: 0 auto 25px auto;
-border-radius: 2px;
+width: 80%;
+max-width: 600px;
+margin: 15px auto 25px auto;
 }
 
 .services-container {
@@ -123,20 +153,28 @@ font-size: 0.8rem;
 color: var(--or-carte);
 }
 
-@media (max-width: 450px) {
-h1 { font-size: 3.5rem; }
-.separator-bar { width: 90%; }
+@media (max-width: 600px) {
+h1 { font-size: 3rem; }
+.header-container { flex-direction: column; }
 }
 </style>
 </head>
 <body>
 
-<header>
+<div class="header-container">
 <img src="logo.png" alt="Wilson Multi Services" class="logo-img">
+
+<div class="horaires-box">
+<h3>🕒 Horaires</h3>
+<div><span>Lundi - Vendredi :</span> <span>08h00 - 18h00</span></div>
+<div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
+<div><span>Dimanche :</span> <span>Fermé</span></div>
+</div>
+</div>
+
 <h1>Wilson-multi-services</h1>
 <p class="devis">Devis Gratuit</p>
 <div class="separator-bar"></div>
-</header>
 
 <div class="services-container">
 <div>✦ Travaux</div>
