@@ -20,12 +20,12 @@ color: white;
 margin: 0;
 padding: 0;
 text-align: center;
-padding-bottom: 180px; /* Plus d'espace pour les mentions légales complètes */
-position: relative;
 min-height: 100vh;
+/* On utilise flex pour gérer le pied de page proprement */
+display: flex;
+flex-direction: column;
 }
 
-/* --- HEADER --- */
 .header-container {
 display: flex;
 flex-direction: column;
@@ -60,7 +60,6 @@ max-width: 700px;
 margin: 10px auto 20px auto;
 }
 
-/* --- HORAIRES --- */
 .horaires-box {
 background: rgba(255, 255, 255, 0.1);
 border: 1px solid var(--or-carte);
@@ -72,17 +71,8 @@ width: 90%;
 max-width: 280px;
 }
 
-.horaires-box h3 {
-margin: 0 0 8px 0;
-color: var(--or-carte);
-font-size: 1rem;
-text-align: center;
-text-transform: uppercase;
-}
-
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-/* --- SERVICES --- */
 .services-container {
 text-align: left;
 display: inline-block;
@@ -90,54 +80,67 @@ background: rgba(255, 255, 255, 0.1);
 padding: 20px;
 border-radius: 15px;
 border-left: 5px solid var(--or-carte);
-margin-top: 20px;
+margin: 20px auto;
+max-width: 90%;
 }
 
-.services-container div { margin: 10px 0; font-size: 1.1rem; }
+/* --- LE CONTENEUR MAGIQUE (STICKY) --- */
+/* Ce conteneur englobe tout sauf le footer pour permettre l'effet flottant */
+.main-content {
+flex: 1;
+display: flex;
+flex-direction: column;
+position: relative;
+padding-bottom: 100px; /* Espace pour que les boutons flottent */
+}
 
-/* --- BOUTONS --- */
-.fixed-left { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
-.fixed-right { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+/* --- BOUTONS FLOTTANTS QUI S'ARRÊTENT AU FOOTER --- */
+.floating-wrapper {
+position: sticky;
+bottom: 20px; /* Reste à 20px du bas de l'écran */
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+padding: 0 15px;
+pointer-events: none; /* Permet de cliquer à travers le conteneur vide */
+}
 
-.btn-float {
+.btn-col-left, .btn-col-right {
+display: flex;
+flex-direction: column;
+gap: 10px;
+pointer-events: auto; /* Réactive le clic sur les boutons */
+}
+
+.btn-style {
 background-color: var(--or-carte);
 color: #000;
 text-decoration: none;
 padding: 12px 18px;
 border-radius: 50px;
 font-weight: bold;
-font-size: 0.9rem;
+font-size: 0.85rem;
 display: flex;
 align-items: center;
 gap: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+white-space: nowrap;
 }
 
-.btn-fb {
+.btn-facebook {
 background-color: var(--bleu-facebook);
 color: white;
-padding: 12px 20px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: bold;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-/* --- MENTIONS LÉGALES CONFORMES --- */
-.copyright-bar {
-position: absolute;
-bottom: 0;
+/* --- FOOTER (MENTIONS) --- */
+footer {
 width: 100%;
-padding: 25px 10px;
-font-size: 0.7rem;
-color: rgba(239, 211, 130, 0.7);
-border-top: 1px solid rgba(239, 211, 130, 0.2);
+padding: 25px 15px;
+font-size: 0.75rem;
+color: rgba(239, 211, 130, 0.8);
+border-top: 1px solid rgba(239, 211, 130, 0.3);
 background: rgba(0, 0, 0, 0.4);
-line-height: 1.4;
-box-sizing: border-box;
+line-height: 1.6;
 }
 
 @media (min-width: 800px) {
@@ -149,6 +152,7 @@ h1 { font-size: 5rem; }
 </head>
 <body>
 
+<div class="main-content">
 <div class="header-container">
 <img src="logo.png" alt="Wilson Multi Services" class="logo-img">
 <div>
@@ -158,11 +162,7 @@ h1 { font-size: 5rem; }
 </div>
 <div class="horaires-box">
 <h3>🕒 Horaires d'ouverture</h3>
-<div><span>Lundi  :</span> <span>08h00 - 18h00</span></div>
-<div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Vendredi :</span> <span>08h00 - 18h00</span></div>
+<div><span>Lundi - Vendredi :</span> <span>08h00 - 18h00</span></div>
 <div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
 <div><span>Dimanche :</span> <span>Fermé</span></div>
 </div>
@@ -178,25 +178,26 @@ h1 { font-size: 5rem; }
 <div>✦ Autres services à la demande</div>
 </div>
 
-<div class="fixed-left">
-<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
-<a href="mailto:wilson.multi.services39@gmail.com" class="btn-float">📧 E-mail</a>
+<div class="floating-wrapper">
+<div class="btn-col-left">
+<a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
+<a href="mailto:wilson.multi.services39@gmail.com" class="btn-style">📧 E-mail</a>
 </div>
-
-<div class="fixed-right">
-<a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-fb" target="_blank">
+<div class="btn-col-right">
+<a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank">
 <i class="fab fa-facebook-f"></i> Facebook
 </a>
 </div>
+</div>
+</div>
 
-<div class="copyright-bar">
+<footer>
 <strong>Mentions Légales</strong><br>
 Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
-Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, st claude <br>
+Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
 SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
 Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
-</div>
+</footer>
 
 </body>
 </html>
-
