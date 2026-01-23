@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root {
---bleu-vif: #020596; /* Ton bleu Canva #020596 */
+--bleu-vif: #020596;
 --or-carte: #efd382;
 --bleu-facebook: #1877F2;
 }
@@ -20,7 +20,7 @@ color: white;
 margin: 0;
 padding: 0;
 text-align: center;
-padding-bottom: 120px;
+padding-bottom: 150px;
 }
 
 header { padding: 20px 10px; }
@@ -31,7 +31,6 @@ height: auto;
 margin-bottom: 5px;
 }
 
-/* Wilson-multi-services en écriture manuscrite agrandie */
 h1 {
 font-family: 'Great Vibes', cursive;
 color: var(--or-carte);
@@ -45,113 +44,22 @@ font-weight: bold;
 text-transform: uppercase;
 font-size: 2rem;
 color: var(--or-carte);
-margin: 5px 0 25px 0;
+margin: 5px 0 10px 0; /* Réduit pour coller à la barre */
+}
+
+/* --- NOUVEAU : LA BARRE DE SÉPARATION --- */
+.separateur {
+width: 75%; /* 75% de la largeur du texte au-dessus */
+max-width: 300px; /* Sécurité pour ne pas être trop longue sur grand écran */
+height: 2px;
+background-color: var(--or-carte);
+margin: 0 auto 30px auto; /* Centre la barre et espace le bas */
+border: none;
+border-radius: 2px;
 }
 
 .services-container {
 text-align: left;
 display: inline-block;
 background: rgba(255, 255, 255, 0.1);
-padding: 20px;
-border-radius: 15px;
-border-left: 5px solid var(--or-carte);
-margin-bottom: 25px;
-}
-
-.services-container div {
-margin: 10px 0;
-font-size: 1.2rem;
-}
-
-/* --- BOUTONS À GAUCHE (TÉLÉPHONE ET EMAIL) --- */
-.fixed-left {
-position: fixed;
-bottom: 20px;
-left: 20px;
-display: flex;
-flex-direction: column;
-gap: 12px;
-z-index: 1000;
-}
-
-/* --- BOUTON À DROITE (FACEBOOK) --- */
-.fixed-right {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 1000;
-}
-
-.btn-float {
-background-color: var(--or-carte);
-color: #000;
-text-decoration: none;
-padding: 12px 18px;
-border-radius: 50px;
-font-weight: bold;
-font-size: 0.9rem;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.btn-fb {
-background-color: var(--bleu-facebook);
-color: white;
-padding: 12px 20px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: bold;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-footer {
-padding: 20px;
-font-size: 0.8rem;
-color: var(--or-carte);
-}
-
-@media (max-width: 450px) {
-h1 { font-size: 3.5rem; }
-}
-</style>
-</head>
-<body>
-
-<header>
-<img src="logo.png" alt="Wilson Multi Services" class="logo-img">
-<h1>Wilson-multi-services</h1>
-<p class="devis">Devis Gratuit</p>
-</header>
-
-<div class="services-container">
-<div>✦ Travaux</div>
-<div>✦ Peinture</div>
-<div>✦ Jardinage</div>
-<div>✦ Petite Plomberie</div>
-<div>✦ Petite Bricole</div>
-<div>✦ Agencement meuble</div>
-<div>✦ Autres services à la demande</div>
-</div>
-
-<div class="fixed-left">
-<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
-<a href="mailto:wilson.multi.services39@gmail.com" class="btn-float">📧 E-mail</a>
-</div>
-
-<div class="fixed-right">
-<a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-fb" target="_blank">
-<i class="fab fa-facebook-f"></i> Facebook
-</a>
-</div>
-
-<footer>
-Wilson-multi-services &copy; 2026
-</footer>
-
-</body>
-</html>
+padding: 20
