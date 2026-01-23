@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wilson-multi-services</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root {
-/* Ta couleur exacte Canva #020596 */
 --bleu-vif: #020596;
 --or-carte: #efd382;
+--bleu-facebook: #1877F2;
 }
 
 body {
@@ -19,7 +20,7 @@ color: white;
 margin: 0;
 padding: 0;
 text-align: center;
-padding-bottom: 100px; /* Espace pour ne pas cacher le contenu par les boutons */
+padding-bottom: 150px; /* Plus d'espace pour les 3 boutons */
 }
 
 header { padding: 20px 10px; }
@@ -30,14 +31,12 @@ height: auto;
 margin-bottom: 5px;
 }
 
-/* Titre Wilson-multi-services agrandi */
 h1 {
 font-family: 'Great Vibes', cursive;
 color: var(--or-carte);
-font-size: 5rem; /* Augmenté pour un impact maximal */
+font-size: 5rem;
 margin: 5px 0;
 font-weight: normal;
-line-height: 1.1;
 }
 
 .devis {
@@ -58,14 +57,20 @@ border-left: 5px solid var(--or-carte);
 margin-bottom: 25px;
 }
 
-/* --- NOUVEAU : STYLE DES BOUTONS FLOTTANTS EN BAS À GAUCHE --- */
-.fixed-contact {
+.services-container div {
+margin: 10px 0;
+font-size: 1.2rem;
+}
+
+/* --- COLONNE DE BOUTONS À DROITE --- */
+.fixed-buttons {
 position: fixed;
 bottom: 20px;
-left: 20px;
+right: 20px;
 display: flex;
 flex-direction: column;
-gap: 10px;
+align-items: flex-end; /* Aligne les boutons contre le bord droit */
+gap: 12px;
 z-index: 1000;
 }
 
@@ -74,14 +79,27 @@ background-color: var(--or-carte);
 color: #000;
 text-decoration: none;
 padding: 12px 18px;
-border-radius: 50px; /* Forme arrondie type "bulle" */
+border-radius: 50px;
 font-weight: bold;
 font-size: 0.9rem;
 display: flex;
 align-items: center;
 gap: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-width: fit-content;
+transition: 0.3s;
+}
+
+.btn-fb {
+background-color: var(--bleu-facebook);
+color: white;
+padding: 12px 20px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: bold;
+display: flex;
+align-items: center;
+gap: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 footer {
@@ -91,7 +109,7 @@ color: var(--or-carte);
 }
 
 @media (max-width: 450px) {
-h1 { font-size: 3.8rem; }
+h1 { font-size: 3.5rem; }
 }
 </style>
 </head>
@@ -113,9 +131,12 @@ h1 { font-size: 3.8rem; }
 <div>✦ Autres services à la demande</div>
 </div>
 
-<div class="fixed-contact">
-<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
+<div class="fixed-buttons">
+<a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-fb" target="_blank">
+<i class="fab fa-facebook-f"></i> Facebook
+</a>
 <a href="mailto:wilson.multi.services39@gmail.com" class="btn-float">📧 E-mail</a>
+<a href="tel:0652240507" class="btn-float">📞 06.52.24.05.07</a>
 </div>
 
 <footer>
