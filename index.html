@@ -3,124 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wilson-multi-services - Travaux & Rénovation</title>
+<title>Wilson-multi-services</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root {
---bleu-royal: #002060;
---or: #D4AF37;
---blanc: #ffffff;
+--bleu-logo: #001a8d;
+--or-clair: #efd382;
 }
 
 body {
 font-family: 'Segoe UI', Arial, sans-serif;
+background-color: var(--bleu-logo);
+color: white;
 margin: 0;
 padding: 0;
-background-color: var(--bleu-royal);
-color: var(--blanc);
 text-align: center;
 }
 
 header {
 padding: 30px 20px;
-border-bottom: 2px solid var(--or);
 }
 
-/* Style pour ton logo image */
 .logo-img {
-max-width: 250px; /* Ajuste la taille selon tes besoins */
+max-width: 260px;
 height: auto;
-margin-bottom: 15px;
+display: block;
+margin: 0 auto 10px auto;
 }
 
-/* Nom de l'entreprise en OR */
+/* TITRE en police manuscrite */
 h1 {
+font-family: 'Great Vibes', cursive;
+color: var(--or-clair);
+font-size: 3.5rem; /* Grande taille pour l'élégance */
 margin: 0;
-font-size: 2rem;
-color: var(--or);
-text-transform: uppercase;
-letter-spacing: 1px;
+font-weight: normal;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.devis-gratuit {
-color: var(--blanc);
+/* DEVIS GRATUIT : Police normale, mais taille augmentée */
+.devis {
 font-weight: bold;
-margin-top: 5px;
-font-style: italic;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 1.6rem; /* Taille augmentée comme demandé */
+color: var(--or-clair);
+margin: 10px 0 30px 0;
 }
 
-.container { padding: 30px 20px; }
-
-.services-list {
+.services-container {
 text-align: left;
 display: inline-block;
-margin: 20px 0;
-font-size: 1.1rem;
-border-left: 2px solid var(--or);
-padding-left: 20px;
-}
-
-.services-list li {
-list-style: none;
-margin-bottom: 12px;
-}
-
-.contact-box {
 background: rgba(255, 255, 255, 0.05);
-padding: 25px;
-border-radius: 15px;
-border: 1px solid var(--or);
-margin-top: 30px;
+padding: 20px;
+border-radius: 10px;
+border-left: 4px solid var(--or-clair);
+margin-bottom: 30px;
 }
 
-.btn {
+.services-container div {
+margin: 12px 0;
+font-size: 1.15rem;
+}
+
+.btn-contact {
 display: block;
-background-color: var(--or);
-color: var(--bleu-royal);
+background-color: var(--or-clair);
+color: #000;
 padding: 18px;
-margin: 15px 0;
+margin: 15px 25px;
 text-decoration: none;
-border-radius: 8px;
+border-radius: 10px;
 font-weight: bold;
-font-size: 1.2rem;
-transition: 0.3s;
-}
-
-.btn:hover {
-background-color: #f1c40f;
-transform: scale(1.02);
+font-size: 1.1rem;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 footer {
-padding: 30px;
+margin-top: 40px;
+padding-bottom: 20px;
 font-size: 0.8rem;
-color: var(--or);
+color: var(--or-clair);
 }
 </style>
 </head>
 <body>
 
 <header>
-<img src="logo.png" alt="Wilson Multi Services Logo" class="logo-img">
+<img src="logo.png" alt="Wilson Multi Services" class="logo-img">
 <h1>Wilson-multi-services</h1>
-<p class="devis-gratuit">Devis Gratuit</p>
+<p class="devis">Devis Gratuit</p>
 </header>
 
-<div class="container">
-<ul class="services-list">
-<li>✦ Travaux</li>
-<li>✦ Peinture</li>
-<li>✦ Jardinage</li>
-<li>✦ Petite Plomberie</li>
-<li>✦ Petite Bricole</li>
-<li>✦ Agencement meuble</li>
-<li>✦ Autre Services à La Demande</li>
-</ul>
+<div class="services-container">
+<div>✦ Travaux</div>
+<div>✦ Peinture</div>
+<div>✦ Jardinage</div>
+<div>✦ Petite Plomberie</div>
+<div>✦ Petite Bricole</div>
+<div>✦ Agencement meuble</div>
+<div>✦ Autres services à la demande</div>
+</div>
 
-<div class="contact-box">
-<a href="tel:0652240507" class="btn">📞 06.52.24.05.07</a>
-<a href="mailto:wilson.multi.services39@gmail.com" class="btn">📧 Envoyer un Mail</a>
-</div>
-</div>
+<a href="tel:0652240507" class="btn-contact">📞 Appeler le 06.52.24.05.07</a>
+<a href="mailto:wilson.multi.services39@gmail.com" class="btn-contact">📧 Envoyer un E-mail</a>
 
 <footer>
 Wilson-multi-services &copy; 2026
