@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--bleu-vif);
   color: white;
   text-align: center;
@@ -34,8 +34,8 @@ body {
 h1 {
   font-family: 'Great Vibes', cursive;
   color: var(--or-carte);
-  font-size: 3.5rem;
-  margin: 30px 0 10px 0;
+  font-size: 3rem;
+  margin-top: 30px;
 }
 
 .form-container {
@@ -46,44 +46,39 @@ h1 {
   max-width: 500px;
   margin: 20px auto;
   border: 1px solid var(--or-carte);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-
-.instruction-text {
-  font-size: 0.9rem;
-  margin-bottom: 25px;
-  line-height: 1.4;
-  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 label {
   display: block;
   text-align: left;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   color: var(--or-carte);
   font-weight: bold;
-  font-size: 0.9rem;
-  text-transform: uppercase;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
   border: 1px solid var(--or-carte);
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   color: white;
   border-radius: 8px;
   box-sizing: border-box;
   font-family: inherit;
-  font-size: 1rem;
 }
 
-input:focus, textarea:focus {
+/* Style spécifique pour le menu déroulant */
+select option {
+  background-color: var(--bleu-vif);
+  color: white;
+}
+
+input:focus, textarea:focus, select:focus {
   outline: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   border-color: white;
-  box-shadow: 0 0 10px rgba(239, 211, 130, 0.3);
 }
 
 .btn-envoyer {
@@ -93,43 +88,31 @@ input:focus, textarea:focus {
   padding: 15px 30px;
   border-radius: 50px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.2s;
   width: 100%;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .btn-envoyer:hover {
-  background-color: white;
-  transform: translateY(-2px);
+  transform: scale(1.02);
+  background-color: #fff;
 }
 
 .btn-retour {
   display: inline-block;
-  margin: 20px 0 40px 0;
-  color: var(--or-carte);
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
-  font-weight: bold;
   font-size: 0.9rem;
-  transition: opacity 0.2s;
 }
 
-.btn-retour:hover {
-  text-decoration: underline;
-  opacity: 0.8;
-}
-
-footer {
-  width: 100%;
-  padding: 20px;
-  font-size: 0.75rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-top: 1px solid rgba(239, 211, 130, 0.2);
-  margin-top: auto;
+.info-text {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 </style>
 </head>
@@ -140,17 +123,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h1>Contactez-nous</h1>
 
 <div class="form-container">
-    <p class="instruction-text">
-        Remplissez les champs ci-dessous. <br>
-        En cliquant sur envoyer, votre application de messagerie s'ouvrira avec le message prêt à partir.
-    </p>
+    <p class="info-text">Un e-mail sera généré automatiquement avec vos réponses.</p>
 
     <form action="mailto:wilson.multi.services39@gmail.com" method="post" enctype="text/plain">
         
-        <label for="nom">Nom / Prénom</label>
-        <input type="text" id="nom" name="Nom" placeholder="Votre nom" required>
+        <label for="nom">Votre Nom & Prénom :</label>
+        <input type="text" id="nom" name="Nom" placeholder="Ex: Jean Dupont" required>
 
-        <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="Telephone" placeholder="Votre numéro de téléphone">
+        <label for="tel">Votre Téléphone :</label>
+        <input type="tel" id="tel" name="Téléphone" placeholder="06 00 00 00 00" required>
 
-        <label for="objet">Objet de votre demande</label>
+        <label for="objet">Objet de votre demande :</label>
+        <select id="objet" name="Service Souhaité" required>
+            <option value="" disabled selected>Choisissez un service...</option>
+            <option value="Travaux">Travaux</option>
+            <option value="Peinture">Peinture</option>
+            <option value="Jardinage">Jardinage</option>
+            <option value="Petite Plomberie">Petite Plomberie</option>
+            <option value="Petite Bricole">Petite Bricole</option>
+            <option value="Agencement meuble">Agencement meuble</option>
+            <option value="Autre demande">Autre demande</option>
+        </select>
+
+        <label for="message">Description détaillée de votre besoin :</label>
+        <textarea id="message" name="Description" rows="6" placeholder="Précisez ici les détails de votre projet (dimensions, type de travaux, urgence...)" required></textarea>
+
+        <label for="email">Votre adresse E-mail :</label>
+        <input type="email" id="email" name="Email_Contact" placeholder="votre-mail@exemple.com" required>
+
+        <button type="submit" class="btn-envoyer">📤 Préparer l'envoi du mail</button>
+    </form>
+</div>
+
+<a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+
+<script>
+  // Protection contre le vol de code
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.onkeydown = function(e) {
+    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+      return false;
+    }
+  };
+</script>
+
+</body>
+</html>
