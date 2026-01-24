@@ -1,231 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T24QSDW8');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wilson-multi-services</title>
+<title>Contact - Wilson Multi-services</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 :root {
---bleu-vif: #020596;
---or-carte: #efd382;
---bleu-facebook: #1877F2;
+  --bleu-vif: #020596;
+  --or-carte: #efd382;
 }
 
 body {
-font-family: 'Segoe UI', Arial, sans-serif;
-background-color: var(--bleu-vif);
-color: white;
-margin: 0;
-padding: 0;
-text-align: center;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bleu-vif);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.header-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 20px;
-gap: 15px;
-}
-
-.logo-img { max-width: 180px; height: auto; margin-bottom: 10px; }
 
 h1 {
-font-family: 'Great Vibes', cursive;
-color: var(--or-carte);
-font-size: 3.5rem;
-margin: 0;
-font-weight: normal;
+  font-family: 'Great Vibes', cursive;
+  color: var(--or-carte);
+  font-size: 3.5rem;
+  margin: 30px 0 10px 0;
 }
 
-.devis {
-font-weight: bold;
-text-transform: uppercase;
-font-size: 1.8rem;
-color: var(--or-carte);
-margin: 5px 0;
+.form-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 1px solid var(--or-carte);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
-.separator-bar {
-height: 1.5px;
-background-color: var(--or-carte);
-width: 85%;
-max-width: 700px;
-margin: 10px auto 20px auto;
+.instruction-text {
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  color: #fff;
 }
 
-.horaires-box {
-background: rgba(255, 255, 255, 0.1);
-border: 1px solid var(--or-carte);
-padding: 15px;
-border-radius: 10px;
-font-size: 0.9rem;
-text-align: left;
-width: 90%;
-max-width: 280px;
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: var(--or-carte);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
-.horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
-
-.services-container {
-text-align: left;
-display: inline-block;
-background: rgba(255, 255, 255, 0.1);
-padding: 20px;
-border-radius: 15px;
-border-left: 5px solid var(--or-carte);
-margin: 20px auto;
-max-width: 90%;
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--or-carte);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
-.main-content {
-flex: 1;
-display: flex;
-flex-direction: column;
-position: relative;
-padding-bottom: 100px;
+input:focus, textarea:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-color: white;
+  box-shadow: 0 0 10px rgba(239, 211, 130, 0.3);
 }
 
-.floating-wrapper {
-position: sticky;
-bottom: 20px;
-z-index: 1000;
-display: flex;
-justify-content: space-between;
-padding: 0 15px;
-pointer-events: none;
+.btn-envoyer {
+  background-color: var(--or-carte);
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.btn-col-left, .btn-col-right {
-display: flex;
-flex-direction: column;
-gap: 10px;
-pointer-events: auto;
+.btn-envoyer:hover {
+  background-color: white;
+  transform: translateY(-2px);
 }
 
-.btn-style {
-background-color: var(--or-carte);
-color: #000;
-text-decoration: none;
-padding: 12px 18px;
-border-radius: 50px;
-font-weight: bold;
-font-size: 0.85rem;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-white-space: nowrap;
-border: none;
-cursor: pointer;
-font-family: inherit;
+.btn-retour {
+  display: inline-block;
+  margin: 20px 0 40px 0;
+  color: var(--or-carte);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
 }
 
-.btn-facebook {
-background-color: var(--bleu-facebook);
-color: white;
+.btn-retour:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
 footer {
-width: 100%;
-padding: 25px 15px;
-font-size: 0.75rem;
-color: rgba(239, 211, 130, 0.8);
-border-top: 1px solid rgba(239, 211, 130, 0.3);
-background: rgba(0, 0, 0, 0.4);
-line-height: 1.6;
-}
-
-@media (min-width: 800px) {
-.header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; }
-h1 { font-size: 5rem; }
-.horaires-box { order: 3; }
+  width: 100%;
+  padding: 20px;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(239, 211, 130, 0.2);
+  margin-top: auto;
 }
 </style>
 </head>
 <body>
 
-<div class="main-content">
-<div class="header-container">
-<img src="logo.png" alt="Wilson Multi Services" class="logo-img">
-<div>
-<h1>Wilson-multi-services</h1>
-<p class="devis">Devis Gratuit</p>
-<div class="separator-bar"></div>
-</div>
-<div class="horaires-box">
-<h3>🕒 Horaires d'ouverture</h3>
-<div><span>Lundi  :</span> <span>08h00 - 18h00</span></div>
-<div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Vendredi :</span> <span>08h00 - 18h00</span></div>
-<div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
-<div><span>Dimanche :</span> <span>Fermé</span></div>
-</div>
-</div>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T24QSDW8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<h1>Contactez-nous</h1>
 
-<div class="services-container">
-<div>✦ Travaux</div>
-<div>✦ Peinture</div>
-<div>✦ Jardinage</div>
-<div>✦ Petite Plomberie</div>
-<div>✦ Petite Bricole</div>
-<div>✦ Agencement meuble</div>
-<div>✦ Autres services à la demande</div>
-</div>
+<div class="form-container">
+    <p class="instruction-text">
+        Remplissez les champs ci-dessous. <br>
+        En cliquant sur envoyer, votre application de messagerie s'ouvrira avec le message prêt à partir.
+    </p>
 
-<div class="floating-wrapper">
-<div class="btn-col-left">
-<a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
-<button onclick="actionEmail()" class="btn-style">📧 Contactez-nous</button>
-</div>
-<div class="btn-col-right">
-<a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank">
-<i class="fab fa-facebook-f"></i> Facebook
-</a>
-</div>
-</div>
-</div>
+    <form action="mailto:wilson.multi.services39@gmail.com" method="post" enctype="text/plain">
+        
+        <label for="nom">Nom / Prénom</label>
+        <input type="text" id="nom" name="Nom" placeholder="Votre nom" required>
 
-<footer>
-<strong>Mentions Légales</strong><br>
-Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
-Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
-SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
-Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
-</footer>
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="Telephone" placeholder="Votre numéro de téléphone">
 
-<script>
-  // 1. PROTECTION : Désactive clic droit et inspection
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.onkeydown = function(e) {
-    if(e.keyCode == 123 || 
-      (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
-      (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-      return false;
-    }
-  };
-
-  // 2. FONCTION : Copier l'adresse mail + Redirection vers votre page
-  function actionEmail() {
-    const email = "wilson.multi.services39@gmail.com";
-    const nomDeVotrePage = "contact.html"; // Remplacez par le nom exact de votre nouvelle page
-
-    navigator.clipboard.writeText(email).then(() => {
-        // Redirection vers la nouvelle page après la copie
-        window.location.href = nomDeVotrePage;
-    }).catch(err => {
-        // En cas d'erreur de copie, on redirige quand même
-        window.location.href = nomDeVotrePage;
-    });
-  }
-</script>
-
-</body>
-</html>
+        <label for="objet">Objet de votre demande</label>
