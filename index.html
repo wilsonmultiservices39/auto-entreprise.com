@@ -21,7 +21,6 @@ margin: 0;
 padding: 0;
 text-align: center;
 min-height: 100vh;
-/* On utilise flex pour gérer le pied de page proprement */
 display: flex;
 flex-direction: column;
 }
@@ -84,7 +83,6 @@ margin: 20px auto;
 max-width: 90%;
 }
 
-/* --- LE CONTENEUR MAGIQUE (STICKY) --- */
 .main-content {
 flex: 1;
 display: flex;
@@ -93,7 +91,6 @@ position: relative;
 padding-bottom: 100px;
 }
 
-/* --- BOUTONS FLOTTANTS --- */
 .floating-wrapper {
 position: sticky;
 bottom: 20px;
@@ -124,6 +121,9 @@ align-items: center;
 gap: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 white-space: nowrap;
+border: none;
+cursor: pointer;
+font-family: inherit;
 }
 
 .btn-facebook {
@@ -131,7 +131,6 @@ background-color: var(--bleu-facebook);
 color: white;
 }
 
-/* --- FOOTER --- */
 footer {
 width: 100%;
 padding: 25px 15px;
@@ -184,7 +183,7 @@ h1 { font-size: 5rem; }
 <div class="floating-wrapper">
 <div class="btn-col-left">
 <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
-<a href="mailto:wilson.multi.services39@gmail.com" class="btn-style">📧 E-mail</a>
+<button onclick="actionEmail()" class="btn-style">📧 E-mail (Copie & Envoi)</button>
 </div>
 <div class="btn-col-right">
 <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank">
@@ -203,10 +202,8 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 </footer>
 
 <script>
-  // Désactive le clic droit
+  // 1. PROTECTION : Désactive clic droit et inspection
   document.addEventListener('contextmenu', e => e.preventDefault());
-
-  // Désactive les raccourcis clavier d'inspection
   document.onkeydown = function(e) {
     if(e.keyCode == 123 || 
       (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
@@ -214,6 +211,23 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
       return false;
     }
   };
+
+  // 2. FONCTION DOUBLE ACTION : Copier + Ouvrir Messagerie
+  function actionEmail() {
+    const email = "wilson.multi.services39@gmail.com";
+    
+    // Action 1 : Copier dans le presse-papier
+    navigator.clipboard.writeText(email).then(() => {
+        // Action 2 : Ouvrir l'application de messagerie
+        window.location.href = "mailto:" + email;
+        
+        // Notification pour l'utilisateur
+        alert("1. Tentative d'ouverture de votre messagerie...\n2. Adresse e-mail copiée dans le presse-papier (au cas où).");
+    }).catch(err => {
+        // Secours si la copie échoue
+        window.location.href = "mailto:" + email;
+    });
+  }
 </script>
 
 </body>
