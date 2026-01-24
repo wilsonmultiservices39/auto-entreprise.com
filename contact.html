@@ -10,131 +10,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Wilson Multi-services</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-:root {
-  --bleu-vif: #020596;
-  --or-carte: #efd382;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bleu-vif);
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  font-family: 'Great Vibes', cursive;
-  color: var(--or-carte);
-  font-size: 3rem;
-  margin-top: 30px;
-}
-
-.form-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  border: 1px solid var(--or-carte);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 5px;
-  color: var(--or-carte);
-  font-weight: bold;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid var(--or-carte);
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-family: inherit;
-}
-
-/* Style spécifique pour le menu déroulant */
-select option {
-  background-color: var(--bleu-vif);
-  color: white;
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  background: rgba(0, 0, 0, 0.4);
-  border-color: white;
-}
-
-.btn-envoyer {
-  background-color: var(--or-carte);
-  color: #000;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-  width: 100%;
-}
-
-.btn-envoyer:hover {
-  transform: scale(1.02);
-  background-color: #fff;
-}
-
-.btn-retour {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.info-text {
-    font-size: 0.8rem;
-    opacity: 0.7;
-    margin-bottom: 20px;
-    font-style: italic;
-}
+:root { --bleu-vif: #020596; --or-carte: #efd382; }
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bleu-vif); color: white; text-align: center; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3rem; margin-top: 30px; }
+.form-container { background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; margin: 20px auto; border: 1px solid var(--or-carte); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+label { display: block; text-align: left; margin-bottom: 5px; color: var(--or-carte); font-weight: bold; }
+input, textarea, select { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--or-carte); background: rgba(0, 0, 0, 0.2); color: white; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+select option { background-color: var(--bleu-vif); color: white; }
+.btn-envoyer { background-color: var(--or-carte); color: #000; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: transform 0.2s; width: 100%; }
+.btn-envoyer:hover { transform: scale(1.02); background-color: #fff; }
+.btn-retour { display: inline-block; margin-top: 10px; margin-bottom: 30px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; }
 </style>
 </head>
 <body>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T24QSDW8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <h1>Contactez-nous</h1>
 
 <div class="form-container">
-    <p class="info-text">Un e-mail sera généré automatiquement avec vos réponses.</p>
-
-    <form action="mailto:wilson.multi.services39@gmail.com" method="post" enctype="text/plain">
+    <form action="https://formspree.io/f/VOTRE_CODE_ICI" method="POST">
         
         <label for="nom">Votre Nom & Prénom :</label>
-        <input type="text" id="nom" name="Nom" placeholder="Ex: Jean Dupont" required>
+        <input type="text" name="Nom" placeholder="Jean Dupont" required>
+
+        <label for="email">Votre adresse E-mail :</label>
+        <input type="email" name="_replyto" placeholder="votre-mail@exemple.com" required>
 
         <label for="tel">Votre Téléphone :</label>
-        <input type="tel" id="tel" name="Téléphone" placeholder="06 00 00 00 00" required>
+        <input type="tel" name="Téléphone" placeholder="06 00 00 00 00" required>
 
         <label for="objet">Objet de votre demande :</label>
-        <select id="objet" name="Service Souhaité" required>
+        <select name="Service" required>
             <option value="" disabled selected>Choisissez un service...</option>
             <option value="Travaux">Travaux</option>
             <option value="Peinture">Peinture</option>
@@ -145,26 +55,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="Autre demande">Autre demande</option>
         </select>
 
-        <label for="message">Description détaillée de votre besoin :</label>
-        <textarea id="message" name="Description" rows="6" placeholder="Précisez ici les détails de votre projet (dimensions, type de travaux, urgence...)" required></textarea>
+        <label for="message">Description détaillée :</label>
+        <textarea name="Message" rows="6" placeholder="Précisez ici les détails..." required></textarea>
 
-        <label for="email">Votre adresse E-mail :</label>
-        <input type="email" id="email" name="Email_Contact" placeholder="votre-mail@exemple.com" required>
+        <input type="text" name="_gotcha" style="display:none">
 
-        <button type="submit" class="btn-envoyer">📤 Préparer l'envoi du mail</button>
+        <button type="submit" class="btn-envoyer">📤 Envoyer ma demande</button>
     </form>
 </div>
 
 <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 
 <script>
-  // Protection contre le vol de code
   document.addEventListener('contextmenu', e => e.preventDefault());
-  document.onkeydown = function(e) {
-    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-      return false;
-    }
-  };
 </script>
 
 </body>
