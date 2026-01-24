@@ -166,7 +166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="horaires-box">
 <h3>🕒 Horaires d'ouverture</h3>
-<div><span>Lundi  :</span> <span>08h00 - 18h00</span></div>
+<div><span>Lundi :</span> <span>08h00 - 18h00</span></div>
 <div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
 <div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
 <div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
@@ -212,23 +212,3 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 </footer>
 
 <script>
-  // Protection code
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.onkeydown = function(e) {
-    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-      return false;
-    }
-  };
-
-  function actionEmail() {
-    const email = "wilson.multi.services39@gmail.com";
-    const nomDeVotrePage = "contact.html";
-    navigator.clipboard.writeText(email).then(() => {
-        window.location.href = nomDeVotrePage;
-    }).catch(err => {
-        window.location.href = nomDeVotrePage;
-    });
-  }
-</script>
-</body>
-</html>
