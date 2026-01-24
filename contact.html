@@ -67,12 +67,25 @@ input, textarea, select {
   padding: 12px;
   margin-bottom: 20px;
   border: 1px solid var(--or-carte);
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.9); /* Fond clair pour la lisibilité lors de la saisie */
+  color: #333; /* Texte foncé pour les champs */
   border-radius: 8px;
   box-sizing: border-box;
   font-family: inherit;
 }
+
+/* --- CORRECTION DU DÉROULANT --- */
+select {
+  background-color: var(--bleu-vif) !important; /* Force le bleu vif */
+  color: white !important; /* Force le texte blanc */
+  cursor: pointer;
+}
+
+select option {
+  background-color: var(--bleu-vif); /* Fond des options en bleu */
+  color: white;
+}
+/* ------------------------------ */
 
 .btn-envoyer {
   background-color: var(--or-carte);
@@ -86,7 +99,6 @@ input, textarea, select {
   width: 100%;
 }
 
-/* Style du message de succès */
 #success-message {
   display: none;
   background: #28a745;
@@ -142,7 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="tel" name="Téléphone" required>
 
             <label for="objet">Objet de votre demande :</label>
-            <select name="Service" required>
+            <select name="Service" id="objet" required>
                 <option value="" disabled selected>Choisissez un service...</option>
                 <option value="Travaux">Travaux</option>
                 <option value="Peinture">Peinture</option>
@@ -172,7 +184,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-  // SCRIPT POUR LE MESSAGE DE REMERCIEMENT SANS CHANGER DE PAGE
   var form = document.getElementById("my-form");
   
   async function handleSubmit(event) {
@@ -183,16 +194,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     fetch(event.target.action, {
       method: form.method,
       body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     }).then(response => {
       if (response.ok) {
-        status.style.display = "block"; // Affiche le message de succès
-        form.reset(); // Vide le formulaire
-        document.getElementById("submit-button").style.display = "none"; // Cache le bouton
+        status.style.display = "block";
+        form.reset();
+        document.getElementById("submit-button").style.display = "none";
       } else {
-        alert("Oups ! Il y a eu un problème lors de l'envoi.");
+        alert("Oups ! Il y a eu un problème.");
       }
     }).catch(error => {
       alert("Erreur de connexion.");
@@ -200,7 +209,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   form.addEventListener("submit", handleSubmit)
 
-  // Protection clic droit
   document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 
