@@ -12,16 +12,109 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-:root { --bleu-vif: #020596; --or-carte: #efd382; }
-body { font-family: 'Segoe UI', sans-serif; background-color: var(--bleu-vif); color: white; text-align: center; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3rem; margin-top: 30px; }
-.form-container { background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; margin: 20px auto; border: 1px solid var(--or-carte); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-label { display: block; text-align: left; margin-bottom: 5px; color: var(--or-carte); font-weight: bold; }
-input, textarea, select { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--or-carte); background: rgba(0, 0, 0, 0.2); color: white; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
-select option { background-color: var(--bleu-vif); color: white; }
-.btn-envoyer { background-color: var(--or-carte); color: #000; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: transform 0.2s; width: 100%; }
-.btn-envoyer:hover { transform: scale(1.02); background-color: #fff; }
-.btn-retour { display: inline-block; margin-top: 10px; margin-bottom: 30px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; }
+:root {
+  --bleu-vif: #020596;
+  --or-carte: #efd382;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bleu-vif);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--or-carte);
+  font-size: 3rem;
+  margin-top: 30px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 1px solid var(--or-carte);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: var(--or-carte);
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--or-carte);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.btn-envoyer {
+  background-color: var(--or-carte);
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Style du message de succès */
+#success-message {
+  display: none;
+  background: #28a745;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  padding: 25px 15px;
+  font-size: 0.75rem;
+  color: rgba(239, 211, 130, 0.8);
+  border-top: 1px solid rgba(239, 211, 130, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.btn-retour {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
 </style>
 </head>
 <body>
@@ -29,44 +122,85 @@ select option { background-color: var(--bleu-vif); color: white; }
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T24QSDW8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<h1>Contactez-nous</h1>
+<div class="main-content">
+    <h1>Contactez-nous</h1>
 
-<div class="form-container">
-    <form action="https://formspree.io/f/VOTRE_CODE_ICI" method="POST">
-        
-        <label for="nom">Votre Nom & Prénom :</label>
-        <input type="text" name="Nom" placeholder="Jean Dupont" required>
+    <div class="form-container">
+        <div id="success-message">
+            ✅ Merci ! Votre demande a bien été envoyée. Nous vous recontacterons rapidement.
+        </div>
 
-        <label for="email">Votre adresse E-mail :</label>
-        <input type="email" name="_replyto" placeholder="votre-mail@exemple.com" required>
+        <form id="my-form" action="https://formspree.io/f/VOTRE_CODE" method="POST">
+            
+            <label for="nom">Votre Nom & Prénom :</label>
+            <input type="text" name="Nom" required>
 
-        <label for="tel">Votre Téléphone :</label>
-        <input type="tel" name="Téléphone" placeholder="06 00 00 00 00" required>
+            <label for="email">Votre adresse E-mail :</label>
+            <input type="email" name="Email" required>
 
-        <label for="objet">Objet de votre demande :</label>
-        <select name="Service" required>
-            <option value="" disabled selected>Choisissez un service...</option>
-            <option value="Travaux">Travaux</option>
-            <option value="Peinture">Peinture</option>
-            <option value="Jardinage">Jardinage</option>
-            <option value="Petite Plomberie">Petite Plomberie</option>
-            <option value="Petite Bricole">Petite Bricole</option>
-            <option value="Agencement meuble">Agencement meuble</option>
-            <option value="Autre demande">Autre demande</option>
-        </select>
+            <label for="tel">Votre Téléphone :</label>
+            <input type="tel" name="Téléphone" required>
 
-        <label for="message">Description détaillée :</label>
-        <textarea name="Message" rows="6" placeholder="Précisez ici les détails..." required></textarea>
+            <label for="objet">Objet de votre demande :</label>
+            <select name="Service" required>
+                <option value="" disabled selected>Choisissez un service...</option>
+                <option value="Travaux">Travaux</option>
+                <option value="Peinture">Peinture</option>
+                <option value="Jardinage">Jardinage</option>
+                <option value="Petite Plomberie">Petite Plomberie</option>
+                <option value="Petite Bricole">Petite Bricole</option>
+                <option value="Agencement meuble">Agencement meuble</option>
+                <option value="Autre demande">Autre demande</option>
+            </select>
 
-        <input type="text" name="_gotcha" style="display:none">
+            <label for="message">Description détaillée :</label>
+            <textarea name="Message" rows="5" required></textarea>
 
-        <button type="submit" class="btn-envoyer">📤 Envoyer ma demande</button>
-    </form>
+            <button id="submit-button" type="submit" class="btn-envoyer">📤 Envoyer ma demande</button>
+        </form>
+    </div>
+
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 </div>
 
-<a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+<footer>
+    <strong>Mentions Légales</strong><br>
+    Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
+    Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
+    SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
+    Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
+</footer>
 
 <script>
+  // SCRIPT POUR LE MESSAGE DE REMERCIEMENT SANS CHANGER DE PAGE
+  var form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("success-message");
+    var data = new FormData(event.target);
+    
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.style.display = "block"; // Affiche le message de succès
+        form.reset(); // Vide le formulaire
+        document.getElementById("submit-button").style.display = "none"; // Cache le bouton
+      } else {
+        alert("Oups ! Il y a eu un problème lors de l'envoi.");
+      }
+    }).catch(error => {
+      alert("Erreur de connexion.");
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+
+  // Protection clic droit
   document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 
