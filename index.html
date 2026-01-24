@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T24QSDW8');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wilson-multi-services</title>
@@ -149,7 +154,8 @@ h1 { font-size: 5rem; }
 </style>
 </head>
 <body>
-
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T24QSDW8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="main-content">
 <div class="header-container">
 <img src="logo.png" alt="Wilson Multi Services" class="logo-img">
@@ -199,33 +205,29 @@ Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
 Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
 SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
 Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
+<br>
+<p style="margin-top: 10px; opacity: 0.6; font-size: 0.7rem;">
+    Visiteurs : <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwilsonmultiservices39.github.io%2Fauto-entreprise.com&count_bg=%23EFD382&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Vues&edge_flat=false" alt="Compteur de vues"/>
+</p>
 </footer>
 
 <script>
-  // 1. PROTECTION : Désactive clic droit et inspection
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.onkeydown = function(e) {
-    if(e.keyCode == 123 || 
-      (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
-      (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
       return false;
     }
   };
 
-  // 2. FONCTION : Copier l'adresse mail + Redirection vers votre page
   function actionEmail() {
     const email = "wilson.multi.services39@gmail.com";
-    const nomDeVotrePage = "contact.html"; // Remplacez par le nom exact de votre nouvelle page
-
+    const nomDeVotrePage = "contact.html";
     navigator.clipboard.writeText(email).then(() => {
-        // Redirection vers la nouvelle page après la copie
         window.location.href = nomDeVotrePage;
     }).catch(err => {
-        // En cas d'erreur de copie, on redirige quand même
         window.location.href = nomDeVotrePage;
     });
   }
 </script>
-
 </body>
 </html>
