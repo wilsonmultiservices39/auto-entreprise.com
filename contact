@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Wilson-multi-services</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* --- RÉCUPÉRATION DU STYLE PRINCIPAL --- */
+:root {
+    --bleu-vif: #020596;
+    --or-carte: #efd382;
+    --bleu-facebook: #1877F2;
+}
 
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bleu-vif);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER SIMPLIFIÉ POUR LA PAGE CONTACT --- */
+.header-contact {
+    padding: 30px 20px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--or-carte);
+    font-size: 3rem; /* Un peu plus petit que la page d'accueil */
+    margin: 0;
+    font-weight: normal;
+}
+
+.separator-bar {
+    height: 1.5px;
+    background-color: var(--or-carte);
+    width: 60%;
+    max-width: 400px;
+    margin: 15px auto;
+}
+
+/* --- CONTENU PRINCIPAL DE CONTACT --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.contact-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--or-carte);
+    max-width: 90%;
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+.success-icon {
+    color: var(--or-carte);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.highlight-email {
+    font-weight: bold;
+    color: var(--or-carte);
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    word-break: break-all; /* Pour éviter que l'email ne dépasse sur petits écrans */
+}
+
+/* --- BOUTONS DE NAVIGATION --- */
+.btn-style {
+    background-color: var(--or-carte);
+    color: #000;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn-style:hover {
+    transform: scale(1.05);
+}
+
+.btn-back {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid var(--or-carte);
+}
+
+/* --- FOOTER (IDENTIQUE) --- */
+footer {
+    width: 100%;
+    padding: 25px 15px;
+    font-size: 0.75rem;
+    color: rgba(239, 211, 130, 0.8);
+    border-top: 1px solid rgba(239, 211, 130, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+    margin-top: auto;
+}
+</style>
+</head>
+<body>
+
+    <div class="header-contact">
+        <h1>Contactez-nous</h1>
+        <div class="separator-bar"></div>
+    </div>
+
+    <div class="main-content">
+        <div class="contact-box">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2>Adresse e-mail copiée !</h2>
+            <p>L'adresse de l'entreprise est maintenant dans votre presse-papier. Vous pouvez la coller dans votre messagerie habituelle.</p>
+            
+            <div class="highlight-email">
+                wilson.multi.services39@gmail.com
+            </div>
+
+            <p>Si votre messagerie ne s'est pas ouverte automatiquement, ouvrez-la et collez l'adresse (Ctrl+V sur PC ou appui long sur mobile).</p>
+            
+            <div class="separator-bar" style="width: 30%; opacity: 0.5;"></div>
+            
+            <h3>Autre moyen de contact :</h3>
+            <a href="tel:0652240507" class="btn-style">
+                📞 Appeler le 06.52.24.05.07
+            </a>
+        </div>
+
+        <a href="index.html" class="btn-style btn-back">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+    </div>
+
+    <footer>
+        <strong>Mentions Légales</strong><br>
+        Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
+        Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
+        SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
+        Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
+    </footer>
+
+    <script>
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      document.onkeydown = function(e) {
+        if(e.keyCode == 123 || 
+          (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+          (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+          return false;
+        }
+      };
+    </script>
+
+</body>
+</html>
