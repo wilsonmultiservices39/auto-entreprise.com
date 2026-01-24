@@ -183,7 +183,7 @@ h1 { font-size: 5rem; }
 <div class="floating-wrapper">
 <div class="btn-col-left">
 <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
-<button onclick="actionEmail()" class="btn-style">📧 E-mail </button>
+<button onclick="actionEmail()" class="btn-style">📧 E-mail (Copie & Envoi)</button>
 </div>
 <div class="btn-col-right">
 <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank">
@@ -202,6 +202,16 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 </footer>
 
 <script>
+  // 1. PROTECTION : Désactive clic droit et inspection
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.onkeydown = function(e) {
+    if(e.keyCode == 123 || 
+      (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+      (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+      return false;
+    }
+  };
+
   // 2. FONCTION DOUBLE ACTION : Copier + Ouvrir Messagerie
   function actionEmail() {
     const email = "wilson.multi.services39@gmail.com";
@@ -222,5 +232,3 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 
 </body>
 </html>
-
-
