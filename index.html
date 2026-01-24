@@ -183,7 +183,7 @@ h1 { font-size: 5rem; }
 <div class="floating-wrapper">
 <div class="btn-col-left">
 <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
-<button onclick="actionEmail()" class="btn-style">📧 Contactez-nous</button>
+<button onclick="actionEmail()" class="btn-style">📧 E-mail (Copie & Envoi)</button>
 </div>
 <div class="btn-col-right">
 <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank">
@@ -199,10 +199,6 @@ Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
 Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
 SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
 Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
-<br>
-<p style="margin-top: 10px; opacity: 0.6; font-size: 0.7rem;">
-    Visiteurs : <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwilsonmultiservices39.github.io%2Fauto-entreprise.com&count_bg=%23EFD382&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Vues&edge_flat=false" alt="Compteur de vues"/>
-</p>
 </footer>
 
 <script>
@@ -216,15 +212,20 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
     }
   };
 
-  // 2. FONCTION : Copier + Redirection
+  // 2. FONCTION DOUBLE ACTION : Copier + Ouvrir Messagerie
   function actionEmail() {
     const email = "wilson.multi.services39@gmail.com";
-    const nomDeVotrePage = "contact.html"; // Nom de votre future page de formulaire
-
+    
+    // Action 1 : Copier dans le presse-papier
     navigator.clipboard.writeText(email).then(() => {
-        window.location.href = nomDeVotrePage;
+        // Action 2 : Ouvrir l'application de messagerie
+        window.location.href = "mailto:" + email;
+        
+        // Notification pour l'utilisateur
+        alert("1. Tentative d'ouverture de votre messagerie...\n2. Adresse e-mail copiée dans le presse-papier (au cas où).");
     }).catch(err => {
-        window.location.href = nomDeVotrePage;
+        // Secours si la copie échoue
+        window.location.href = "mailto:" + email;
     });
   }
 </script>
