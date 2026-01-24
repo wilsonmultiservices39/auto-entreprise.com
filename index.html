@@ -202,16 +202,6 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 </footer>
 
 <script>
-  // 1. PROTECTION : Désactive clic droit et inspection
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.onkeydown = function(e) {
-    if(e.keyCode == 123 || 
-      (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
-      (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-      return false;
-    }
-  };
-
   // 2. FONCTION DOUBLE ACTION : Copier + Ouvrir Messagerie
   function actionEmail() {
     const email = "wilson.multi.services39@gmail.com";
@@ -232,4 +222,5 @@ Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, US
 
 </body>
 </html>
+
 
