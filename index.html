@@ -29,10 +29,10 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
 
-/* Style spécifique pour le menu déroulant des travaux */
-.travaux-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; }
-.travaux-trigger:hover { text-decoration: underline; }
-.travaux-details { display: none; padding-left: 20px; margin-top: 5px; font-size: 0.9rem; color: white; border-left: 1px dashed var(--or-carte); margin-left: 5px; }
+/* Style du menu travaux */
+.travaux-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 5px 0; display: block; }
+.travaux-trigger:hover { color: white; }
+.travaux-details { display: none; padding-left: 20px; margin-top: 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); }
 
 .collapsible {
   background-color: #010363;
@@ -52,10 +52,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.active, .collapsible:hover {
-  background-color: #020596;
-  transform: translateY(-2px);
-}
+.active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
 
 .content-description {
   padding: 0 18px;
@@ -111,7 +108,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   </div>
 
   <div class="services-container">
-    <div class="travaux-trigger" onclick="toggleTravaux()">✦ Travaux (cliquer pour voir)</div>
+    <div class="travaux-trigger" onclick="toggleTravaux()">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></div>
     <div id="travaux-list" class="travaux-details">
         • Placo plâtre<br>
         • Ferraillage<br>
@@ -127,8 +124,8 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <div>✦ Autres services à la demande</div>
   </div>
 
-  <button type="button" class="collapsible">▼ Description de l'établissement</button>
-  <div class="content-description">
+  <button type="button" class="collapsible" id="descBtn">▼ Description de l'établissement</button>
+  <div class="content-description" id="descContent">
     <p style="margin-top:15px;"><strong>Bienvenue chez Wilson Multi-services</strong></p>
     <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
     <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
@@ -164,22 +161,48 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
     <h3 style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">Mentions Légales</h3>
-    
     <p><strong>1. Éditeur du site</strong><br>
-    L'entreprise <strong>Wilson Multi-services</strong> est une Entreprise Individuelle (EI) dirigée par <strong>Monsieur Rousseau Lionel</strong>.<br>
-    Siège social : 19 rue du faubourg marcel, 39200 Saint-Claude.<br>
-    SIRET : 99455217200011 (RCS Lons-le-Saunier).<br>
-    TVA : Franchise en base de TVA, article 293 B du CGI (non applicable).<br>
-    Tél : 06.52.24.05.07 / Email : wilson.multi.services39@gmail.com</p>
-    
-    <p><strong>2. Hébergement</strong><br>
-    Le site est hébergé par GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    
-    <p><strong>3. Assurance Professionnelle</strong><br>
-    Conformément à la loi, l'entreprise est couverte par une <strong>Assurance Responsabilité Civile Professionnelle </strong> valable pour la zone géographique de Saint-Claude.</p>
-    
-    <p><strong>4. Propriété intellectuelle</strong><br>
-    Tous les éléments du site (textes, logos, photos) sont la propriété de Wilson Multi-services. Toute reproduction est interdite sans accord préalable.</p>
-    
-    <p><strong>5. Données personnelles (RGPD)</strong><br>
-    Les informations recueillies via le formulaire de contact sont traitées uniquement pour la gestion de vos demandes. Vous disposez d'un droit d'accès et de rectification sur simple demande par email.</p
+    Wilson Multi-services (EI) - M. Rousseau Lionel<br>
+    19 rue du faubourg marcel, 39200 Saint-Claude.<br>
+    SIRET : 99455217200011 | TVA non applicable (Art. 293 B du CGI)</p>
+    <p><strong>2. Hébergement</strong> : GitHub Inc.</p>
+    <p><strong>3. Assurance</strong> : RC Professionnelle incluse.</p>
+  </div>
+</div>
+
+<script>
+  // FONCTION TRAVAUX CORRIGÉE
+  function toggleTravaux() {
+    var list = document.getElementById("travaux-list");
+    // On vérifie le style réel calculé pour éviter le bug du premier clic
+    if (window.getComputedStyle(list).display === "none") {
+      list.style.display = "block";
+    } else {
+      list.style.display = "none";
+    }
+  }
+
+  // ACCORDEON DESCRIPTION
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (window.getComputedStyle(content).display === "block") {
+        content.style.display = "none";
+        this.innerHTML = "▼ Description de l'établissement";
+      } else {
+        content.style.display = "block";
+        this.innerHTML = "▲ Réduire";
+      }
+    });
+  }
+
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('legalModal')) {
+      document.getElementById('legalModal').style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
