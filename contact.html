@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-YYZNJ0PLJS');
 </script>
 
@@ -78,7 +77,7 @@ input, textarea, select {
   font-family: inherit;
 }
 
-/* Correction du déroulant pour qu'il reste bleu */
+/* Style du menu déroulant */
 select {
   background-color: var(--bleu-vif) !important;
   color: white !important;
@@ -100,12 +99,6 @@ select option {
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
-  transition: transform 0.2s;
-}
-
-.btn-envoyer:hover {
-  transform: scale(1.02);
-  background-color: #fff;
 }
 
 #success-message {
@@ -116,19 +109,32 @@ select option {
   border-radius: 10px;
   margin-bottom: 20px;
   font-weight: bold;
-  border: 1px solid white;
 }
 
-footer {
-  width: 100%;
-  padding: 25px 15px;
-  font-size: 0.75rem;
-  color: rgba(239, 211, 130, 0.8);
-  border-top: 1px solid rgba(239, 211, 130, 0.3);
-  background: rgba(0, 0, 0, 0.4);
-  line-height: 1.6;
-  box-sizing: border-box;
+/* Footer & Modal */
+footer { 
+  width: 100%; 
+  padding: 25px 15px; 
+  font-size: 0.75rem; 
+  color: rgba(239, 211, 130, 0.8); 
+  border-top: 1px solid rgba(239, 211, 130, 0.3); 
+  background: rgba(0, 0, 0, 0.4); 
+  line-height: 1.6; 
 }
+.btn-mentions { 
+  background: none; 
+  border: 1px solid var(--or-carte); 
+  color: var(--or-carte); 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 0.7rem; 
+  margin-top: 10px; 
+}
+
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
+.modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
 .btn-retour {
   display: inline-block;
@@ -150,15 +156,14 @@ footer {
         </div>
 
         <form id="my-form" action="https://formspree.io/f/xzdenlnj" method="POST">
-            
             <label for="nom">Votre Nom & Prénom :</label>
-            <input type="text" name="Nom" placeholder="Ex: Jean Dupont" required>
+            <input type="text" name="Nom" required>
 
             <label for="email">Votre adresse E-mail :</label>
-            <input type="email" name="Email" placeholder="votre-mail@exemple.com" required>
+            <input type="email" name="Email" required>
 
             <label for="tel">Votre Téléphone :</label>
-            <input type="tel" name="Téléphone" placeholder="06 00 00 00 00" required>
+            <input type="tel" name="Téléphone" required>
 
             <label for="objet">Objet de votre demande :</label>
             <select name="Service" required>
@@ -173,7 +178,7 @@ footer {
             </select>
 
             <label for="message">Description détaillée :</label>
-            <textarea name="Message" rows="5" placeholder="Détails de votre projet..." required></textarea>
+            <textarea name="Message" rows="5" required></textarea>
 
             <button id="submit-button" type="submit" class="btn-envoyer">📤 Envoyer ma demande</button>
         </form>
@@ -183,12 +188,31 @@ footer {
 </div>
 
 <footer>
-    <strong>Mentions Légales</strong><br>
-    Wilson-multi-services &copy; 2026. Entreprise Individuelle (EI). <br>
-    Dirigeant : Rousseau Lionel | Adresse : 19 rue du faubourg marcel, 39200, St Claude <br>
-    SIRET : 99455217200011 | E-mail : wilson.multi.services39@gmail.com | Tél : 06.52.24.05.07 <br>
-    Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.
+    Wilson-multi-services &copy; 2026. <br>
+    <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales</button>
 </footer>
+
+<div id="legalModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
+    <h3>Mentions Légales</h3>
+    <p><strong>1. Éditeur du site</strong><br>
+    Entreprise : Wilson Multi-services (EI)<br>
+    Dirigeant : Rousseau Lionel<br>
+    Siège social : 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+    SIRET : 99455217200011<br>
+    Tél : 06.52.24.05.07</p>
+    
+    <p><strong>2. Hébergement</strong><br>
+    Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    
+    <p><strong>3. Propriété intellectuelle</strong><br>
+    L'ensemble du contenu est la propriété de Wilson Multi-services.</p>
+    
+    <p><strong>4. Données personnelles</strong><br>
+    Les données sont utilisées uniquement pour répondre à vos demandes. Contact : wilson.multi.services39@gmail.com.</p>
+  </div>
+</div>
 
 <script>
   var form = document.getElementById("my-form");
@@ -197,29 +221,26 @@ footer {
     event.preventDefault();
     var status = document.getElementById("success-message");
     var data = new FormData(event.target);
-    
     fetch(event.target.action, {
       method: form.method,
       body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     }).then(response => {
       if (response.ok) {
-        status.style.display = "block"; // Affiche le message vert
-        form.reset(); // Vide les champs
-        document.getElementById("submit-button").style.display = "none"; // Cache le bouton
+        status.style.display = "block";
+        form.reset();
+        document.getElementById("submit-button").style.display = "none";
       } else {
-        alert("Oups ! Il y a eu un problème lors de l'envoi.");
+        alert("Oups ! Problème lors de l'envoi.");
       }
-    }).catch(error => {
-      alert("Erreur de connexion.");
-    });
+    }).catch(error => { alert("Erreur de connexion."); });
   }
-  form.addEventListener("submit", handleSubmit)
+  form.addEventListener("submit", handleSubmit);
 
-  // Protection clic droit basique
-  document.addEventListener('contextmenu', e => e.preventDefault());
+  window.onclick = function(event) {
+    var modal = document.getElementById('legalModal');
+    if (event.target == modal) { modal.style.display = "none"; }
+  }
 </script>
 
 </body>
