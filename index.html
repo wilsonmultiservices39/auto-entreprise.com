@@ -24,25 +24,46 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .devis { font-weight: bold; text-transform: uppercase; font-size: 1.8rem; color: var(--or-carte); margin: 5px 0; }
 .separator-bar { height: 1.5px; background-color: var(--or-carte); width: 85%; max-width: 700px; margin: 10px auto 20px auto; }
 
-/* Nouveau style pour la description */
-.description-text {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--or-carte);
-  border-radius: 15px;
-  padding: 25px;
-  margin: 20px auto;
-  max-width: 800px;
-  width: 90%;
-  text-align: left;
-  line-height: 1.6;
-}
-.description-text h2 { color: var(--or-carte); margin-top: 0; font-size: 1.4rem; }
-.description-text p { margin-bottom: 15px; }
-
 .horaires-box { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--or-carte); padding: 15px; border-radius: 10px; font-size: 0.9rem; text-align: left; width: 90%; max-width: 280px; }
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-.services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto; max-width: 90%; }
+.services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
+
+/* Style du bouton accordéon */
+.collapsible {
+  background-color: rgba(239, 211, 130, 0.2);
+  color: var(--or-carte);
+  cursor: pointer;
+  padding: 15px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid var(--or-carte);
+  text-align: center;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 10px auto;
+  transition: 0.3s;
+}
+
+.active, .collapsible:hover {
+  background-color: rgba(239, 211, 130, 0.4);
+}
+
+.content-description {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  border: 1px solid rgba(239, 211, 130, 0.3);
+  border-top: none;
+}
 
 .main-content { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
 .floating-wrapper { position: sticky; bottom: 20px; z-index: 1000; display: flex; justify-content: space-between; padding: 0 15px; pointer-events: none; }
@@ -82,20 +103,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     </div>
   </div>
 
-  <div class="description-text">
-    <h2>Bienvenue chez Wilson Multi-services</h2>
-    <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
-    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
-    <ul>
-      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
-      <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
-      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
-      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
-    </ul>
-    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
-    <p>Contactez-nous dès aujourd'hui au <strong>06.52.24.05.07</strong> pour donner vie à vos projets !</p>
-  </div>
-
   <div class="services-container">
     <div>✦ Travaux</div>
     <div>✦ Peinture</div>
@@ -104,6 +111,19 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <div>✦ Petite Bricole</div>
     <div>✦ Agencement meuble</div>
     <div>✦ Autres services à la demande</div>
+  </div>
+
+  <button type="button" class="collapsible">▼ En savoir plus sur nous</button>
+  <div class="content-description">
+    <p style="margin-top:15px;">Bienvenue chez <strong>Wilson Multi-services</strong>, votre partenaire de confiance à <strong>Saint-Claude (39200)</strong>.</p>
+    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient pour :</p>
+    <ul style="padding-left: 20px;">
+      <li>Travaux & Peinture</li>
+      <li>Jardinage</li>
+      <li>Bricolage & Plomberie</li>
+      <li>Montage de meubles</li>
+    </ul>
+    <p>Travail soigné et <strong>devis gratuit</strong>.</p>
   </div>
 
   <div class="floating-wrapper">
@@ -142,11 +162,28 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     L'ensemble du contenu (textes, images) est la propriété de Wilson Multi-services.</p>
     
     <p><strong>4. Données personnelles</strong><br>
-    Les données du formulaire de contact sont utilisées exclusivement pour répondre à vos demandes. Vous disposez d'un droit de modification/suppression à l'adresse : wilson.multi.services39@gmail.com.</p>
+    Les données sont utilisées uniquement pour répondre à vos demandes. Contact : wilson.multi.services39@gmail.com.</p>
   </div>
 </div>
 
 <script>
+  // Script pour l'accordéon
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        this.innerHTML = "▼ En savoir plus sur nous";
+      } else {
+        content.style.display = "block";
+        this.innerHTML = "▲ Réduire";
+      }
+    });
+  }
+
+  // Fermer mentions légales
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
