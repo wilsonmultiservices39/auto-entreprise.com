@@ -77,9 +77,13 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
+/* Styles de la fenêtre modale */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
-.modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; }
-.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+.modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; position: relative; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 20px; }
+.close:hover { color: #000; }
+.modal-content h3 { border-bottom: 2px solid var(--bleu-vif); padding-bottom: 10px; color: var(--bleu-vif); }
+.modal-content p { margin-bottom: 15px; font-size: 0.9rem; }
 
 @media (min-width: 800px) { .header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; } h1 { font-size: 5rem; } .horaires-box { order: 3; } }
 </style>
@@ -108,49 +112,28 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="travaux-list" class="menu-details">
-        • Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande
-    </div>
+    <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="peinture-list" class="menu-details">
-        • Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande
-    </div>
+    <div id="peinture-list" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('revetement-list')">✦ Revêtements muraux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="revetement-list" class="menu-details">
-        • Papier<br>• Fibre de verre<br>• + de services à la demande
-    </div>
+    <div id="revetement-list" class="menu-details">• Papier<br>• Fibre de verre<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="jardinage-list" class="menu-details">
-        • Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande
-    </div>
+    <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('plomberie-list')">✦ Petite Plomberie <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="plomberie-list" class="menu-details">
-        • Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande
-    </div>
+    <div id="plomberie-list" class="menu-details">• Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="bricolage-list" class="menu-details">
-        • Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande
-    </div>
+    <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('agencement-list')">✦ Agencement meuble <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="agencement-list" class="menu-details">
-        • Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande
-    </div>
+    <div id="agencement-list" class="menu-details">• Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande</div>
 
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
-    <div id="autres-list" class="menu-details">
-        • Débarrassage d'encombrants<br>
-        • Nettoyage bâtiment / appartement<br>
-        • Locaux commerciaux / entrepôt / cave<br>
-        • Déménagement<br>
-        • Aide et installation numérique<br>
-        • + de services à la demande
-    </div>
+    <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
   </div>
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
@@ -190,21 +173,33 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
     <h3>Mentions Légales</h3>
-    <p>Wilson Multi-services (EI) - M. Rousseau Lionel<br>
-    SIRET : 99455217200011 | TVA non applicable (Art. 293 B du CGI)</p>
+    
+    <p><strong>1. Éditeur du site</strong><br>
+    Entreprise : Wilson Multi-services (EI)<br>
+    Dirigeant : Rousseau Lionel<br>
+    Siège social : 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+    SIRET : 99455217200011<br>
+    Tél : 06.52.24.05.07</p>
+    
+    <p><strong>2. Hébergement</strong><br>
+    Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    
+    <p><strong>3. Propriété intellectuelle</strong><br>
+    L'ensemble du contenu (textes, images) est la propriété de Wilson Multi-services.</p>
+    
+    <p><strong>4. Données personnelles</strong><br>
+    Les données du formulaire de contact sont utilisées exclusivement pour répondre à vos demandes. Vous disposez d'un droit de modification/suppression à l'adresse : wilson.multi.services39@gmail.com.</p>
   </div>
 </div>
 
 <script>
+  // Menu des services
   function toggleMenu(id) {
     var list = document.getElementById(id);
-    if (list.style.display === "block") {
-      list.style.display = "none";
-    } else {
-      list.style.display = "block";
-    }
+    list.style.display = (list.style.display === "block") ? "none" : "block";
   }
 
+  // Accordéon description
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -220,9 +215,11 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     });
   }
 
+  // Gestion de la fermeture des modales
   window.onclick = function(event) {
-    if (event.target == document.getElementById('legalModal')) {
-      document.getElementById('legalModal').style.display = "none";
+    var modal = document.getElementById('legalModal');
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
   }
 </script>
