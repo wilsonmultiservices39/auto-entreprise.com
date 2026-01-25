@@ -60,12 +60,23 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
   background-color: rgba(255, 255, 255, 0.08);
   width: 90%;
   max-width: 500px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 10px auto;
   border-radius: 0 0 10px 10px;
   text-align: left;
   border: 1px solid var(--or-carte);
   border-top: none;
   line-height: 1.6;
+}
+
+/* Style de la carte intégrée */
+.map-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 2px solid var(--or-carte);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .main-content { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
@@ -77,13 +88,9 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
-/* Styles de la fenêtre modale */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
-.modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; position: relative; }
-.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 20px; }
-.close:hover { color: #000; }
-.modal-content h3 { border-bottom: 2px solid var(--bleu-vif); padding-bottom: 10px; color: var(--bleu-vif); }
-.modal-content p { margin-bottom: 15px; font-size: 0.9rem; }
+.modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
 @media (min-width: 800px) { .header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; } h1 { font-size: 5rem; } .horaires-box { order: 3; } }
 </style>
@@ -151,6 +158,18 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
   </div>
 
+  <div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.568474268157!2d5.8601662!3d46.3879793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf30fed373085%3A0x7001408861bc5f66!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
   <div class="floating-wrapper">
     <div class="btn-col-left">
       <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
@@ -173,7 +192,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
     <h3>Mentions Légales</h3>
-    
     <p><strong>1. Éditeur du site</strong><br>
     Entreprise : Wilson Multi-services (EI)<br>
     Dirigeant : Rousseau Lionel<br>
@@ -185,21 +203,19 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     Hébergeur : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
     
     <p><strong>3. Propriété intellectuelle</strong><br>
-    L'ensemble du contenu (textes, images) est la propriété de Wilson Multi-services.</p>
+    L'ensemble du contenu est la propriété de Wilson Multi-services.</p>
     
     <p><strong>4. Données personnelles</strong><br>
-    Les données du formulaire de contact sont utilisées exclusivement pour répondre à vos demandes. Vous disposez d'un droit de modification/suppression à l'adresse : wilson.multi.services39@gmail.com.</p>
+    Les données sont utilisées uniquement pour répondre à vos demandes. Contact : wilson.multi.services39@gmail.com.</p>
   </div>
 </div>
 
 <script>
-  // Menu des services
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
   }
 
-  // Accordéon description
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -215,12 +231,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     });
   }
 
-  // Gestion de la fermeture des modales
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+    if (event.target == modal) { modal.style.display = "none"; }
   }
 </script>
 </body>
