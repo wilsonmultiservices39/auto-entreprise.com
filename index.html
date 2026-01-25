@@ -29,39 +29,41 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
 
-/* Style du bouton accordéon */
+/* Style du bouton accordéon MIS À JOUR */
 .collapsible {
-  background-color: rgba(239, 211, 130, 0.2);
+  background-color: #010363; /* Bleu plus foncé */
   color: var(--or-carte);
   cursor: pointer;
   padding: 15px;
   width: 90%;
   max-width: 500px;
-  border: 1px solid var(--or-carte);
+  border: 2px solid var(--or-carte); /* Bordure or plus marquée */
   text-align: center;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   border-radius: 10px;
-  margin: 10px auto;
+  margin: 15px auto 5px auto;
   transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .active, .collapsible:hover {
-  background-color: rgba(239, 211, 130, 0.4);
+  background-color: #020596;
+  transform: translateY(-2px);
 }
 
 .content-description {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.08);
   width: 90%;
   max-width: 500px;
   margin: 0 auto 20px auto;
   border-radius: 0 0 10px 10px;
   text-align: left;
-  border: 1px solid rgba(239, 211, 130, 0.3);
+  border: 1px solid var(--or-carte);
   border-top: none;
   line-height: 1.6;
 }
