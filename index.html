@@ -36,7 +36,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
   cursor: pointer;
   padding: 15px;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   border: 1px solid var(--or-carte);
   text-align: center;
   outline: none;
@@ -57,12 +57,13 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.05);
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto 20px auto;
   border-radius: 0 0 10px 10px;
   text-align: left;
   border: 1px solid rgba(239, 211, 130, 0.3);
   border-top: none;
+  line-height: 1.6;
 }
 
 .main-content { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
@@ -113,17 +114,19 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <div>✦ Autres services à la demande</div>
   </div>
 
-  <button type="button" class="collapsible">▼ En savoir plus sur nous</button>
+  <button type="button" class="collapsible">▼ Description de l'établissement</button>
   <div class="content-description">
-    <p style="margin-top:15px;">Bienvenue chez <strong>Wilson Multi-services</strong>, votre partenaire de confiance à <strong>Saint-Claude (39200)</strong>.</p>
-    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient pour :</p>
-    <ul style="padding-left: 20px;">
-      <li>Travaux & Peinture</li>
-      <li>Jardinage</li>
-      <li>Bricolage & Plomberie</li>
-      <li>Montage de meubles</li>
+    <p style="margin-top:15px;"><strong>Bienvenue chez Wilson Multi-services</strong></p>
+    <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
+    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
+    <ul style="padding-left: 20px; margin-bottom: 15px;">
+      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
+      <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
+      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
+      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
     </ul>
-    <p>Travail soigné et <strong>devis gratuit</strong>.</p>
+    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
+    <p style="margin-bottom: 15px;">Contactez-nous dès aujourd'hui au <strong>06.52.24.05.07</strong> pour donner vie à vos projets !</p>
   </div>
 
   <div class="floating-wrapper">
@@ -167,7 +170,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // Script pour l'accordéon
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -175,7 +177,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       var content = this.nextElementSibling;
       if (content.style.display === "block") {
         content.style.display = "none";
-        this.innerHTML = "▼ En savoir plus sur nous";
+        this.innerHTML = "▼ Description de l'établissement";
       } else {
         content.style.display = "block";
         this.innerHTML = "▲ Réduire";
@@ -183,7 +185,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     });
   }
 
-  // Fermer mentions légales
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
