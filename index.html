@@ -29,7 +29,6 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
 
-/* Style Corrigé pour les menus interactifs */
 .menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; transition: 0.2s; }
 .menu-trigger:hover { color: white; padding-left: 5px; }
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
@@ -110,11 +109,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="travaux-list" class="menu-details">
-        • Placo plâtre<br>
-        • Ferraillage<br>
-        • Enduit de lissage<br>
-        • Parquet stratifié<br>
-        • + de services à la demande
+        • Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande
     </div>
 
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
@@ -129,8 +124,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
     <div>✦ Jardinage</div>
     <div>✦ Petite Plomberie</div>
-    <div>✦ Petite Bricole</div>
-    <div>✦ Agencement meuble</div>
+    <div>✦ Petit Bricolage</div> <div>✦ Agencement meuble</div>
     <div>✦ Autres services à la demande</div>
   </div>
 
@@ -169,10 +163,8 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // FONCTION DE CORRECTION
   function toggleMenu(id) {
     var list = document.getElementById(id);
-    // On force la vérification directe de l'état
     if (list.style.display === "block") {
       list.style.display = "none";
     } else {
@@ -180,7 +172,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     }
   }
 
-  // ACCORDEON DESCRIPTION
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
