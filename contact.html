@@ -111,6 +111,17 @@ select option {
   font-weight: bold;
 }
 
+/* Style de la carte */
+.map-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 10px auto 20px auto;
+  border: 2px solid var(--or-carte);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
 /* Footer & Modal */
 footer { 
   width: 100%; 
@@ -184,6 +195,18 @@ footer {
         </form>
     </div>
 
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.5684651919693!2d5.858714315664448!3d46.38792017912285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3980387431f%3A0x7d07949174092996!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715600000000!5m2!1sfr!2sfr" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
     <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 </div>
 
@@ -230,6 +253,8 @@ footer {
         status.style.display = "block";
         form.reset();
         document.getElementById("submit-button").style.display = "none";
+        // Optionnel : remonter la page pour voir le message de succès
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         alert("Oups ! Problème lors de l'envoi.");
       }
