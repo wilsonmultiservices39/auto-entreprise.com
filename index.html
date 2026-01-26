@@ -33,40 +33,18 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .menu-trigger:hover { color: white; padding-left: 5px; }
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
-/* STYLE DE LA SECTION GALERIE */
-.gallery-section { width: 90%; max-width: 800px; margin: 30px auto; }
+/* STYLE DES SECTIONS */
+.gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
+.review-card { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-top: 3px solid var(--or-carte); text-align: left; margin-bottom: 15px; }
 
 .map-container {
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto 5px auto;
-  border: 2px solid var(--or-carte);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  width: 90%; max-width: 500px; margin: 20px auto 5px auto; border: 2px solid var(--or-carte); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.intervention-zone {
-  font-size: 0.85rem;
-  color: var(--or-carte);
-  margin-bottom: 20px;
-  padding: 0 15px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.intervention-zone { font-size: 0.85rem; color: var(--or-carte); margin-bottom: 20px; padding: 0 15px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
 .collapsible {
-  background-color: #010363;
-  color: var(--or-carte);
-  cursor: pointer;
-  padding: 15px;
-  width: 90%;
-  max-width: 500px;
-  border: 2px solid var(--or-carte);
-  text-align: center;
-  outline: none;
-  font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background-color: #010363; color: var(--or-carte); cursor: pointer; padding: 15px; width: 90%; max-width: 500px; border: 2px solid var(--or-carte); text-align: center; outline: none; font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
@@ -117,20 +95,44 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="peinture-list" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('revetement-list')">✦ Revêtements muraux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="revetement-list" class="menu-details">• Papier peint<br>• Fibre de verre<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('plomberie-list')">✦ Petite Plomberie <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="plomberie-list" class="menu-details">• Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('agencement-list')">✦ Agencement meuble <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="agencement-list" class="menu-details">• Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande</div>
+    
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
+  </div>
+
+  <div class="reviews-section">
+    <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      <div class="review-card">
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
+        <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
+      </div>
+      <div class="review-card">
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
+        <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
+      </div>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
   </div>
 
   <div class="gallery-section">
@@ -142,7 +144,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   </div>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8606471!3d46.3900257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39804e142e1%3A0x67347a54823467e2!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1737750000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8606471!3d46.3900257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39804e142e1%3A0x67347a54823467e2!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1737750000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -151,12 +153,10 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
   <div class="content-description">
-    <p style="margin-top:15px;"><strong>Wilson Multi-services : Votre artisan de proximité à Saint-Claude et dans le Haut-Jura</strong></p>
-    <p>Vous recherchez un professionnel polyvalent pour prendre soin de votre maison ou de votre jardin ? Basée à <strong>Saint-Claude (39200)</strong>, l’entreprise Wilson Multi-services, dirigée par <strong>Lionel Rousseau</strong>, intervient rapidement pour tous vos besoins de rénovation et d'entretien courant.</p>
-    <p>Nous proposons une expertise complète en <strong>peinture intérieure</strong> (murs, plafonds, boiseries), en pose de <strong>revêtements muraux</strong> et de sols (parquet stratifié), ainsi qu’en travaux de <strong>plâtrerie et placo</strong>.</p>
-    <p>Besoin d'un coup de main pour l'extérieur ? Nous assurons l'<strong>entretien de vos espaces verts</strong> : tonte, débroussaillage et évacuation des déchets verts à Saint-Claude et dans les communes voisines.</p>
-    <p>Que ce soit pour du <strong>petit bricolage</strong>, de la <strong>petite plomberie</strong> (changement de robinet, débouchage) ou le <strong>montage de vos meubles</strong>, nous garantissons un travail soigné, un interlocuteur unique et un <strong>devis gratuit</strong> sous 48h.</p>
-    <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
+    <p style="margin-top:15px;"><strong>Wilson Multi-services : Votre artisan de proximité à Saint-Claude</strong></p>
+    <p>Basée à <strong>Saint-Claude (39200)</strong>, l’entreprise Wilson Multi-services, dirigée par <strong>Lionel Rousseau</strong>, intervient pour tous vos besoins de rénovation et d'entretien.</p>
+    <p>Nous proposons une expertise en <strong>peinture</strong>, <strong>placo</strong>, <strong>revêtements de sols</strong>, <strong>jardinage</strong>, <strong>petite plomberie</strong> et <strong>bricolage</strong>. Devis gratuit sous 48h.</p>
+    <p><strong>Contactez-nous au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a>.</strong></p>
   </div>
 
   <div class="floating-wrapper">
@@ -179,32 +179,11 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
-    
-    <h3>1. Éditeur du site</h3>
-    <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
-    <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
-    <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
-    <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
-    <strong>SIRET :</strong> 99455217200011<br>
-    <strong>Téléphone :</strong> 06.52.24.05.07<br>
-    <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
-    
-    <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    
-    <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction ou représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l'autorisation expresse de M. Rousseau Lionel est interdite et constituerait une contrefaçon sanctionnée par les articles L 335-2 et suivants du Code de la propriété intellectuelle.</p>
-    
-    <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), nous vous informons que :</p>
-    <ul>
-      <li><strong>Collecte :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis.</li>
-      <li><strong>Conservation :</strong> Elles sont conservées pendant une durée maximale de 3 ans.</li>
-      <li><strong>Vos droits :</strong> Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce en précisant l’adresse à laquelle la réponse doit être envoyée.</li>
-    </ul>
-
-    <h3>5. Cookies et Statistiques</h3>
-    <p>Ce site utilise <strong>Google Analytics</strong> pour analyser l'audience. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+    <p><strong>Éditeur :</strong> Wilson Multi-services (EI), M. Rousseau Lionel<br>
+    <strong>Siège :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+    <strong>SIRET :</strong> 99455217200011</p>
+    <p><strong>Hébergement :</strong> GitHub Inc.</p>
+    <p><strong>RGPD :</strong> Les données du formulaire sont utilisées uniquement pour les devis et conservées 3 ans.</p>
   </div>
 </div>
 
