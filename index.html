@@ -33,6 +33,17 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .menu-trigger:hover { color: white; padding-left: 5px; }
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
+/* Styles de la carte */
+.map-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 2px solid var(--or-carte);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
 .collapsible {
   background-color: #010363;
   color: var(--or-carte);
@@ -46,7 +57,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 10px;
-  margin: 15px auto 5px auto;
+  margin: 5px auto 15px auto;
   transition: 0.3s;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
@@ -131,6 +142,18 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
+  </div>
+
+  <div class="map-container">
+    <iframe 
+        src="http://googleusercontent.com/maps.google.com/8" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
