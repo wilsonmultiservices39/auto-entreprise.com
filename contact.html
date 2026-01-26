@@ -13,7 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Wilson Multi-services Saint-Claude</title>
 
-<!-- PROTECTION COPYRIGHT - Métadonnées -->
 <meta name="author" content="Wilson Multi-services - Lionel Rousseau">
 <meta name="copyright" content="© 2026 Wilson Multi-services. Tous droits réservés.">
 <meta name="robots" content="noarchive">
@@ -40,12 +39,11 @@ img {
   user-select: none;
 }
 
-/* PROTECTION : Overlay invisible sur les images pour empêcher le glisser-déposer */
+/* PROTECTION : Overlay invisible sur les images */
 .image-container {
   position: relative;
   display: inline-block;
 }
-
 .image-container::after {
   content: '';
   position: absolute;
@@ -115,7 +113,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </head>
 <body>
 
-<!-- PROTECTION : Watermark visible copyright -->
 <div class="copyright-watermark no-select">
   © 2026 Wilson Multi-services
 </div>
@@ -134,20 +131,22 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
   <form action="https://formspree.io/f/mkgogpze" method="POST">
     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Wilson Multi-services">
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     
     <div class="form-group">
       <label>Nom et prénom</label>
       <input type="text" name="nom" placeholder="Votre nom" required>
     </div>
+    
     <div class="form-group">
       <label>Email</label>
       <input type="email" name="email" placeholder="votre@email.com" required>
     </div>
+    
     <div class="form-group">
       <label>Téléphone</label>
       <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
     </div>
+    
     <div class="form-group">
       <label>Service souhaité</label>
       <select name="service" required>
@@ -162,18 +161,22 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
         <option value="Autre">Autre service</option>
       </select>
     </div>
+    
     <div class="form-group">
       <label>Votre Message</label>
       <textarea name="message" placeholder="Décrivez votre projet ici..." required></textarea>
     </div>
+
     <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
-      <input type="checkbox" name="rgpd_consent" required style="width: auto; margin-top: 5px;" id="rgpd-check">
+      <input type="checkbox" name="rgpd_consent" id="rgpd-check" required style="width: auto; margin-top: 5px;">
       <label for="rgpd-check" style="font-size: 0.8rem; font-weight: normal; line-height: 1.4;">
-        J'accepte que mes données personnelles soient collectées et traitées par Wilson Multi-services dans le cadre de ma demande de devis. <a href="#" onclick="document.getElementById('legalModal').style.display='block'; return false;" style="color: var(--or-carte); text-decoration: underline;">En savoir plus sur vos droits</a>
+        J'accepte que mes données personnelles soient collectées et traitées par Wilson Multi-services dans le cadre de ma demande de devis. <a href="#" onclick="document.getElementById('legalModal').style.display='block'; return false;" style="color: var(--or-carte); text-decoration: underline;">En savoir plus</a>
       </label>
     </div>
+
     <button type="submit" class="btn-submit">Envoyer la demande</button>
   </form>
+  
   <a href="index.html" class="back-link">← Retour à l'accueil</a>
 </div>
 
@@ -202,20 +205,14 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
     
     <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction ou représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l'autorisation expresse de M. Rousseau Lionel est interdite et constituerait une contrefaçon sanctionnée par les articles L 335-2 et suivants du Code de la propriété intellectuelle.</p>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>.</p>
     
     <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) :</p>
     <ul>
-      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
-      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
-      <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
-      <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
-      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
-      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
-      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
-      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
-      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
+      <li><strong>Collecte :</strong> Les données collectées via ce formulaire sont uniquement destinées à la gestion de vos demandes de devis.</li>
+      <li><strong>Conservation :</strong> Elles sont conservées pendant une durée maximale de 3 ans.</li>
+      <li><strong>Vos droits :</strong> Vous disposez d’un droit d’accès, de rectification et d’opposition aux données personnelles vous concernant.</li>
     </ul>
 
     <h3>5. Cookies et Statistiques</h3>
@@ -227,9 +224,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     • Ils font l'objet d'un contrôle de vérification avant publication.<br>
     • Aucune contrepartie n'est fournie en échange d'un avis.<br>
     • Tout client peut demander la suppression de son avis via ce formulaire de contact.</p>
-
-    <h3>7. Sécurité et lutte contre la fraude</h3>
-    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
   </div>
 </div>
 
@@ -241,13 +235,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     return false;
   });
 
-  // PROTECTION : Désactive certains raccourcis clavier
+  // PROTECTION : Désactive certains raccourcis clavier (Code source)
   document.addEventListener('keydown', function(e) {
-    // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    if (e.keyCode == 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85)) {
       e.preventDefault();
       alert('© Wilson Multi-services - Contenu protégé');
       return false;
@@ -256,44 +246,15 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
   // PROTECTION : Empêche le glisser-déposer des images
   document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') {
-      e.preventDefault();
-      return false;
-    }
+    if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
   });
 
-  // PROTECTION : Alerte si quelqu'un essaie d'ouvrir les DevTools
-  var devtools = {open: false};
-  var threshold = 160;
-  var checkStatus = function() {
-    if (window.outerHeight - window.innerHeight > threshold || 
-        window.outerWidth - window.innerWidth > threshold) {
-      if (!devtools.open) {
-        console.log('%c© Wilson Multi-services 2026', 'color: #efd382; font-size: 20px; font-weight: bold;');
-        console.log('%cCe site est protégé par le droit d\'auteur.', 'color: #ff0000; font-size: 14px;');
-        console.log('%cToute copie non autorisée est illégale.', 'color: #ff0000; font-size: 14px;');
-      }
-      devtools.open = true;
-    } else {
-      devtools.open = false;
-    }
-  };
-  setInterval(checkStatus, 500);
-
-  // Fonction originale du site
+  // Fonction originale pour la modale
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
   }
 </script>
-
-<!-- PROTECTION : Balises de copyright invisibles pour les moteurs de recherche -->
-<!--
-  © 2026 Wilson Multi-services
-  Propriétaire : Lionel Rousseau
-  SIRET : 99455217200011
-  Tous droits réservés - Reproduction interdite
--->
 
 </body>
 </html>
