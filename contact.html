@@ -11,213 +11,94 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Wilson Multi-services</title>
+<title>Contact - Wilson Multi-services Saint-Claude</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-:root {
-  --bleu-vif: #020596;
-  --or-carte: #efd382;
-}
+:root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bleu-vif);
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+.header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
+.logo-img { max-width: 150px; height: auto; cursor: pointer; }
+h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3rem; margin: 0; }
 
-h1 {
-  font-family: 'Great Vibes', cursive;
-  color: var(--or-carte);
-  font-size: 3rem;
-  margin-top: 30px;
-}
+.contact-container { background: rgba(255, 255, 255, 0.1); padding: 30px 20px; border-radius: 15px; border: 1px solid var(--or-carte); width: 90%; max-width: 500px; margin: 20px auto; box-sizing: border-box; }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* Style pour la zone d'intervention */
+.intervention-zone { font-size: 0.9rem; color: var(--or-carte); margin-bottom: 25px; line-height: 1.4; }
 
-.form-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  border: 1px solid var(--or-carte);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
+.form-group { text-align: left; margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; color: var(--or-carte); font-weight: bold; font-size: 0.9rem; }
+input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--or-carte); background: white; color: #333; font-family: inherit; box-sizing: border-box; }
+textarea { height: 120px; resize: vertical; }
 
-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 5px;
-  color: var(--or-carte);
-  font-weight: bold;
-}
+.btn-submit { background-color: var(--or-carte); color: #000; border: none; padding: 15px; width: 100%; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.btn-submit:hover { transform: scale(1.02); background-color: white; }
 
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid var(--or-carte);
-  background: white;
-  color: #333;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-family: inherit;
-}
+.back-link { display: inline-block; margin-top: 20px; color: var(--or-carte); text-decoration: none; font-size: 0.9rem; }
+.back-link:hover { text-decoration: underline; }
 
-select {
-  background-color: var(--bleu-vif) !important;
-  color: white !important;
-  cursor: pointer;
-}
+footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); margin-top: auto; }
+.btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
-select option {
-  background-color: var(--bleu-vif);
-  color: white;
-}
-
-.btn-envoyer {
-  background-color: var(--or-carte);
-  color: #000;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
-}
-
-#success-message {
-  display: none;
-  background: #28a745;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.map-container {
-  width: 90%;
-  max-width: 500px;
-  margin: 10px auto 20px auto;
-  border: 2px solid var(--or-carte);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-footer { 
-  width: 100%; 
-  padding: 25px 15px; 
-  font-size: 0.75rem; 
-  color: rgba(239, 211, 130, 0.8); 
-  border-top: 1px solid rgba(239, 211, 130, 0.3); 
-  background: rgba(0, 0, 0, 0.4); 
-  line-height: 1.6; 
-}
-
-.btn-mentions { 
-  background: none; 
-  border: 1px solid var(--or-carte); 
-  color: var(--or-carte); 
-  padding: 5px 10px; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  font-size: 0.7rem; 
-  margin-top: 10px; 
-}
-
+/* Modal styles identiques à l'index */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
 .modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; font-size: 0.9rem; }
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
-
-.btn-retour {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-}
 </style>
 </head>
 <body>
 
-<div class="main-content">
-    <h1>Contactez-nous</h1>
+<div class="header-container">
+  <a href="index.html"><img src="logo.png" alt="Wilson Multi Services" class="logo-img"></a>
+  <h1>Contactez-nous</h1>
+</div>
 
-    <div class="form-container">
-        <div id="success-message">
-            ✅ Merci ! Votre demande a bien été envoyée. Nous vous recontacterons rapidement.
-        </div>
+<div class="contact-container">
+  <div class="intervention-zone">
+    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-lès-Saint-Claude, Saint-Lupicin, Moirans-en-Montagne et alentours.
+  </div>
 
-        <form id="my-form" action="https://formspree.io/f/xzdenlnj" method="POST">
-            <label for="nom">Votre Nom & Prénom :</label>
-            <input type="text" name="Nom" required>
-
-            <label for="email">Votre adresse E-mail :</label>
-            <input type="email" name="Email" required>
-
-            <label for="tel">Votre Téléphone :</label>
-            <input type="tel" name="Téléphone" required>
-
-            <label for="objet">Objet de votre demande :</label>
-            <select name="Service" required>
-                <option value="" disabled selected>Choisissez un service...</option>
-                <option value="Travaux">Travaux</option>
-                <option value="Peinture">Peinture</option>
-                <option value="Jardinage">Jardinage</option>
-                <option value="Petite Plomberie">Petite Plomberie</option>
-                <option value="Petite Bricole">Petit bricolage</option>
-                <option value="Agencement meuble">Agencement meuble</option>
-                <option value="revêtements muraux">revêtements muraux</option>
-                <option value="Autre demande">Autre demande</option>
-            </select>
-
-            <label for="message">Description détaillée :</label>
-            <textarea name="Message" rows="5" required></textarea>
-
-            <button id="submit-button" type="submit" class="btn-envoyer">📤 Envoyer ma demande</button>
-        </form>
+  <form action="https://formspree.io/f/mkgogpze" method="POST">
+    <div class="form-group">
+      <label>Nom Complet</label>
+      <input type="text" name="nom" placeholder="Votre nom" required>
     </div>
-
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8606471!3d46.3900257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39804e142e1%3A0x67347a54823467e2!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1737750000000!5m2!1sfr!2sfr" 
-            width="100%" 
-            height="300" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <div class="form-group">
+      <label>Téléphone</label>
+      <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
     </div>
-
-    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    <div class="form-group">
+      <label>Service souhaité</label>
+      <select name="service" required>
+        <option value="">-- Choisissez un service --</option>
+        <option value="Travaux">Travaux (Placo, Parquet...)</option>
+        <option value="Peinture">Peinture</option>
+        <option value="Jardinage">Jardinage / Espaces verts</option>
+        <option value="Plomberie">Petite Plomberie</option>
+        <option value="Bricolage">Petit Bricolage</option>
+        <option value="Agencement">Agencement meuble</option>
+        <option value="Autre">Autre service</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Votre Message</label>
+      <textarea name="message" placeholder="Décrivez votre projet ici..." required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Envoyer la demande</button>
+  </form>
+  <a href="index.html" class="back-link">← Retour à l'accueil</a>
 </div>
 
 <footer>
-    Wilson-multi-services © 2026. <br>
-    <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
+  Wilson-multi-services © 2026. <br>
+  <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
 </footer>
 
 <div id="legalModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
     
     <h3>1. Éditeur du site</h3>
@@ -229,49 +110,13 @@ footer {
     <strong>Téléphone :</strong> 06.52.24.05.07<br>
     <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
     
-    <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    
-    <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction ou représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l'autorisation expresse de M. Rousseau Lionel est interdite et constituerait une contrefaçon sanctionnée par les articles L 335-2 et suivants du Code de la propriété intellectuelle.</p>
-    
     <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), nous vous informons que :</p>
-    <ul>
-      <li><strong>Collecte :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis.</li>
-      <li><strong>Conservation :</strong> Elles sont conservées pendant une durée maximale de 3 ans.</li>
-      <li><strong>Vos droits :</strong> Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce en précisant l’adresse à laquelle la réponse doit être envoyée.</li>
-    </ul>
-
-    <h3>5. Cookies et Statistiques</h3>
-    <p>Ce site utilise <strong>Google Analytics</strong> pour analyser l'audience. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+    <p>Les données collectées via ce formulaire sont uniquement destinées à la gestion de vos demandes de devis et ne sont jamais revendues à des tiers.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès et de suppression de vos données sur simple demande.</p>
   </div>
 </div>
 
 <script>
-  var form = document.getElementById("my-form");
-  
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("success-message");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        status.style.display = "block";
-        form.reset();
-        document.getElementById("submit-button").style.display = "none";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        alert("Oups ! Problème lors de l'envoi.");
-      }
-    }).catch(error => { alert("Erreur de connexion."); });
-  }
-  form.addEventListener("submit", handleSubmit);
-
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
