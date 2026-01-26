@@ -33,25 +33,18 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .menu-trigger:hover { color: white; padding-left: 5px; }
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
-/* STYLE DES SECTIONS */
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 .review-card { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-top: 3px solid var(--or-carte); text-align: left; margin-bottom: 15px; }
 
-.map-container {
-  width: 90%; max-width: 500px; margin: 20px auto 5px auto; border: 2px solid var(--or-carte); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
+.map-container { width: 90%; max-width: 500px; margin: 20px auto 5px auto; border: 2px solid var(--or-carte); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
 .intervention-zone { font-size: 0.85rem; color: var(--or-carte); margin-bottom: 20px; padding: 0 15px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-.collapsible {
-  background-color: #010363; color: var(--or-carte); cursor: pointer; padding: 15px; width: 90%; max-width: 500px; border: 2px solid var(--or-carte); text-align: center; outline: none; font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
+.collapsible { background-color: #010363; color: var(--or-carte); cursor: pointer; padding: 15px; width: 90%; max-width: 500px; border: 2px solid var(--or-carte); text-align: center; outline: none; font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
 
 .active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
 
-.content-description {
-  padding: 0 18px; display: none; overflow: hidden; background-color: rgba(255, 255, 255, 0.08); width: 90%; max-width: 500px; margin: 0 auto 10px auto; border-radius: 0 0 10px 10px; text-align: left; border: 1px solid var(--or-carte); border-top: none; line-height: 1.6;
-}
+.content-description { padding: 0 18px; display: none; overflow: hidden; background-color: rgba(255, 255, 255, 0.08); width: 90%; max-width: 500px; margin: 0 auto 10px auto; border-radius: 0 0 10px 10px; text-align: left; border: 1px solid var(--or-carte); border-top: none; line-height: 1.6; }
 
 .main-content { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
 .floating-wrapper { position: sticky; bottom: 20px; z-index: 1000; display: flex; justify-content: space-between; padding: 0 15px; pointer-events: none; }
@@ -95,25 +88,18 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="peinture-list" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('revetement-list')">✦ Revêtements muraux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="revetement-list" class="menu-details">• Papier peint<br>• Fibre de verre<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('plomberie-list')">✦ Petite Plomberie <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="plomberie-list" class="menu-details">• Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('agencement-list')">✦ Agencement meuble <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="agencement-list" class="menu-details">• Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
   </div>
@@ -179,14 +165,35 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
-    <p><strong>Éditeur :</strong> Wilson Multi-services (EI), M. Rousseau Lionel<br>
-    <strong>Siège :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
-    <strong>SIRET :</strong> 99455217200011</p>
-    <p><strong>Hébergement :</strong> GitHub Inc.</p>
-    <p><strong>RGPD :</strong> Les données du formulaire sont utilisées uniquement pour les devis et conservées 3 ans.</p>
     
-    <h3 style="font-size:1rem; color:var(--bleu-vif); border-bottom:1px solid var(--or-carte);">Transparence des avis clients</h3>
-    <p style="font-size:0.85rem;">Conformément à la loi, nous informons nos utilisateurs que :<br>
+    <h3>1. Éditeur du site</h3>
+    <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
+    <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
+    <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
+    <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+    <strong>SIRET :</strong> 99455217200011<br>
+    <strong>Téléphone :</strong> 06.52.24.05.07<br>
+    <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
+    
+    <h3>2. Hébergement</h3>
+    <p>Le site est hébergé par : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    
+    <h3>3. Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>.</p>
+    
+    <h3>4. Protection des données (RGPD)</h3>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) :</p>
+    <ul>
+      <li><strong>Collecte :</strong> Les données du formulaire sont uniquement pour la gestion de vos devis.</li>
+      <li><strong>Conservation :</strong> Elles sont conservées 3 ans maximum.</li>
+      <li><strong>Vos droits :</strong> Vous disposez d’un droit d’accès, de rectification et d’opposition.</li>
+    </ul>
+
+    <h3>5. Cookies et Statistiques</h3>
+    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+
+    <h3>6. Transparence des avis clients</h3>
+    <p>Conformément à la loi :<br>
     • Les avis sont recueillis suite à une prestation réelle.<br>
     • Ils font l'objet d'un contrôle de vérification avant publication.<br>
     • Aucune contrepartie n'est fournie en échange d'un avis.<br>
@@ -199,7 +206,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
   }
-
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -214,7 +220,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       }
     });
   }
-
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
