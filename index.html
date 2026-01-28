@@ -7,7 +7,7 @@
       "@type": "HomeAndConstructionBusiness",
       "name": "Wilson Multi-services",
       "description": "Rénovation, peinture, jardinage et petit bricolage à Saint-Claude et ses environs.",
-      "url": "https://votre-pseudo.github.io/votre-depot/",
+      "url": "https://wilsonmultiservices39.github.io/auto-entreprise.com/",
       "telephone": "+33652240507",
       "address": {
         "@type": "PostalAddress",
@@ -69,10 +69,8 @@
     .image-container { position: relative; display: inline-block; }
     .image-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; }
 
-    /* Watermark */
     .copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.8); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 
-    /* Layout */
     .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
     .logo-img { max-width: 180px; height: auto; margin-bottom: 10px; }
     h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5rem; margin: 0; font-weight: normal; }
@@ -100,7 +98,7 @@
     footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; }
     .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
-    /* Modal */
+    /* Modal Mentions Légales */
     .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
     .modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; font-size: 0.9rem; }
     .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
@@ -139,25 +137,18 @@
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="peinture-list" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('revetement-list')">✦ Revêtements muraux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="revetement-list" class="menu-details">• Papier peint<br>• Fibre de verre<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('plomberie-list')">✦ Petite Plomberie <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="plomberie-list" class="menu-details">• Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('agencement-list')">✦ Agencement meuble <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="agencement-list" class="menu-details">• Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande</div>
-    
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
   </div>
@@ -188,7 +179,7 @@
   </div>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.1384451034444!2d5.864!3d46.388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf47555555555%3A0x0!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.076332768565!2d5.862417676644075!3d46.388383871138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3f6195e7915%3A0x6b4991199341295b!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -201,13 +192,13 @@
     <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
     <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
     <ul>
-      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations. [cite: 62]</li>
-      <li><strong>Jardinage :</strong> entretien de vos espaces verts. [cite: 62]</li>
-      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens. [cite: 62]</li>
-      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure. [cite: 62]</li>
+      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
+      <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
+      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
+      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
     </ul>
-    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>. [cite: 62]</p>
-    <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong> [cite: 63, 64]</p>
+    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
+    <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
   </div>
 
   <div class="floating-wrapper">
@@ -231,29 +222,62 @@
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
+    
     <h3>1. Éditeur du site</h3>
-    <p><strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
+    <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
+    <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
     <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
     <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
     <strong>SIRET :</strong> 99455217200011<br>
+    <strong>Téléphone :</strong> 06.52.24.05.07<br>
     <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
+    
     <h3>2. Hébergement</h3>
-    <p>Hébergé par GitHub Inc. et Formspree Inc. [cite: 67]</p>
+    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
+    
     <h3>3. Propriété intellectuelle</h3>
-    <p>Contenu exclusif de Wilson Multi-services. Reproduction interdite. [cite: 68]</p>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.</p>
+    
+    <h3>4. Protection des données (RGPD)</h3>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
+    <ul>
+      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
+      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
+      <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
+      <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
+      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
+      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
+      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
+      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
+      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
+    </ul>
+
+    <h3>5. Cookies et Statistiques</h3>
+    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+
+    <h3>6. Transparence des avis clients</h3>
+    <p>Conformément à la loi :<br>
+    • Les avis sont recueillis suite à une prestation réelle.<br>
+    • Ils font l'objet d'un contrôle de vérification avant publication.<br>
+    • Aucune contrepartie n'est fournie en échange d'un avis.<br>
+    • Tout client peut demander la suppression de son avis via le formulaire de contact.</p>
+
+    <h3>7. Sécurité et lutte contre la fraude</h3>
+    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
   </div>
 </div>
 
 <script>
-  // Fonctions de protection [cite: 77, 78, 79, 80, 81, 82, 83]
-  document.addEventListener('contextmenu', e => { e.preventDefault(); alert('© Wilson Multi-services - Protégé'); });
+  // Fonctions de protection
+  document.addEventListener('contextmenu', e => { e.preventDefault(); alert('© Wilson Multi-services - Contenu protégé'); });
   document.addEventListener('keydown', e => {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-      e.preventDefault(); alert('© Wilson Multi-services - Protégé');
+      e.preventDefault(); alert('© Wilson Multi-services - Contenu protégé');
     }
   });
 
-  // Fonctions du menu [cite: 85, 86, 87, 88]
+  // Fonctions du menu et accordéons
   function toggleMenu(id) { var l = document.getElementById(id); l.style.display = (l.style.display === "block") ? "none" : "block"; }
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
@@ -263,6 +287,12 @@
       if (content.style.display === "block") { content.style.display = "none"; this.innerHTML = "▼ Description de l'établissement"; }
       else { content.style.display = "block"; this.innerHTML = "▲ Réduire"; }
     });
+  }
+
+  // Fermeture modale
+  window.onclick = function(event) {
+    var modal = document.getElementById('legalModal');
+    if (event.target == modal) { modal.style.display = "none"; }
   }
 </script>
 
