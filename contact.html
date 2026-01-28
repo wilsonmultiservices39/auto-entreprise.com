@@ -12,62 +12,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Wilson Multi-services Saint-Claude</title>
-
-<meta name="author" content="Wilson Multi-services - Lionel Rousseau">
-<meta name="copyright" content="© 2026 Wilson Multi-services. Tous droits réservés.">
-<meta name="robots" content="noarchive">
-
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
-
-/* PROTECTION : Empêche la sélection de texte sur les éléments sensibles */
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* PROTECTION : Empêche le clic droit sur les images */
-img {
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-/* PROTECTION : Overlay invisible sur les images */
-.image-container {
-  position: relative;
-  display: inline-block;
-}
-.image-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-
-/* PROTECTION : Watermark visible sur le site */
-.copyright-watermark {
-  position: fixed;
-  bottom: 80px;
-  right: 15px;
-  background: rgba(2, 5, 150, 0.8);
-  color: var(--or-carte);
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-size: 0.7rem;
-  z-index: 999;
-  border: 1px solid var(--or-carte);
-  pointer-events: none;
-}
 
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
 .logo-img { max-width: 150px; height: auto; cursor: pointer; }
@@ -95,33 +44,13 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 .modal-content { background-color: #fefefe; color: #333; margin: 5% auto; padding: 25px; border: 1px solid #888; width: 90%; max-width: 600px; border-radius: 10px; text-align: left; line-height: 1.5; font-size: 0.9rem; }
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
-
-/* PROTECTION : Message d'alerte pour impression */
-@media print {
-  body::before {
-    content: "© 2026 Wilson Multi-services - Document protégé par le droit d'auteur - Reproduction interdite sans autorisation";
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    padding: 20px;
-    background: #f0f0f0;
-    border: 2px solid #000;
-    margin-bottom: 20px;
-  }
-}
 </style>
 </head>
 <body>
 
-<div class="copyright-watermark no-select">
-  © 2026 Wilson Multi-services
-</div>
-
 <div class="header-container">
-  <div class="image-container">
-    <a href="index.html"><img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false"></a>
-  </div>
-  <h1 class="no-select">Contactez-nous</h1>
+  <a href="index.html"><img src="logo.png" alt="Wilson Multi Services" class="logo-img"></a>
+  <h1>Contactez-nous</h1>
 </div>
 
 <div class="contact-container">
@@ -130,23 +59,14 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   </div>
 
   <form action="https://formspree.io/f/mkgogpze" method="POST">
-    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Wilson Multi-services">
-    
     <div class="form-group">
       <label>Nom et prénom</label>
       <input type="text" name="nom" placeholder="Votre nom" required>
     </div>
-    
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="votre@email.com" required>
-    </div>
-    
     <div class="form-group">
       <label>Téléphone</label>
       <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
     </div>
-    
     <div class="form-group">
       <label>Service souhaité</label>
       <select name="service" required>
@@ -161,28 +81,17 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
         <option value="Autre">Autre service</option>
       </select>
     </div>
-    
     <div class="form-group">
       <label>Votre Message</label>
       <textarea name="message" placeholder="Décrivez votre projet ici..." required></textarea>
     </div>
-
-    <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
-      <input type="checkbox" name="rgpd_consent" id="rgpd-check" required style="width: auto; margin-top: 5px;">
-      <label for="rgpd-check" style="font-size: 0.8rem; font-weight: normal; line-height: 1.4;">
-        J'accepte que mes données personnelles soient collectées et traitées par Wilson Multi-services dans le cadre de ma demande de devis. <a href="#" onclick="document.getElementById('legalModal').style.display='block'; return false;" style="color: var(--or-carte); text-decoration: underline;">En savoir plus</a>
-      </label>
-    </div>
-
     <button type="submit" class="btn-submit">Envoyer la demande</button>
   </form>
-  
   <a href="index.html" class="back-link">← Retour à l'accueil</a>
 </div>
 
 <footer>
-  Wilson-multi-services © 2026. Tous droits réservés.<br>
-  <small style="font-size: 0.65rem; opacity: 0.8;">Ce site et son contenu sont protégés par le droit d'auteur. Toute reproduction est interdite sans autorisation.</small><br>
+  Wilson-multi-services © 2026. <br>
   <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
 </footer>
 
@@ -201,18 +110,17 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
     
     <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
+    <p>Le site est hébergé par : GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
     
     <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>.</p>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction ou représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l'autorisation expresse de M. Rousseau Lionel est interdite et constituerait une contrefaçon sanctionnée par les articles L 335-2 et suivants du Code de la propriété intellectuelle.</p>
     
     <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) :</p>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), nous vous informons que :</p>
     <ul>
-      <li><strong>Collecte :</strong> Les données collectées via ce formulaire sont uniquement destinées à la gestion de vos demandes de devis.</li>
+      <li><strong>Collecte :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis.</li>
       <li><strong>Conservation :</strong> Elles sont conservées pendant une durée maximale de 3 ans.</li>
-      <li><strong>Vos droits :</strong> Vous disposez d’un droit d’accès, de rectification et d’opposition aux données personnelles vous concernant.</li>
+      <li><strong>Vos droits :</strong> Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant.</li>
     </ul>
 
     <h3>5. Cookies et Statistiques</h3>
@@ -228,28 +136,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // PROTECTION : Désactive le clic droit sur tout le site
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    alert('© Wilson Multi-services - Contenu protégé par le droit d\'auteur');
-    return false;
-  });
-
-  // PROTECTION : Désactive certains raccourcis clavier (Code source)
-  document.addEventListener('keydown', function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85)) {
-      e.preventDefault();
-      alert('© Wilson Multi-services - Contenu protégé');
-      return false;
-    }
-  });
-
-  // PROTECTION : Empêche le glisser-déposer des images
-  document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
-  });
-
-  // Fonction originale pour la modale
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
