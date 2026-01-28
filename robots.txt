@@ -1,5 +1,12 @@
+# Autoriser tous les robots (Google, Bing, Opera, etc.)
 User-agent: *
 Allow: /
 
-# Lien direct vers votre plan de site pour faciliter l'indexation
-Sitemap: https://wilsonmultiservices39.github.io/auto-entreprise.com/sitemap.xml
+# Indiquer l'emplacement du plan du site pour faciliter l'indexation
+Sitemap: https://wilsonmultiservices39.github.io/auto-entreprise.com/index.html/sitemap.xml
+
+# Protection contre les robots malveillants ou inutiles
+User-agent: MJ12bot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
