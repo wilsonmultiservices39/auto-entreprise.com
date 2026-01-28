@@ -23,11 +23,17 @@
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
 
+/* PROTECTION : Empêche la sélection de texte sur les éléments sensibles */
 .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+/* PROTECTION : Empêche le clic droit sur les images */
 img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+
+/* PROTECTION : Overlay invisible sur les images */
 .image-container { position: relative; display: inline-block; }
 .image-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; }
 
+/* PROTECTION : Watermark visible */
 .copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.8); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
@@ -63,7 +69,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); white-space: nowrap; border: none; cursor: pointer; font-family: inherit; }
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
-footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); margin-top: auto; }
+footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
@@ -71,6 +77,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
 
+@media (min-width: 800px) { .header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; } h1 { font-size: 5rem; } .horaires-box { order: 3; } }
+
+/* PROTECTION : Message d'alerte pour impression */
 @media print {
   body::before {
     content: "© 2026 Wilson Multi-services - Document protégé par le droit d'auteur - Reproduction interdite sans autorisation";
@@ -81,7 +90,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </head>
 <body>
 
-<div class="copyright-watermark no-select">© 2026 Wilson Multi-services</div>
+<div class="copyright-watermark no-select">
+  © 2026 Wilson Multi-services
+</div>
 
 <div class="main-content">
   <div class="header-container">
@@ -150,7 +161,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   </div>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2744.155455325883!2d5.861751276856402!3d46.3858066711382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf398b17a02df%3A0xc07f6f1406000000!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715876543210!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8606471!3d46.3900257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39804e142e1%3A0x67347a54823467e2!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1737750000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -191,7 +202,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
 <div id="legalModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">&times;</span>
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
     
     <h3>1. Éditeur du site</h3>
@@ -208,7 +219,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
     
     <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction ou représentation totale ou partielle de ce site par quelque procédé que ce soit, sans l'autorisation expresse de M. Rousseau Lionel est interdite et constituerait une contrefaçon sanctionnée par les articles L 335-2 et suivants du Code de la propriété intellectuelle.</p>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.</p>
     
     <h3>4. Protection des données (RGPD)</h3>
     <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
@@ -217,17 +228,18 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
       <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
       <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
-      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree.</li>
+      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
       <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
-      <li><strong>Vos droits :</strong> Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition.</li>
-      <li><strong>Exercer vos droits :</strong> Contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier au siège social.</li>
+      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
+      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
+      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
     </ul>
 
     <h3>5. Cookies et Statistiques</h3>
-    <p>Ce site utilise <strong>Google Analytics</strong> pour analyser l'audience. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
 
     <h3>6. Transparence des avis clients</h3>
-    <p>Conformément à la loi française :<br>
+    <p>Conformément à la loi :<br>
     • Les avis sont recueillis suite à une prestation réelle.<br>
     • Ils font l'objet d'un contrôle de vérification avant publication.<br>
     • Aucune contrepartie n'est fournie en échange d'un avis.<br>
@@ -239,27 +251,68 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // PROTECTIONS
-  document.addEventListener('contextmenu', e => { e.preventDefault(); alert('© Wilson Multi-services - Contenu protégé'); });
-  document.addEventListener('keydown', e => {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-      e.preventDefault(); alert('© Wilson Multi-services - Contenu protégé');
+  // PROTECTION : Désactive le clic droit sur tout le site
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('© Wilson Multi-services - Contenu protégé par le droit d\'auteur');
+    return false;
+  });
+
+  // PROTECTION : Désactive certains raccourcis clavier
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74) || (e.ctrlKey && e.keyCode == 85)) {
+      e.preventDefault();
+      alert('© Wilson Multi-services - Contenu protégé');
+      return false;
     }
   });
 
-  // FONCTIONS SITE
-  function toggleMenu(id) { var l = document.getElementById(id); l.style.display = (l.style.display === "block") ? "none" : "block"; }
+  // PROTECTION : Empêche le glisser-déposer des images
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // PROTECTION : Alerte si quelqu'un essaie d'ouvrir les DevTools
+  var devtools = {open: false};
+  var threshold = 160;
+  var checkStatus = function() {
+    if (window.outerHeight - window.innerHeight > threshold || window.outerWidth - window.innerWidth > threshold) {
+      if (!devtools.open) {
+        console.log('%c© Wilson Multi-services 2026', 'color: #efd382; font-size: 20px; font-weight: bold;');
+        console.log('%cCe site est protégé par le droit d\'auteur.', 'color: #ff0000; font-size: 14px;');
+        console.log('%cToute copie non autorisée est illégale.', 'color: #ff0000; font-size: 14px;');
+      }
+      devtools.open = true;
+    } else {
+      devtools.open = false;
+    }
+  };
+  setInterval(checkStatus, 500);
+
+  // Fonctions originales du site
+  function toggleMenu(id) {
+    var list = document.getElementById(id);
+    list.style.display = (list.style.display === "block") ? "none" : "block";
+  }
   
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
-      if (content.style.display === "block") { content.style.display = "none"; this.innerHTML = "▼ Description de l'établissement"; }
-      else { content.style.display = "block"; this.innerHTML = "▲ Réduire"; }
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        this.innerHTML = "▼ Description de l'établissement";
+      } else {
+        content.style.display = "block";
+        this.innerHTML = "▲ Réduire";
+      }
     });
   }
-
+  
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
