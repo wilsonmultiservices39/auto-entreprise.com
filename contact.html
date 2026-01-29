@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZNJ0PLJS"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YYZNJ0PLJS');
+  window.addEventListener('load', function() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YYZNJ0PLJS";
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YYZNJ0PLJS');
+  });
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
 <title>Contact - Wilson Multi-services Saint-Claude</title>
 
 <meta name="author" content="Wilson Multi-services - Lionel Rousseau">
@@ -71,7 +78,8 @@ img {
 }
 
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
-.logo-img { max-width: 150px; height: auto; cursor: pointer; }
+/* Correction Performance : Taille fixée pour éviter le CLS */
+.logo-img { width: 150px; height: 92px; cursor: pointer; }
 h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3rem; margin: 0; }
 
 .contact-container { background: rgba(255, 255, 255, 0.1); padding: 30px 20px; border-radius: 15px; border: 1px solid var(--or-carte); width: 90%; max-width: 500px; margin: 20px auto; box-sizing: border-box; }
@@ -120,7 +128,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
 <div class="header-container">
   <div class="image-container">
-    <a href="index.html"><img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false"></a>
+    <a href="index.html">
+      <img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false" width="150" height="92">
+    </a>
   </div>
   <h1 class="no-select">Contactez-nous</h1>
 </div>
@@ -135,20 +145,20 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     
     <div class="form-group">
-      <label>Nom et prénom</label>
-      <input type="text" name="nom" placeholder="Votre nom" required>
+      <label for="nom">Nom et prénom</label>
+      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
     </div>
     <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="votre@email.com" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="votre@email.com" required>
     </div>
     <div class="form-group">
-      <label>Téléphone</label>
-      <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
+      <label for="telephone">Téléphone</label>
+      <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" required>
     </div>
     <div class="form-group">
-      <label>Service souhaité</label>
-      <select name="service" required>
+      <label for="service">Service souhaité</label>
+      <select id="service" name="service" required>
         <option value="">-- Choisissez un service --</option>
         <option value="Travaux">Travaux</option>
         <option value="Peinture">Peinture</option>
@@ -161,8 +171,8 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       </select>
     </div>
     <div class="form-group">
-      <label>Votre Message</label>
-      <textarea name="message" placeholder="Décrivez votre projet ici..." required></textarea>
+      <label for="message">Votre Message</label>
+      <textarea id="message" name="message" placeholder="Décrivez votre projet ici..." required></textarea>
     </div>
     <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
       <input type="checkbox" name="rgpd_consent" required style="width: auto; margin-top: 5px;" id="rgpd-check">
@@ -241,11 +251,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
   // PROTECTION : Désactive certains raccourcis clavier
   document.addEventListener('keydown', function(e) {
-    // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    if (e.keyCode == 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74) || (e.ctrlKey && e.keyCode == 85)) {
       e.preventDefault();
       alert('© Wilson Multi-services - Contenu protégé');
       return false;
@@ -264,12 +270,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   var devtools = {open: false};
   var threshold = 160;
   var checkStatus = function() {
-    if (window.outerHeight - window.innerHeight > threshold || 
-        window.outerWidth - window.innerWidth > threshold) {
+    if (window.outerHeight - window.innerHeight > threshold || window.outerWidth - window.innerWidth > threshold) {
       if (!devtools.open) {
         console.log('%c© Wilson Multi-services 2026', 'color: #efd382; font-size: 20px; font-weight: bold;');
-        console.log('%cCe site est protégé par le droit d\'auteur.', 'color: #ff0000; font-size: 14px;');
-        console.log('%cToute copie non autorisée est illégale.', 'color: #ff0000; font-size: 14px;');
       }
       devtools.open = true;
     } else {
@@ -278,7 +281,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   };
   setInterval(checkStatus, 500);
 
-  // Fonction originale du site
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
