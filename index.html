@@ -26,7 +26,7 @@
 :root {
   --bleu-vif: #020596;
   --or-carte: #efd382;
-  --bleu-facebook: #1877F2;
+  --bleu-facebook: #0866FF; /* Correction contraste PageSpeed */
 }
 
 body {
@@ -167,7 +167,6 @@ h1 {
   padding-left: 5px;
 }
 
-/* Correction Contraste : Changement de #ddd vers #ffffff pour PageSpeed */
 .menu-details {
   display: none;
   padding-left: 20px;
@@ -446,7 +445,6 @@ footer {
       </article>
       </div>
       <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
-    </div>
   </section>
 
   <section class="gallery-section">
@@ -458,7 +456,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43843.8329683939!2d5.831513279101562!3d46.38815199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39920a0680d%3A0xc3f1a0e8354972f1!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1716382900000!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43867.7346808799!2d5.8291471!3d46.3888796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c93563914a519%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1710000000000" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -486,7 +484,7 @@ footer {
       <a href="contact.html" class="btn-style">📧 E-mail</a>
     </div>
     <div class="btn-col-right">
-      <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
     </div>
   </div>
 
@@ -499,7 +497,7 @@ footer {
 
 <div id="legalModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'" aria-label="Fermer la fenêtre">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
     
     <h3>1. Éditeur du site</h3>
@@ -582,5 +580,3 @@ footer {
 
 </body>
 </html>
-
-
