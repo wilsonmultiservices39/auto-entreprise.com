@@ -6,114 +6,150 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-YYZNJ0PLJS', { 'anonimize_ip': true });
+  gtag('config', 'G-YYZNJ0PLJS', { 'anonymize_ip': true });
 </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <title>Rénovation & Jardinage Saint-Claude (39) | Wilson Multi-services</title>
 
-<meta name="description" content="Wilson Multi-services à Saint-Claude (39200). Expert en rénovation, peinture, jardinage et bricolage dans le Jura. Devis gratuit au 06.52.24.05.07.">
-<meta name="keywords" content="Wilson Multi-services, Lionel Rousseau, bricolage Saint-Claude, jardinage Saint-Claude, rénovation Jura, artisan multiservices 39200">
+<meta name="description" content="Wilson Multi-services à Saint-Claude (39200). Expert en rénovation, peinture, jardinage, petite plomberie et bricolage dans le Jura. Devis gratuit au 06.52.24.05.07.">
+<meta name="keywords" content="Wilson Multi-services, Lionel Rousseau, bricolage Saint-Claude, jardinage Saint-Claude, rénovation Jura, peintre Saint-Claude, plomberie Saint-Claude, montage meuble 39, artisan multiservices 39200, entretien jardin Jura, pose parquet Saint-Claude, placo Saint-Claude, débarras encombrants Jura, artisan Saint-Claude, travaux habitat 39">
+<meta name="author" content="Wilson Multi-services - Lionel Rousseau">
+<meta name="copyright" content="© 2026 Wilson Multi-services. Tous droits réservés.">
+<meta name="robots" content="index, follow, noarchive">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <style>
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #0062E0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
 .no-select { -webkit-user-select: none; user-select: none; }
 img { pointer-events: none; user-select: none; height: auto; max-width: 100%; }
-.image-container { position: relative; display: inline-block; min-height: 110px; }
+.image-container { position: relative; display: inline-block; }
+.copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.8); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
-.logo-img { width: 180px; height: 110px; aspect-ratio: 180/110; }
+.logo-img { width: 180px; height: 110px; }
 h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5rem; margin: 0; font-weight: normal; }
 .devis { font-weight: bold; text-transform: uppercase; font-size: 1.8rem; color: var(--or-carte); margin: 5px 0; }
 .separator-bar { height: 1.5px; background-color: var(--or-carte); width: 85%; max-width: 700px; margin: 10px auto 20px auto; }
 .horaires-box { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--or-carte); padding: 15px; border-radius: 10px; font-size: 0.9rem; text-align: left; width: 90%; max-width: 280px; }
-.horaires-box h2 { font-size: 1.2rem; font-weight: bold; margin: 0 0 10px 0; color: var(--or-carte); }
-.horaires-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+.horaires-box h2 { font-size: 1.2rem; font-weight: bold; margin-top: 0; color: var(--or-carte); }
+.horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto; max-width: 90%; }
-.menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; }
-.menu-details { display: none; padding-left: 20px; margin: 5px 0; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); }
+.menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; transition: 0.2s; }
+.menu-trigger:hover { color: white; padding-left: 5px; }
+.menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
 .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 .review-card { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-top: 3px solid var(--or-carte); text-align: left; margin-bottom: 15px; }
-.map-container { width: 90%; max-width: 500px; margin: 20px auto; border: 2px solid var(--or-carte); border-radius: 15px; overflow: hidden; background: #333; height: 300px; }
+.map-container { width: 90%; max-width: 500px; margin: 20px auto 5px auto; border: 2px solid var(--or-carte); border-radius: 15px; overflow: hidden; background: #333; min-height: 300px; }
+.intervention-zone { font-size: 0.85rem; color: var(--or-carte); margin-bottom: 20px; padding: 0 15px; max-width: 500px; margin: 0 auto 20px auto; }
+.collapsible { background-color: #010363; color: var(--or-carte); cursor: pointer; padding: 15px; width: 90%; max-width: 500px; border: 2px solid var(--or-carte); text-align: center; font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; }
+.content-description { padding: 0 18px; display: none; background-color: rgba(255, 255, 255, 0.08); width: 90%; max-width: 500px; margin: 0 auto 10px auto; border-radius: 0 0 10px 10px; text-align: left; border: 1px solid var(--or-carte); border-top: none; line-height: 1.6; }
 .main-content { flex: 1; padding-bottom: 100px; }
 .floating-wrapper { position: sticky; bottom: 20px; z-index: 1000; display: flex; justify-content: space-between; padding: 0 15px; pointer-events: none; }
 .btn-col { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
-.btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); border: none; }
+.btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); background: rgba(0, 0, 0, 0.4); }
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-.modal-content { background: white; color: #333; margin: 10% auto; padding: 25px; width: 80%; max-width: 500px; border-radius: 10px; text-align: left; }
+.modal-content { background: white; color: #333; margin: 10% auto; padding: 25px; width: 85%; max-width: 500px; border-radius: 10px; text-align: left; }
 @media (min-width: 800px) { .header-container { flex-direction: row; justify-content: space-around; } h1 { font-size: 5rem; } }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
-<body>
+<body class="no-select">
+
+<div class="copyright-watermark">© 2026 Wilson Multi-services</div>
 
 <main id="main-content" class="main-content">
   <div class="header-container">
     <div class="image-container">
       <picture>
         <source srcset="logo.webp" type="image/webp">
-        <img src="logo.png" alt="Wilson Multi Services Logo" class="logo-img" width="180" height="110" loading="eager">
+        <img src="logo.png" alt="Wilson Multi Services" class="logo-img" width="180" height="110" loading="eager">
       </picture>
     </div>
-    
-    <div class="no-select">
+    <div>
       <h1>Wilson-multi-services</h1>
       <p class="devis">Devis Gratuit</p>
       <div class="separator-bar"></div>
     </div>
-
     <section class="horaires-box" aria-label="Horaires d'ouverture">
-      <h2>🕒 Horaires</h2>
-      <div class="horaires-row"><span>Lundi - Vendredi</span> <span>08h00 - 18h00</span></div>
-      <div class="horaires-row"><span>Samedi</span> <span>09h00 - 12h00</span></div>
-      <div class="horaires-row"><span>Dimanche</span> <span>Fermé</span></div>
+      <h2>🕒 Horaires d'ouverture</h2>
+      <div><span>Lundi :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Vendredi :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
+      <div><span>Dimanche :</span> <span>Fermé</span></div>
     </section>
   </div>
 
-  <div class="services-container">
-    <nav aria-label="Nos services">
-      <div class="menu-trigger" onclick="toggleM('s1')">✦ Travaux & Rénovation <i class="fas fa-chevron-down"></i></div>
-      <div id="s1" class="menu-details">• Placo & Enduits<br>• Parquet stratifié<br>• Peinture murs & plafonds</div>
-      
-      <div class="menu-trigger" onclick="toggleM('s2')">✦ Extérieur & Jardin <i class="fas fa-chevron-down"></i></div>
-      <div id="s2" class="menu-details">• Entretien jardin<br>• Évacuation déchets verts<br>• Nettoyage parcelles</div>
+  <nav class="services-container" aria-label="Liste des services">
+    <div class="menu-trigger" onclick="toggleM('s1')">✦ Travaux <i class="fas fa-chevron-down"></i></div>
+    <div id="s1" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
+    
+    <div class="menu-trigger" onclick="toggleM('s2')">✦ Peinture <i class="fas fa-chevron-down"></i></div>
+    <div id="s2" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
 
-      <div class="menu-trigger" onclick="toggleM('s3')">✦ Services & Bricolage <i class="fas fa-chevron-down"></i></div>
-      <div id="s3" class="menu-details">• Petite plomberie<br>• Montage meubles<br>• Débarras encombrants</div>
-    </nav>
-  </div>
+    <div class="menu-trigger" onclick="toggleM('s3')">✦ Revêtements muraux <i class="fas fa-chevron-down"></i></div>
+    <div id="s3" class="menu-details">• Papier peint<br>• Fibre de verre<br>• + de services à la demande</div>
+
+    <div class="menu-trigger" onclick="toggleM('s4')">✦ Jardinage <i class="fas fa-chevron-down"></i></div>
+    <div id="s4" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
+
+    <div class="menu-trigger" onclick="toggleM('s5')">✦ Petite Plomberie <i class="fas fa-chevron-down"></i></div>
+    <div id="s5" class="menu-details">• Robinetterie<br>• Installation évier / Lavabo / WC<br>• Paroi de douche<br>• Débouchage canalisation</div>
+
+    <div class="menu-trigger" onclick="toggleM('s6')">✦ Petit Bricolage <i class="fas fa-chevron-down"></i></div>
+    <div id="s6" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie</div>
+
+    <div class="menu-trigger" onclick="toggleM('s7')">✦ Agencement meuble <i class="fas fa-chevron-down"></i></div>
+    <div id="s7" class="menu-details">• Montage de mobilier intérieur et extérieur</div>
+
+    <div class="menu-trigger" onclick="toggleM('s8')">✦ Autres services <i class="fas fa-chevron-down"></i></div>
+    <div id="s8" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / cave<br>• Déménagement / Aide numérique</div>
+  </nav>
 
   <section class="reviews-section">
-    <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem;">Avis Clients</h2>
+    <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem;">Avis de nos clients</h2>
     <div class="review-card">
-      <p><em>"Travail soigné et ponctualité exemplaire. Je recommande vivement pour vos petits travaux."</em></p>
-      <strong>- Client de Saint-Claude</strong>
+      <div style="color: var(--or-carte); margin-bottom: 5px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p><em>"Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</em></p>
+      <strong>- Jean-Pierre (Saint-Claude)</strong>
+    </div>
+    <div class="review-card">
+      <div style="color: var(--or-carte); margin-bottom: 5px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p><em>"Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</em></p>
+      <strong>- Marie L. (Morez)</strong>
     </div>
   </section>
 
   <div class="map-container">
-    <iframe src="about:blank" 
-            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.6!2d5.8!3d46.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3!2sSaint-Claude!5e0!3m2!1sfr!2sfr!4v1" 
-            title="Localisation Wilson Multi-services" 
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.591325752311!2d5.8596!3d46.3884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c59363d3a95c9%3A0x633d2830f5a4e5e4!2sSaint-Claude!5e0!3m2!1sfr!2sfr!4v1710000000000" 
+            title="Localisation à Saint-Claude" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  
+  <p class="intervention-zone">
+    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-les-Saint-Claude et alentours.
+  </p>
+
+  <button type="button" class="collapsible" id="colBtn">▼ Description de l'établissement</button>
+  <div class="content-description" id="colContent">
+    <p><strong>Wilson Multi-services</strong> : Lionel Rousseau, votre artisan de confiance dans le Jura pour tous vos besoins de rénovation et d'entretien.</p>
   </div>
 
   <div class="floating-wrapper">
     <div class="btn-col">
       <a href="tel:0652240507" class="btn-style" rel="noopener">📞 06.52.24.05.07</a>
-      <a href="contact.html" class="btn-style" rel="noopener">📧 Contact E-mail</a>
+      <a href="contact.html" class="btn-style" rel="noopener">📧 E-mail</a>
     </div>
     <div class="btn-col">
       <a href="https://www.facebook.com/share/1ARKKzKSkq/" class="btn-style btn-facebook" target="_blank" rel="noopener">
@@ -124,28 +160,33 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </main>
 
 <footer>
-  <p>Wilson Multi-services © 2026 | Siret : 99455217200011</p>
-  <button onclick="document.getElementById('m-leg').style.display='block'" style="background:none; border:1px solid; color:inherit; cursor:pointer; padding:5px;">Mentions Légales</button>
+  Wilson-multi-services © 2026. <br>
+  <button onclick="document.getElementById('legalM').style.display='block'" style="background:none; border:1px solid; color:inherit; padding:5px; margin-top:10px; cursor:pointer;">Mentions Légales</button>
 </footer>
 
-<div id="m-leg" class="modal">
+<div id="legalM" class="modal">
   <div class="modal-content">
-    <span onclick="this.parentElement.parentElement.style.display='none'" style="float:right; cursor:pointer;">&times;</span>
-    <h3>Informations Légales</h3>
-    <p>Auto-entrepreneur : Lionel Rousseau<br>Siège : Saint-Claude (39)</p>
+    <span onclick="this.parentElement.parentElement.style.display='none'" style="float:right; cursor:pointer; font-size:20px;">&times;</span>
+    <h3 style="color:var(--bleu-vif)">Mentions Légales</h3>
+    <p>Wilson Multi-services (EI) - SIRET : 99455217200011<br>Responsable : Lionel Rousseau</p>
   </div>
 </div>
 
 <script>
   function toggleM(id) {
     const el = document.getElementById(id);
-    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    el.style.display = (el.style.display === "block") ? "none" : "block";
   }
   
-  // Lazy load de l'iframe Maps pour les performances
+  document.getElementById('colBtn').addEventListener('click', function() {
+    const content = document.getElementById('colContent');
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+    this.innerText = (content.style.display === "block") ? "▲ Réduire" : "▼ Description de l'établissement";
+  });
+
   window.addEventListener('load', function() {
     const ifr = document.querySelector('iframe');
-    if(ifr.getAttribute('data-src')) ifr.setAttribute('src', ifr.getAttribute('data-src'));
+    if(ifr.dataset.src) ifr.src = ifr.dataset.src;
   });
 
   document.addEventListener('contextmenu', e => e.preventDefault());
