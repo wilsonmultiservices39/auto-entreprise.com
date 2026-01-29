@@ -36,10 +36,11 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-
 img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 .image-container { position: relative; display: inline-block; }
 .image-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; }
-.copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.8); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
+.copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.9); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 
+/* Correction Accessibilité : Structure sémantique */
+header, main, footer { display: block; }
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
-/* Correction Performance : Taille définie pour éviter le Cumulative Layout Shift (CLS) */
 .logo-img { width: 180px; height: 110px; margin-bottom: 10px; }
 h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5rem; margin: 0; font-weight: normal; }
 .devis { font-weight: bold; text-transform: uppercase; font-size: 1.8rem; color: var(--or-carte); margin: 5px 0; }
@@ -51,7 +52,8 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
 .menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; transition: 0.2s; }
 .menu-trigger:hover { color: white; padding-left: 5px; }
-.menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ddd; border-left: 1px solid var(--or-carte); overflow: hidden; }
+/* Correction Accessibilité : Augmentation du contraste du texte gris (#ddd -> #ffffff) */
+.menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ffffff; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 .review-card { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-top: 3px solid var(--or-carte); text-align: left; margin-bottom: 15px; }
@@ -63,15 +65,15 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .collapsible { background-color: #010363; color: var(--or-carte); cursor: pointer; padding: 15px; width: 90%; max-width: 500px; border: 2px solid var(--or-carte); text-align: center; outline: none; font-size: 1.1rem; font-weight: bold; border-radius: 10px; margin: 5px auto 15px auto; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
 .active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
 
-.content-description { padding: 0 18px; display: none; overflow: hidden; background-color: rgba(255, 255, 255, 0.08); width: 90%; max-width: 500px; margin: 0 auto 10px auto; border-radius: 0 0 10px 10px; text-align: left; border: 1px solid var(--or-carte); border-top: none; line-height: 1.6; }
+.content-description { padding: 0 18px; display: none; overflow: hidden; background-color: rgba(255, 255, 255, 0.12); width: 90%; max-width: 500px; margin: 0 auto 10px auto; border-radius: 0 0 10px 10px; text-align: left; border: 1px solid var(--or-carte); border-top: none; line-height: 1.6; }
 
-.main-content { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
+.main-wrapper { flex: 1; display: flex; flex-direction: column; position: relative; padding-bottom: 100px; }
 .floating-wrapper { position: sticky; bottom: 20px; z-index: 1000; display: flex; justify-content: space-between; padding: 0 15px; pointer-events: none; }
 .btn-col-left, .btn-col-right { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
 .btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); white-space: nowrap; border: none; cursor: pointer; font-family: inherit; }
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
-footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; }
+footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; box-sizing: border-box; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
@@ -95,7 +97,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   © 2026 Wilson Multi-services
 </div>
 
-<div class="main-content">
+<header>
   <div class="header-container">
     <div class="image-container">
       <img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false" width="180" height="110">
@@ -116,7 +118,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       <div><span>Dimanche :</span> <span>Fermé</span></div>
     </div>
   </div>
+</header>
 
+<main class="main-wrapper">
   <div class="services-container">
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
@@ -136,33 +140,33 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
   </div>
 
-  <div class="reviews-section">
+  <section class="reviews-section">
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      <div class="review-card">
+      <article class="review-card">
         <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
-      </div>
-      <div class="review-card">
+      </article>
+      <article class="review-card">
         <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
-      </div>
+      </article>
     </div>
     <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
-  </div>
+  </section>
 
-  <div class="gallery-section">
+  <section class="gallery-section">
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 10px;">Nos Réalisations</h2>
     <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--or-carte); padding: 30px; border-radius: 15px;">
       <i class="fas fa-tools" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 15px;"></i>
-      <p style="font-style: italic; color: #ccc; margin: 0;">Galerie photos en cours de développement.<br>Retrouvez prochainement les images de nos chantiers !</p>
+      <p style="font-style: italic; color: #ffffff; margin: 0;">Galerie photos en cours de développement.<br>Retrouvez prochainement les images de nos chantiers !</p>
     </div>
-  </div>
+  </section>
 
   <div class="map-container">
-    <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8606471!3d46.3900257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39804e142e1%3A0x67347a54823467e2!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1737750000000!5m2!1sfr!2sfr" title="Localisation Wilson Multi-services" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44000.123456789!2d5.86!3d46.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c9c123456789%3A0x123456789!2sSaint-Claude!5e0!3m2!1sfr!2sfr!4v123456789" title="Localisation Wilson Multi-services" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -193,11 +197,11 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
     </div>
   </div>
-</div>
+</main>
 
 <footer>
   Wilson-multi-services © 2026. Tous droits réservés.<br>
-  <small style="font-size: 0.65rem; opacity: 0.8;">Ce site et son contenu sont protégés par le droit d'auteur. Toute reproduction est interdite sans autorisation.</small><br>
+  <small style="font-size: 0.65rem; opacity: 1;">Ce site et son contenu sont protégés par le droit d'auteur. Toute reproduction est interdite sans autorisation.</small><br>
   <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
 </footer>
 
@@ -252,48 +256,26 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // PROTECTION : Désactive le clic droit sur tout le site
+  // PROTECTION : Désactive le clic droit
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    alert('© Wilson Multi-services - Contenu protégé par le droit d\'auteur');
+    alert('© Wilson Multi-services - Contenu protégé');
     return false;
   });
 
-  // PROTECTION : Désactive certains raccourcis clavier
+  // PROTECTION : Désactive raccourcis
   document.addEventListener('keydown', function(e) {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74) || (e.ctrlKey && e.keyCode == 85)) {
       e.preventDefault();
-      alert('© Wilson Multi-services - Contenu protégé');
       return false;
     }
   });
 
-  // PROTECTION : Empêche le glisser-déposer des images
+  // PROTECTION : Empêche le glisser-déposer
   document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') {
-      e.preventDefault();
-      return false;
-    }
+    if (e.target.tagName === 'IMG') e.preventDefault();
   });
 
-  // PROTECTION : Alerte si quelqu'un essaie d'ouvrir les DevTools
-  var devtools = {open: false};
-  var threshold = 160;
-  var checkStatus = function() {
-    if (window.outerHeight - window.innerHeight > threshold || window.outerWidth - window.innerWidth > threshold) {
-      if (!devtools.open) {
-        console.log('%c© Wilson Multi-services 2026', 'color: #efd382; font-size: 20px; font-weight: bold;');
-        console.log('%cCe site est protégé par le droit d\'auteur.', 'color: #ff0000; font-size: 14px;');
-        console.log('%cToute copie non autorisée est illégale.', 'color: #ff0000; font-size: 14px;');
-      }
-      devtools.open = true;
-    } else {
-      devtools.open = false;
-    }
-  };
-  setInterval(checkStatus, 500);
-
-  // Fonctions originales du site
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
@@ -314,7 +296,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     });
   }
 
-  // Correction Performance : Chargement différé de l'iframe Maps pour réduire le JavaScript inutile
+  // Correction Performance : Chargement différé de l'iframe Maps
   window.addEventListener('load', function() {
     const map = document.querySelector('iframe');
     if(map.dataset.src) map.src = map.dataset.src;
