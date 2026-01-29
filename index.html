@@ -22,14 +22,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="logo.png" as="image">
+<link rel="preload" href="logo.png" as="image" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bleu-vif: #020596;
   --or-carte: #efd382;
-  --bleu-facebook: #0866FF; 
+  --bleu-facebook: #0056b3; /* Ajusté pour l'accessibilité 100% */
 }
 
 body {
@@ -61,6 +61,9 @@ img {
 .image-container {
   position: relative;
   display: inline-block;
+  /* Dimensions réservées pour éviter le CLS sur Bureau */
+  width: 180px;
+  height: 110px;
 }
 
 .image-container::after {
@@ -295,7 +298,7 @@ h1 {
 
 .btn-facebook {
   background-color: var(--bleu-facebook);
-  color: white;
+  color: white !important; /* Force contraste pour accessibilité */
 }
 
 footer {
@@ -377,7 +380,7 @@ footer {
 <header>
   <div class="header-container">
     <div class="image-container">
-      <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" width="180" height="110">
+      <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" width="180" height="110" fetchpriority="high">
     </div>
     <div>
       <h1>Wilson-multi-services</h1>
@@ -428,12 +431,12 @@ footer {
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
       <article class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
       </article>
       <article class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
       </article>
@@ -450,7 +453,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43997.74971295988!2d5.823616212176466!3d46.38883626245037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf7d966967755%3A0xc3f8379c3a373307!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714561234567!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43896.22383842858!2d5.823906667104862!3d46.38879685955606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3f89839352f%3A0x409ce34b31458e0!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715600000000!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
