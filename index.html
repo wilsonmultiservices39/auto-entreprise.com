@@ -21,7 +21,8 @@
 <meta name="robots" content="index, follow, noarchive">
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
 <style>
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
@@ -33,7 +34,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; u
 .image-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; }
 .copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.9); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 
-/* Correction Accessibilité : Ajout de sémantique sans changer le design */
+/* Correction Accessibilité : Balises sémantiques */
 header, main, footer { display: block; }
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
 .logo-img { width: 180px; height: 110px; margin-bottom: 10px; }
@@ -48,7 +49,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; transition: 0.2s; }
 .menu-trigger:hover { color: white; padding-left: 5px; }
 
-/* Correction Accessibilité : Contraste augmenté pour le texte des services (Passage de #ddd à blanc pur) */
+/* 3. Correction Contraste : Utilisation du blanc pur pour une meilleure lisibilité */
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ffffff; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
@@ -69,7 +70,6 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); white-space: nowrap; border: none; cursor: pointer; font-family: inherit; }
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
-/* Correction Accessibilité : Texte du footer plus contrasté (blanc au lieu de doré opacité réduite) */
 footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; box-sizing: border-box; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
@@ -97,7 +97,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
 <header>
   <div class="header-container">
     <div class="image-container">
-      <img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false" width="180" height="110">
+      <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" draggable="false" width="180" height="110">
     </div>
     <div class="no-select">
       <h1>Wilson-multi-services</h1>
@@ -151,38 +151,18 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
       </article>
     </div>
-    <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
-  </section>
-
-  <section class="gallery-section">
-    <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 10px;">Nos Réalisations</h2>
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--or-carte); padding: 30px; border-radius: 15px;">
-      <i class="fas fa-tools" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 15px;"></i>
-      <p style="font-style: italic; color: #ffffff; margin: 0;">Galerie photos en cours de développement.<br>Retrouvez prochainement les images de nos chantiers !</p>
-    </div>
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44141.51703272993!2d5.829147775536481!3d46.39203648082405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3f9d5015b61%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715850000000!5m2!1sfr!2sfr" title="Zone d'intervention Wilson Multi-services" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
-  
-  <div class="intervention-zone">
-    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-les-Saint-Claude, Saint-Lupicin, Moirans-en-Montagne et alentours.
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43843.8329683939!2d5.831513279101562!3d46.38815199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39920a0680d%3A0xc3f1a0e8354972f1!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1716382900000!5m2!1sfr!2sfr" 
+            title="Localisation de Wilson Multi-services à Saint-Claude" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
   <div class="content-description">
     <p style="margin-top:15px;"><strong>Bienvenue chez Wilson Multi-services</strong></p>
     <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
-    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
-    <ul>
-      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
-      <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
-      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
-      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
-    </ul>
-    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
-    <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
   </div>
 
   <div class="floating-wrapper">
@@ -198,81 +178,10 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
 
 <footer>
   Wilson-multi-services © 2026. Tous droits réservés.<br>
-  <small style="font-size: 0.65rem; opacity: 1;">Ce site et son contenu sont protégés par le droit d'auteur. Toute reproduction est interdite sans autorisation.</small><br>
-  <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
+  <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Mentions Légales & RGPD</button>
 </footer>
 
-<div id="legalModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
-    <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
-    
-    <h3>1. Éditeur du site</h3>
-    <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
-    <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
-    <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
-    <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
-    <strong>SIRET :</strong> 99455217200011<br>
-    <strong>Téléphone :</strong> 06.52.24.05.07<br>
-    <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
-    
-    <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
-    
-    <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.</p>
-    
-    <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
-    <ul>
-      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
-      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
-      <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
-      <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
-      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
-      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
-      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
-      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
-      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
-    </ul>
-
-    <h3>5. Cookies et Statistiques</h3>
-    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
-
-    <h3>6. Transparence des avis clients</h3>
-    <p>Conformément à la loi :<br>
-    • Les avis sont recueillis suite à une prestation réelle.<br>
-    • Ils font l'objet d'un contrôle de vérification avant publication.<br>
-    • Aucune contrepartie n'est fournie en échange d'un avis.<br>
-    • Tout client peut demander la suppression de son avis via le formulaire de contact.</p>
-
-    <h3>7. Sécurité et lutte contre la fraude</h3>
-    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
-  </div>
-</div>
-
 <script>
-  // PROTECTION : Désactive le clic droit
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    alert('© Wilson Multi-services - Contenu protégé');
-    return false;
-  });
-
-  // PROTECTION : Désactive raccourcis
-  document.addEventListener('keydown', function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74) || (e.ctrlKey && e.keyCode == 85)) {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // PROTECTION : Empêche le glisser-déposer
-  document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') e.preventDefault();
-  });
-
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
@@ -283,21 +192,9 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        this.innerHTML = "▼ Description de l'établissement";
-      } else {
-        content.style.display = "block";
-        this.innerHTML = "▲ Réduire";
-      }
+      content.style.display = (content.style.display === "block") ? "none" : "block";
     });
   }
-  
-  window.onclick = function(event) {
-    var modal = document.getElementById('legalModal');
-    if (event.target == modal) { modal.style.display = "none"; }
-  }
 </script>
-
 </body>
 </html>
