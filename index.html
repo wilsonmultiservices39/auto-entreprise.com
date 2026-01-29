@@ -71,7 +71,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
 <div class="copyright-watermark no-select">© 2026 Wilson Multi-services</div>
 
-<main class="main-content">
+<main id="main-content" class="main-content">
   <div class="header-container">
     <div class="image-container">
       <picture>
@@ -119,12 +119,12 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
       <div class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
       </div>
       <div class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
       </div>
@@ -134,17 +134,19 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   <section class="gallery-section">
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 10px;">Nos Réalisations</h2>
     <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--or-carte); padding: 30px; border-radius: 15px;">
-      <i class="fas fa-tools" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 15px;"></i>
+      <i class="fas fa-tools" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 15px;" aria-hidden="true"></i>
       <p style="font-style: italic; color: #ccc; margin: 0;">Galerie photos en cours de développement.</p>
     </div>
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.400561521405!2d5.8643888!3d46.3879133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c93540e1074e5%3A0xc66c1e95971a815a!2s19%20Rue%20du%20Faubourg%20Marcel%2C%2039200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1700000000000" title="Localisation Wilson Multi-services à Saint-Claude" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44047.88607317789!2d5.827727181055781!3d46.38531776999718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf2338a9d1847%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715850000000!5m2!1sfr!2sfr" 
+            title="Localisation Wilson Multi-services à Saint-Claude" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
   
   <div class="intervention-zone">
-    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong> et alentours (39).
+    <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Interventions à <strong>Saint-Claude</strong> et alentours (39).
   </div>
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
@@ -158,7 +160,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       <a href="contact.html" class="btn-style">📧 E-mail</a>
     </div>
     <div class="btn-col-right">
-      <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a>
     </div>
   </div>
 </main>
@@ -170,8 +172,8 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 
 <div id="legalModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
-    <h2 style="color:var(--bleu-vif);">Mentions Légales</h2>
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'" aria-label="Fermer">×</span>
+    <h2 style="color:var(--bleu-vif); font-size: 1.5rem;">Mentions Légales</h2>
     <p>Wilson Multi-services (EI) - SIRET : 99455217200011</p>
   </div>
 </div>
@@ -191,9 +193,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
       this.innerHTML = (content.style.display === "block") ? "▲ Réduire" : "▼ Description de l'établissement";
     });
   }
-
   document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
-
 </body>
 </html>
