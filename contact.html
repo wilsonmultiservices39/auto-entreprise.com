@@ -30,7 +30,6 @@
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
 
-/* PROTECTION : Empêche la sélection de texte sur les éléments sensibles */
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -38,7 +37,6 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-
   user-select: none;
 }
 
-/* PROTECTION : Empêche le clic droit sur les images */
 img {
   pointer-events: none;
   -webkit-user-select: none;
@@ -46,7 +44,6 @@ img {
   user-select: none;
 }
 
-/* PROTECTION : Overlay invisible sur les images pour empêcher le glisser-déposer */
 .image-container {
   position: relative;
   display: inline-block;
@@ -62,12 +59,11 @@ img {
   background: transparent;
 }
 
-/* PROTECTION : Watermark visible sur le site */
 .copyright-watermark {
   position: fixed;
   bottom: 80px;
   right: 15px;
-  background: rgba(2, 5, 150, 0.8);
+  background: rgba(2, 5, 150, 0.9); /* Harmonisé avec index */
   color: var(--or-carte);
   padding: 8px 15px;
   border-radius: 5px;
@@ -78,26 +74,25 @@ img {
 }
 
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
-/* Correction Performance : Taille fixée pour éviter le CLS */
-.logo-img { width: 150px; height: 92px; cursor: pointer; }
-h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3rem; margin: 0; }
+.logo-img { width: 180px; height: 110px; cursor: pointer; } /* Harmonisé avec index */
+h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5rem; margin: 0; font-weight: normal; } /* Harmonisé avec index */
 
 .contact-container { background: rgba(255, 255, 255, 0.1); padding: 30px 20px; border-radius: 15px; border: 1px solid var(--or-carte); width: 90%; max-width: 500px; margin: 20px auto; box-sizing: border-box; }
 
-.intervention-zone { font-size: 0.9rem; color: var(--or-carte); margin-bottom: 25px; line-height: 1.4; }
+.intervention-zone { font-size: 0.85rem; color: var(--or-carte); margin-bottom: 25px; line-height: 1.4; } /* Harmonisé avec index */
 
 .form-group { text-align: left; margin-bottom: 15px; }
 label { display: block; margin-bottom: 5px; color: var(--or-carte); font-weight: bold; font-size: 0.9rem; }
 input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--or-carte); background: white; color: #333; font-family: inherit; box-sizing: border-box; }
 textarea { height: 120px; resize: vertical; }
 
-.btn-submit { background-color: var(--or-carte); color: #000; border: none; padding: 15px; width: 100%; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-.btn-submit:hover { transform: scale(1.02); background-color: white; }
+.btn-submit { background-color: var(--or-carte); color: #000; border: none; padding: 15px; width: 100%; border-radius: 50px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+.btn-submit:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 .back-link { display: inline-block; margin-top: 20px; color: var(--or-carte); text-decoration: none; font-size: 0.9rem; }
 .back-link:hover { text-decoration: underline; }
 
-footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 211, 130, 0.8); border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); margin-top: auto; }
+footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); margin-top: auto; line-height: 1.6; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); overflow-y: auto; }
@@ -105,7 +100,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
 
-/* PROTECTION : Message d'alerte pour impression */
 @media print {
   body::before {
     content: "© 2026 Wilson Multi-services - Document protégé par le droit d'auteur - Reproduction interdite sans autorisation";
@@ -118,23 +112,29 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     margin-bottom: 20px;
   }
 }
+@media (min-width: 800px) {
+  h1 { font-size: 5rem; }
+}
 </style>
 </head>
-<body>
+<body class="no-select">
 
-<div class="copyright-watermark no-select">
+<div class="copyright-watermark">
   © 2026 Wilson Multi-services
 </div>
 
+<header>
 <div class="header-container">
   <div class="image-container">
     <a href="index.html">
-      <img src="logo.png" alt="Wilson Multi Services" class="logo-img" draggable="false" width="150" height="92">
+      <img src="logo.png" alt="Wilson Multi Services" class="logo-img" width="180" height="110">
     </a>
   </div>
-  <h1 class="no-select">Contactez-nous</h1>
+  <h1>Contactez-nous</h1>
 </div>
+</header>
 
+<main>
 <div class="contact-container">
   <div class="intervention-zone">
     <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-lès-Saint-Claude, Saint-Lupicin, Moirans-en-Montagne et alentours.
@@ -184,6 +184,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
   </form>
   <a href="index.html" class="back-link">← Retour à l'accueil</a>
 </div>
+</main>
 
 <footer>
   Wilson-multi-services © 2026. Tous droits réservés.<br>
@@ -242,14 +243,12 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
 </div>
 
 <script>
-  // PROTECTION : Désactive le clic droit sur tout le site
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
     alert('© Wilson Multi-services - Contenu protégé par le droit d\'auteur');
     return false;
   });
 
-  // PROTECTION : Désactive certains raccourcis clavier
   document.addEventListener('keydown', function(e) {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74) || (e.ctrlKey && e.keyCode == 85)) {
       e.preventDefault();
@@ -258,7 +257,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     }
   });
 
-  // PROTECTION : Empêche le glisser-déposer des images
   document.addEventListener('dragstart', function(e) {
     if (e.target.tagName === 'IMG') {
       e.preventDefault();
@@ -266,7 +264,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: rgba(239, 2
     }
   });
 
-  // PROTECTION : Alerte si quelqu'un essaie d'ouvrir les DevTools
   var devtools = {open: false};
   var threshold = 160;
   var checkStatus = function() {
