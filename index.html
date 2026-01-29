@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZNJ0PLJS"></script>
 <script>
-  window.addEventListener('load', function() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YYZNJ0PLJS";
-    document.head.appendChild(script);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YYZNJ0PLJS');
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YYZNJ0PLJS');
 </script>
 
 <meta charset="UTF-8">
@@ -26,7 +21,7 @@
 <meta name="robots" content="index, follow, noarchive">
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <style>
 :root { --bleu-vif: #020596; --or-carte: #efd382; --bleu-facebook: #1877F2; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bleu-vif); color: white; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
@@ -38,7 +33,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; u
 .image-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; }
 .copyright-watermark { position: fixed; bottom: 80px; right: 15px; background: rgba(2, 5, 150, 0.9); color: var(--or-carte); padding: 8px 15px; border-radius: 5px; font-size: 0.7rem; z-index: 999; border: 1px solid var(--or-carte); pointer-events: none; }
 
-/* Correction Accessibilité : Structure sémantique */
+/* Correction Accessibilité : Ajout de sémantique sans changer le design */
 header, main, footer { display: block; }
 .header-container { display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 15px; }
 .logo-img { width: 180px; height: 110px; margin-bottom: 10px; }
@@ -52,7 +47,8 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .services-container { text-align: left; display: inline-block; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; border-left: 5px solid var(--or-carte); margin: 20px auto 10px auto; max-width: 90%; }
 .menu-trigger { cursor: pointer; color: var(--or-carte); font-weight: bold; padding: 8px 0; display: block; transition: 0.2s; }
 .menu-trigger:hover { color: white; padding-left: 5px; }
-/* Correction Accessibilité : Augmentation du contraste du texte gris (#ddd -> #ffffff) */
+
+/* Correction Accessibilité : Contraste augmenté pour le texte des services (Passage de #ddd à blanc pur) */
 .menu-details { display: none; padding-left: 20px; margin: 5px 0 10px 5px; font-size: 0.95rem; color: #ffffff; border-left: 1px solid var(--or-carte); overflow: hidden; }
 
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
@@ -73,6 +69,7 @@ h1 { font-family: 'Great Vibes', cursive; color: var(--or-carte); font-size: 3.5
 .btn-style { background-color: var(--or-carte); color: #000; text-decoration: none; padding: 12px 18px; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); white-space: nowrap; border: none; cursor: pointer; font-family: inherit; }
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
+/* Correction Accessibilité : Texte du footer plus contrasté (blanc au lieu de doré opacité réduite) */
 footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; border-top: 1px solid rgba(239, 211, 130, 0.3); background: rgba(0, 0, 0, 0.4); line-height: 1.6; box-sizing: border-box; }
 .btn-mentions { background: none; border: 1px solid var(--or-carte); color: var(--or-carte); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; margin-top: 10px; }
 
@@ -166,7 +163,7 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
   </section>
 
   <div class="map-container">
-    <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44000.123456789!2d5.86!3d46.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c9c123456789%3A0x123456789!2sSaint-Claude!5e0!3m2!1sfr!2sfr!4v123456789" title="Localisation Wilson Multi-services" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44141.51703272993!2d5.829147775536481!3d46.39203648082405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3f9d5015b61%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715850000000!5m2!1sfr!2sfr" title="Zone d'intervention Wilson Multi-services" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -295,12 +292,6 @@ footer { width: 100%; padding: 25px 15px; font-size: 0.75rem; color: #ffffff; bo
       }
     });
   }
-
-  // Correction Performance : Chargement différé de l'iframe Maps
-  window.addEventListener('load', function() {
-    const map = document.querySelector('iframe');
-    if(map.dataset.src) map.src = map.dataset.src;
-  });
   
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
