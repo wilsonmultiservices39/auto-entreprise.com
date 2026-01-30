@@ -1,507 +1,1031 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYZNJ0PLJS"></script>
+
 <script>
+
   window.dataLayer = window.dataLayer || [];
+
   function gtag(){dataLayer.push(arguments);}
+
   gtag('js', new Date());
+
   gtag('config', 'G-YYZNJ0PLJS');
+
 </script>
 
+
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rénovation & Jardinage Saint-Claude (39) | Wilson Multi-services</title>
 
+
+
 <meta name="description" content="Wilson Multi-services à Saint-Claude (39200). Expert en rénovation, peinture, jardinage, petite plomberie et bricolage dans le Jura. Devis gratuit au 06.52.24.05.07.">
+
 <meta name="keywords" content="Wilson Multi-services, Lionel Rousseau, bricolage Saint-Claude, jardinage Saint-Claude, rénovation Jura, peintre Saint-Claude, plomberie Saint-Claude, montage meuble 39, artisan multiservices 39200, entretien jardin Jura, pose parquet Saint-Claude, placo Saint-Claude, débarras encombrants Jura, artisan Saint-Claude, travaux habitat 39">
 
+
+
 <meta name="author" content="Wilson Multi-services - Lionel Rousseau">
+
 <meta name="copyright" content="© 2026 Wilson Multi-services. Tous droits réservés.">
+
 <meta name="robots" content="index, follow, noarchive">
 
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
+
+
 <style>
+
 :root {
+
   --bleu-vif: #020596;
+
   --or-carte: #efd382;
+
   --bleu-facebook: #0866FF; 
+
 }
+
+
 
 body {
+
   font-family: 'Segoe UI', Arial, sans-serif;
+
   background-color: var(--bleu-vif);
+
   color: white;
+
   margin: 0;
+
   padding: 0;
+
   text-align: center;
+
   min-height: 100vh;
+
   display: flex;
+
   flex-direction: column;
+
   font-display: swap;
+
 }
 
+
+
 /* PROTECTION DU CONTENU */
+
 .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
 img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+
+
 
 .image-container { position: relative; display: inline-block; min-height: 110px; }
 
+
+
 .copyright-watermark {
+
   position: fixed;
+
   bottom: 80px;
+
   right: 15px;
+
   background: rgba(2, 5, 150, 0.9);
+
   color: var(--or-carte);
+
   padding: 8px 15px;
+
   border-radius: 5px;
+
   font-size: 0.7rem;
+
   z-index: 999;
+
   border: 1px solid var(--or-carte);
+
   pointer-events: none;
+
 }
+
+
 
 /* MISE EN PAGE & STABILISATION CLS */
+
 .header-container {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   padding: 20px;
+
   gap: 15px;
+
 }
+
+
 
 .logo-img {
+
   width: 180px;
+
   height: 110px;
+
   margin-bottom: 10px;
+
   aspect-ratio: 180 / 110; /* Réserve l'espace pour éviter le saut au chargement */
+
 }
+
+
 
 h1 {
+
   font-family: 'Great Vibes', cursive;
+
   color: var(--or-carte);
+
   font-size: 3.5rem;
+
   margin: 0;
+
   font-weight: normal;
+
 }
+
+
 
 .devis {
+
   font-weight: bold;
+
   text-transform: uppercase;
+
   font-size: 1.8rem;
+
   color: var(--or-carte);
+
   margin: 5px 0;
+
 }
+
+
 
 .separator-bar {
+
   height: 1.5px;
+
   background-color: var(--or-carte);
+
   width: 85%;
+
   max-width: 700px;
+
   margin: 10px auto 20px auto;
+
 }
 
+
+
 .horaires-box {
+
   background: rgba(255, 255, 255, 0.1);
+
   border: 1px solid var(--or-carte);
+
   padding: 15px;
+
   border-radius: 10px;
+
   font-size: 0.9rem;
+
   text-align: left;
+
   width: 90%;
+
   max-width: 280px;
+
 }
+
+
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
+
+
 /* SERVICES */
+
 .services-container {
+
   text-align: left;
+
   display: inline-block;
+
   background: rgba(255, 255, 255, 0.1);
+
   padding: 20px;
+
   border-radius: 15px;
+
   border-left: 5px solid var(--or-carte);
+
   margin: 20px auto 10px auto;
+
   max-width: 90%;
+
 }
 
+
+
 .menu-trigger {
+
   cursor: pointer;
+
   color: var(--or-carte);
+
   font-weight: bold;
+
   padding: 8px 0;
+
   display: block;
+
   transition: 0.2s;
+
 }
+
+
 
 .menu-trigger:hover { color: white; padding-left: 5px; }
 
+
+
 .menu-details {
+
   display: none;
+
   padding-left: 20px;
+
   margin: 5px 0 10px 5px;
+
   font-size: 0.95rem;
+
   color: #ffffff;
+
   border-left: 1px solid var(--or-carte);
+
   overflow: hidden;
+
 }
+
+
 
 /* SECTIONS */
+
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 
+
+
 .review-card {
+
   background: rgba(255, 255, 255, 0.1);
+
   padding: 20px;
+
   border-radius: 15px;
+
   border-top: 3px solid var(--or-carte);
+
   text-align: left;
+
   margin-bottom: 15px;
+
 }
+
+
 
 .map-container {
+
   width: 90%;
+
   max-width: 500px;
+
   margin: 20px auto 5px auto;
+
   border: 2px solid var(--or-carte);
+
   border-radius: 15px;
+
   overflow: hidden;
+
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
   min-height: 300px; /* Stabilisation de la zone de la carte */
+
 }
+
+
 
 .intervention-zone {
+
   font-size: 0.85rem;
+
   color: var(--or-carte);
+
   margin-bottom: 20px;
+
   padding: 0 15px;
+
   max-width: 500px;
+
   margin: 0 auto 20px auto;
+
 }
 
+
+
 /* COLLAPSIBLE */
+
 .collapsible {
+
   background-color: #010363;
+
   color: var(--or-carte);
+
   cursor: pointer;
+
   padding: 15px;
+
   width: 90%;
+
   max-width: 500px;
+
   border: 2px solid var(--or-carte);
+
   text-align: center;
+
   outline: none;
+
   font-size: 1.1rem;
+
   font-weight: bold;
+
   border-radius: 10px;
+
   margin: 5px auto 15px auto;
+
   transition: 0.3s;
+
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+
 }
+
+
 
 .active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
 
+
+
 .content-description {
+
   padding: 0 18px;
+
   display: none;
+
   overflow: hidden;
+
   background-color: rgba(255, 255, 255, 0.12);
+
   width: 90%;
+
   max-width: 500px;
+
   margin: 0 auto 10px auto;
+
   border-radius: 0 0 10px 10px;
+
   text-align: left;
+
   border: 1px solid var(--or-carte);
+
   border-top: none;
+
   line-height: 1.6;
+
 }
+
+
 
 /* BOUTONS FLOTTANTS */
+
 .main-wrapper {
+
   flex: 1;
+
   display: flex;
+
   flex-direction: column;
+
   position: relative;
+
   padding-bottom: 100px;
+
 }
 
+
+
 .floating-wrapper {
+
   position: sticky;
+
   bottom: 20px;
+
   z-index: 1000;
+
   display: flex;
+
   justify-content: space-between;
+
   padding: 0 15px;
+
   pointer-events: none;
+
 }
+
+
 
 .btn-col-left, .btn-col-right { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
 
+
+
 .btn-style {
+
   background-color: var(--or-carte);
+
   color: #000;
+
   text-decoration: none;
+
   padding: 12px 18px;
+
   border-radius: 50px;
+
   font-weight: bold;
+
   font-size: 0.85rem;
+
   display: flex;
+
   align-items: center;
+
   gap: 8px;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
   white-space: nowrap;
+
   border: none;
+
   cursor: pointer;
+
 }
+
+
 
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
+
+
 /* FOOTER */
+
 footer {
+
   width: 100%;
+
   padding: 25px 15px;
+
   font-size: 0.75rem;
+
   color: #ffffff;
+
   border-top: 1px solid rgba(239, 211, 130, 0.3);
+
   background: rgba(0, 0, 0, 0.4);
+
   line-height: 1.6;
+
   box-sizing: border-box;
+
 }
+
+
 
 .btn-mentions {
+
   background: none;
+
   border: 1px solid var(--or-carte);
+
   color: var(--or-carte);
+
   padding: 5px 10px;
+
   border-radius: 5px;
+
   cursor: pointer;
+
   font-size: 0.7rem;
+
   margin-top: 10px;
+
 }
+
+
 
 /* MODALE */
+
 .modal {
+
   display: none;
+
   position: fixed;
+
   z-index: 2000;
+
   left: 0;
+
   top: 0;
+
   width: 100%;
+
   height: 100%;
+
   background-color: rgba(0,0,0,0.8);
+
   overflow-y: auto;
+
 }
 
+
+
 .modal-content {
+
   background-color: #fefefe;
+
   color: #333;
+
   margin: 5% auto;
+
   padding: 25px;
+
   border: 1px solid #888;
+
   width: 90%;
+
   max-width: 600px;
+
   border-radius: 10px;
+
   text-align: left;
+
   line-height: 1.5;
+
   font-size: 0.9rem;
+
 }
+
+
 
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
+
+
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
 
+
+
 @media (min-width: 800px) {
+
   .header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; }
+
   h1 { font-size: 5rem; }
+
   .horaires-box { order: 3; }
+
 }
+
 </style>
+
 </head>
+
 <body class="no-select">
+
+
 
 <div class="copyright-watermark">© 2026 Wilson Multi-services</div>
 
+
+
 <header>
+
   <div class="header-container">
+
     <div class="image-container">
+
       <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" width="180" height="110" fetchpriority="high">
+
     </div>
+
     <div>
+
       <h1>Wilson-multi-services</h1>
+
       <p class="devis">Devis Gratuit</p>
+
       <div class="separator-bar"></div>
+
     </div>
+
     <div class="horaires-box">
+
       <h2 style="font-size: 1.1rem; margin-top: 0; color: var(--or-carte);">🕒 Horaires d'ouverture</h2>
+
       <div><span>Lundi :</span> <span>08h00 - 18h00</span></div>
+
       <div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
+
       <div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
+
       <div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
+
       <div><span>Vendredi :</span> <span>08h00 - 18h00</span></div>
+
       <div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
+
       <div><span>Dimanche :</span> <span>Fermé</span></div>
+
     </div>
+
   </div>
+
 </header>
 
+
+
 <main class="main-wrapper">
+
   <div class="services-container">
+
     <div class="menu-trigger" onclick="toggleMenu('travaux-list')">✦ Travaux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="travaux-list" class="menu-details">• Placo plâtre<br>• Ferraillage<br>• Enduit de lissage<br>• Parquet stratifié<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('peinture-list')">✦ Peinture <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="peinture-list" class="menu-details">• Mur<br>• Plafond<br>• Boiserie<br>• Fer<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('revetement-list')">✦ Revêtements muraux <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="revetement-list" class="menu-details">• Papier peint<br>• Fibre de verre<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('plomberie-list')">✦ Petite Plomberie <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="plomberie-list" class="menu-details">• Robinetterie<br>• Installation évier<br>• Lavabo<br>• WC<br>• Paroi de douche<br>• Débouchage canalisation<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('agencement-list')">✦ Agencement meuble <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="agencement-list" class="menu-details">• Montage de mobilier<br>• Installation de mobilier intérieur et extérieur<br>• + de services à la demande</div>
+
     
+
     <div class="menu-trigger" onclick="toggleMenu('autres-list')">✦ Autres services à la demande <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
+
     <div id="autres-list" class="menu-details">• Débarrassage d'encombrants<br>• Nettoyage bâtiment / appartement<br>• Locaux commerciaux / entrepôt / cave<br>• Déménagement<br>• Aide et installation numérique<br>• + de services à la demande</div>
+
   </div>
+
+
 
   <section class="reviews-section">
+
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
+
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+
       <article class="review-card">
+
         <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
+
         <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
+
       </article>
+
       <article class="review-card">
+
         <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
+
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
+
       </article>
+
     </div>
+
     <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
+
   </section>
+
+
 
   <section class="gallery-section">
+
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 10px;">Nos Réalisations</h2>
+
     <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--or-carte); padding: 30px; border-radius: 15px;">
+
       <i class="fas fa-tools" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 15px;"></i>
+
       <p style="font-style: italic; color: #ffffff; margin: 0;">Galerie photos en cours de développement.<br>Retrouvez prochainement les images de nos chantiers !</p>
+
     </div>
+
   </section>
 
+
+
   <div class="map-container">
+
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44111.45564887372!2d5.82747377519641!3d46.38883584852928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf84f04d0f737%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1710000000000" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
   </div>
+
   
+
   <div class="intervention-zone">
+
     <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-les-Saint-Claude, Saint-Lupicin, Moirans-en-Montagne et alentours.
+
   </div>
+
+
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
+
   <div class="content-description">
+
     <p style="margin-top:15px;"><strong>Bienvenue chez Wilson Multi-services</strong></p>
+
     <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
+
     <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
+
     <ul>
+
       <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
+
       <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
+
       <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
+
       <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
+
     </ul>
+
     <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
+
     <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
+
   </div>
+
+
 
   <div class="floating-wrapper">
+
     <div class="btn-col-left">
+
       <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
+
       <a href="contact.html" class="btn-style">📧 E-mail</a>
+
     </div>
+
     <div class="btn-col-right">
+
       <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+
     </div>
+
   </div>
+
 </main>
 
+
+
 <footer>
+
   Wilson-multi-services © 2026. Tous droits réservés.<br>
+
   <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
+
 </footer>
 
+
+
 <div id="legalModal" class="modal">
+
   <div class="modal-content">
+
     <span class="close" onclick="document.getElementById('legalModal').style.display='none'" aria-label="Fermer la fenêtre">×</span>
+
     <h2 style="text-align:center; color:var(--bleu-vif);">Mentions Légales & RGPD</h2>
+
     
+
     <h3>1. Éditeur du site</h3>
+
     <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
+
     <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
+
     <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
+
     <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+
     <strong>SIRET :</strong> 99455217200011<br>
+
     <strong>Téléphone :</strong> 06.52.24.05.07<br>
+
     <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
+
     
+
     <h3>2. Hébergement</h3>
+
     <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, USA.</p>
+
     <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD.</p>
+
     
+
     <h3>3. Propriété intellectuelle</h3>
+
     <p>L'ensemble du contenu de ce site est la propriété exclusive de <strong>Wilson Multi-services</strong>.</p>
+
     
+
     <h3>4. Protection des données (RGPD)</h3>
+
     <p>Les données collectées via le formulaire sont uniquement destinées à la gestion de vos devis. Vous disposez d'un droit d'accès et de suppression en nous contactant par email.</p>
 
+
+
     <h3>5. Cookies et Statistiques</h3>
+
     <p>Ce site utilise Google Analytics pour améliorer l'expérience utilisateur.</p>
+
+  <h3>6. Transparence des avis clients</h3>
+
+    <p>Conformément à la loi :<br>
+
+    • Les avis sont recueillis suite à une prestation réelle.<br>
+
+    • Ils font l'objet d'un contrôle de vérification avant publication.<br>
+
+    • Aucune contrepartie n'est fournie en échange d'un avis.<br>
+
+    • Tout client peut demander la suppression de son avis via le formulaire de contact.</p>
+
+
+
+    <h3>7. Sécurité et lutte contre la fraude</h3>
+
+    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
+
   </div>
+
 </div>
 
+
+
 <script>
+
   // Désactivation clic droit et touches F12
+
   document.addEventListener('contextmenu', e => e.preventDefault());
+
   document.addEventListener('keydown', e => {
+
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) e.preventDefault();
+
   });
 
+
+
   // Toggle Menus Services
+
   function toggleMenu(id) {
+
     var list = document.getElementById(id);
+
     list.style.display = (list.style.display === "block") ? "none" : "block";
+
   }
+
   
+
   // Accordéon Description
+
   var coll = document.getElementsByClassName("collapsible");
+
   for (var i = 0; i < coll.length; i++) {
+
     coll[i].addEventListener("click", function() {
+
       this.classList.toggle("active");
+
       var content = this.nextElementSibling;
+
       if (content.style.display === "block") {
+
         content.style.display = "none";
+
         this.innerHTML = "▼ Description de l'établissement";
+
       } else {
+
         content.style.display = "block";
+
         this.innerHTML = "▲ Réduire";
+
       }
+
     });
+
   }
+
+
 
   // Fermer Modale
+
   window.onclick = function(event) {
+
     var modal = document.getElementById('legalModal');
+
     if (event.target == modal) { modal.style.display = "none"; }
+
   }
+
 </script>
 
+
+
 </body>
+
 </html>
