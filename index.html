@@ -22,14 +22,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="logo.png" as="image" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" display="swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
 <style>
 :root {
   --bleu-vif: #020596;
   --or-carte: #efd382;
-  --bleu-facebook: #0056b3; 
+  --bleu-facebook: #0866FF; 
 }
 
 body {
@@ -42,9 +42,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden; /* Optimisation mobile : évite le scroll horizontal accidentel */
 }
 
+/* PROTECTION DU CONTENU */
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -57,16 +57,11 @@ img {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  max-width: 100%;
-  height: auto;
 }
 
 .image-container {
   position: relative;
   display: inline-block;
-  width: 180px; 
-  height: 110px;
-  contain: size layout; /* Optimisation : aide le navigateur mobile à calculer le rendu */
 }
 
 .image-container::after {
@@ -93,6 +88,7 @@ img {
   pointer-events: none;
 }
 
+/* MISE EN PAGE */
 .header-container {
   display: flex;
   flex-direction: column;
@@ -148,6 +144,7 @@ h1 {
   margin-bottom: 3px;
 }
 
+/* SERVICES */
 .services-container {
   text-align: left;
   display: inline-block;
@@ -183,6 +180,7 @@ h1 {
   overflow: hidden;
 }
 
+/* SECTIONS */
 .gallery-section, .reviews-section {
   width: 90%;
   max-width: 800px;
@@ -201,7 +199,6 @@ h1 {
 .map-container {
   width: 90%;
   max-width: 500px;
-  height: 300px; /* Optimisation : réserve l'espace pour éviter le saut de page au chargement */
   margin: 20px auto 5px auto;
   border: 2px solid var(--or-carte);
   border-radius: 15px;
@@ -219,6 +216,7 @@ h1 {
   margin-right: auto;
 }
 
+/* COLLAPSIBLE */
 .collapsible {
   background-color: #010363;
   color: var(--or-carte);
@@ -257,12 +255,13 @@ h1 {
   line-height: 1.6;
 }
 
+/* BOUTONS FLOTTANTS */
 .main-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 120px; /* Espace optimisé pour les boutons mobiles */
+  padding-bottom: 100px;
 }
 
 .floating-wrapper {
@@ -302,9 +301,10 @@ h1 {
 
 .btn-facebook {
   background-color: var(--bleu-facebook);
-  color: white !important;
+  color: white;
 }
 
+/* FOOTER */
 footer {
   width: 100%;
   padding: 25px 15px;
@@ -327,6 +327,7 @@ footer {
   margin-top: 10px;
 }
 
+/* MODALE */
 .modal {
   display: none;
   position: fixed;
@@ -384,7 +385,7 @@ footer {
 <header>
   <div class="header-container">
     <div class="image-container">
-      <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" width="180" height="110" fetchpriority="high">
+      <img src="logo.png" alt="Logo Wilson Multi Services" class="logo-img" width="180" height="110">
     </div>
     <div>
       <h1>Wilson-multi-services</h1>
@@ -397,7 +398,7 @@ footer {
       <div><span>Mardi :</span> <span>08h00 - 18h00</span></div>
       <div><span>Mercredi :</span> <span>08h00 - 18h00</span></div>
       <div><span>Jeudi :</span> <span>08h00 - 18h00</span></div>
-      <div><span>Fri :</span> <span>08h00 - 18h00</span></div>
+      <div><span>Vendredi :</span> <span>08h00 - 18h00</span></div>
       <div><span>Samedi :</span> <span>09h00 - 12h00</span></div>
       <div><span>Dimanche :</span> <span>Fermé</span></div>
     </div>
@@ -435,12 +436,12 @@ footer {
     <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px;">Avis de nos clients</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
       <article class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Travail très soigné pour la peinture de ma cuisine. Lionel est ponctuel et très professionnel."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Jean-Pierre (Saint-Claude)</span>
       </article>
       <article class="review-card">
-        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
+        <div style="color: var(--or-carte); margin-bottom: 10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
       </article>
@@ -457,7 +458,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43997.74971295988!2d5.823616212176466!3d46.38883626245037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf7d966967755%3A0xc3f8379c3a373307!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714561234567!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44002.321743015!2d5.828624195156429!3d46.40624029285743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf4a1796d8b67%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714567890123!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -505,20 +506,52 @@ footer {
     <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
     <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
     <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
-    <strong>SIRET :</strong> 99455217200011</p>
+    <strong>SIRET :</strong> 99455217200011<br>
+    <strong>Téléphone :</strong> 06.52.24.05.07<br>
+    <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
+    
+    <h3>2. Hébergement</h3>
+    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
+    
+    <h3>3. Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.</p>
+    
+    <h3>4. Protection des données (RGPD)</h3>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
+    <ul>
+      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
+      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
+      <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
+      <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
+      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
+      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
+      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
+      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
+      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
+    </ul>
+
+    <h3>5. Cookies et Statistiques</h3>
+    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+
+    <h3>6. Transparence des avis clients</h3>
+    <p>Conformément à la loi :<br>
+    • Les avis sont recueillis suite à une prestation réelle.<br>
+    • Ils font l'objet d'un contrôle de vérification avant publication.<br>
+    • Aucune contrepartie n'est fournie en échange d'un avis.<br>
+    • Tout client peut demander la suppression de son avis via le formulaire de contact.</p>
+
+    <h3>7. Sécurité et lutte contre la fraude</h3>
+    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
   </div>
 </div>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-
 <script>
-  // Sécurité
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('keydown', e => {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) e.preventDefault();
   });
 
-  // Menus
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
@@ -539,19 +572,10 @@ footer {
     });
   }
 
-  // Modale
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
   }
-
-  // Optimisation Mobile : Chargement différé de la carte (Lazy load)
-  window.addEventListener('scroll', function() {
-    var map = document.querySelector('.map-container iframe');
-    if (map && map.src === "about:blank") {
-      map.src = map.getAttribute('data-src');
-    }
-  }, {once: true});
 </script>
 
 </body>
