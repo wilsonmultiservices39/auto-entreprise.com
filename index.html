@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
 <style>
@@ -42,6 +43,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* 3. Empêcher les sauts de texte lors du chargement des polices */
+  font-display: swap;
 }
 
 /* PROTECTION DU CONTENU */
@@ -101,6 +104,8 @@ img {
   width: 180px;
   height: 110px;
   margin-bottom: 10px;
+  /* 4. Reserver l'espace pour éviter l'ajustement forcé de mise en page */
+  aspect-ratio: 180 / 110;
 }
 
 h1 {
@@ -204,6 +209,8 @@ h1 {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  /* 5. Stabilisation du conteneur de carte */
+  min-height: 300px;
 }
 
 .intervention-zone {
@@ -458,7 +465,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44002.321743015!2d5.828624195156429!3d46.40624029285743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf4a1796d8b67%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714567890123!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87635.0862594635!2d5.80802715!3d46.38814755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cfe9589d892d5%3A0x409ce34b31405e0!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714567890123!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
