@@ -23,7 +23,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
 <style>
@@ -43,39 +42,14 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* 3. Empêcher les sauts de texte lors du chargement des polices */
   font-display: swap;
 }
 
 /* PROTECTION DU CONTENU */
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+.no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 
-img {
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.image-container {
-  position: relative;
-  display: inline-block;
-}
-
-.image-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
+.image-container { position: relative; display: inline-block; min-height: 110px; }
 
 .copyright-watermark {
   position: fixed;
@@ -91,7 +65,7 @@ img {
   pointer-events: none;
 }
 
-/* MISE EN PAGE */
+/* MISE EN PAGE & STABILISATION CLS */
 .header-container {
   display: flex;
   flex-direction: column;
@@ -104,8 +78,7 @@ img {
   width: 180px;
   height: 110px;
   margin-bottom: 10px;
-  /* 4. Reserver l'espace pour éviter l'ajustement forcé de mise en page */
-  aspect-ratio: 180 / 110;
+  aspect-ratio: 180 / 110; /* Réserve l'espace pour éviter le saut au chargement */
 }
 
 h1 {
@@ -143,11 +116,7 @@ h1 {
   max-width: 280px;
 }
 
-.horaires-box div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3px;
-}
+.horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
 /* SERVICES */
 .services-container {
@@ -170,10 +139,7 @@ h1 {
   transition: 0.2s;
 }
 
-.menu-trigger:hover {
-  color: white;
-  padding-left: 5px;
-}
+.menu-trigger:hover { color: white; padding-left: 5px; }
 
 .menu-details {
   display: none;
@@ -186,11 +152,7 @@ h1 {
 }
 
 /* SECTIONS */
-.gallery-section, .reviews-section {
-  width: 90%;
-  max-width: 800px;
-  margin: 30px auto;
-}
+.gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 
 .review-card {
   background: rgba(255, 255, 255, 0.1);
@@ -209,8 +171,7 @@ h1 {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  /* 5. Stabilisation du conteneur de carte */
-  min-height: 300px;
+  min-height: 300px; /* Stabilisation de la zone de la carte */
 }
 
 .intervention-zone {
@@ -219,8 +180,7 @@ h1 {
   margin-bottom: 20px;
   padding: 0 15px;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 20px auto;
 }
 
 /* COLLAPSIBLE */
@@ -242,10 +202,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.active, .collapsible:hover {
-  background-color: #020596;
-  transform: translateY(-2px);
-}
+.active, .collapsible:hover { background-color: #020596; transform: translateY(-2px); }
 
 .content-description {
   padding: 0 18px;
@@ -281,12 +238,7 @@ h1 {
   pointer-events: none;
 }
 
-.btn-col-left, .btn-col-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  pointer-events: auto;
-}
+.btn-col-left, .btn-col-right { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
 
 .btn-style {
   background-color: var(--or-carte);
@@ -303,13 +255,9 @@ h1 {
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  font-family: inherit;
 }
 
-.btn-facebook {
-  background-color: var(--bleu-facebook);
-  color: white;
-}
+.btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
 /* FOOTER */
 footer {
@@ -361,20 +309,9 @@ footer {
   font-size: 0.9rem;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
-.modal-content h3 {
-  color: var(--bleu-vif);
-  border-bottom: 2px solid var(--or-carte);
-  padding-bottom: 5px;
-  margin-top: 20px;
-}
+.modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
 
 @media (min-width: 800px) {
   .header-container { flex-direction: row; justify-content: space-between; padding: 20px 50px; }
@@ -385,9 +322,7 @@ footer {
 </head>
 <body class="no-select">
 
-<div class="copyright-watermark">
-  © 2026 Wilson Multi-services
-</div>
+<div class="copyright-watermark">© 2026 Wilson Multi-services</div>
 
 <header>
   <div class="header-container">
@@ -452,8 +387,8 @@ footer {
         <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">"exemple : Super service pour l'entretien de mon jardin. Rapide et efficace, le résultat est parfait."</p>
         <span style="font-weight: bold; color: var(--or-carte);">- Marie L. (Morez)</span>
       </article>
-      </div>
-      <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.85rem;">Vous êtes satisfait ? <a href="contact.html" style="color: var(--or-carte); text-decoration: underline;">Laissez-nous un message !</a></p>
   </section>
 
   <section class="gallery-section">
@@ -465,7 +400,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87635.0862594635!2d5.80802715!3d46.38814755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cfe9589d892d5%3A0x409ce34b31405e0!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714567890123!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44111.45564887372!2d5.82747377519641!3d46.38883584852928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf84f04d0f737%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1710000000000" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
@@ -518,52 +453,34 @@ footer {
     <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
     
     <h3>2. Hébergement</h3>
-    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
-    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
+    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, USA.</p>
+    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD.</p>
     
     <h3>3. Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code source, logo) est la propriété exclusive de <strong>Wilson Multi-services</strong>. Toute reproduction, même partielle, est strictement interdite sans autorisation écrite préalable.</p>
+    <p>L'ensemble du contenu de ce site est la propriété exclusive de <strong>Wilson Multi-services</strong>.</p>
     
     <h3>4. Protection des données (RGPD)</h3>
-    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
-    <ul>
-      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
-      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
-      <li><strong>Base légale :</strong> Votre consentement et l'exécution de mesures précontractuelles.</li>
-      <li><strong>Données collectées :</strong> Nom, prénom, téléphone, service souhaité, message.</li>
-      <li><strong>Destinataires :</strong> Les données sont uniquement accessibles par Wilson Multi-services et Formspree (hébergeur du formulaire).</li>
-      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
-      <li><strong>Vos droits :</strong> Conformément aux articles 15 à 22 du RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité et d'opposition aux données personnelles vous concernant.</li>
-      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par email à wilson.multi.services39@gmail.com ou par courrier à l'adresse du siège social.</li>
-      <li><strong>Réclamation :</strong> Vous pouvez introduire une réclamation auprès de la CNIL (www.cnil.fr).</li>
-    </ul>
+    <p>Les données collectées via le formulaire sont uniquement destinées à la gestion de vos devis. Vous disposez d'un droit d'accès et de suppression en nous contactant par email.</p>
 
     <h3>5. Cookies et Statistiques</h3>
-    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
-
-    <h3>6. Transparence des avis clients</h3>
-    <p>Conformément à la loi :<br>
-    • Les avis sont recueillis suite à une prestation réelle.<br>
-    • Ils font l'objet d'un contrôle de vérification avant publication.<br>
-    • Aucune contrepartie n'est fournie en échange d'un avis.<br>
-    • Tout client peut demander la suppression de son avis via le formulaire de contact.</p>
-
-    <h3>7. Sécurité et lutte contre la fraude</h3>
-    <p>Les formulaires de ce site sont protégés contre le spam et les abus. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
+    <p>Ce site utilise Google Analytics pour améliorer l'expérience utilisateur.</p>
   </div>
 </div>
 
 <script>
+  // Désactivation clic droit et touches F12
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('keydown', e => {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) e.preventDefault();
   });
 
+  // Toggle Menus Services
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
   }
   
+  // Accordéon Description
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -579,6 +496,7 @@ footer {
     });
   }
 
+  // Fermer Modale
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
