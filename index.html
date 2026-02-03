@@ -163,12 +163,14 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* CADRE DIRIGEANT */
+/* CADRE DIRIGEANT ALIGNÉ SUR LES SERVICES */
 .dirigeant-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed var(--or-carte);
-  border-radius: 15px;
+  text-align: left;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
   padding: 20px;
+  border-radius: 15px;
+  border-left: 5px solid var(--or-carte);
   width: 90%;
   max-width: 500px;
   margin: 10px auto 20px auto;
@@ -194,7 +196,6 @@ h1 {
   max-width: 500px;
   margin: 0 auto 20px auto;
 }
-
 /* COLLAPSIBLE */
 .collapsible {
   background-color: #010363;
@@ -375,7 +376,6 @@ footer {
     
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
-
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
     
@@ -434,7 +434,6 @@ footer {
       <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
       <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
       <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
-      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
     </ul>
     <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
     <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
@@ -544,4 +543,3 @@ footer {
 
 </body>
 </html>
-
