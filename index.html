@@ -118,7 +118,7 @@ h1 {
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-/* SERVICES */
+/* SERVICES (Style de référence) */
 .services-container {
   text-align: left;
   display: inline-block;
@@ -128,6 +128,20 @@ h1 {
   border-left: 5px solid var(--or-carte);
   margin: 20px auto 10px auto;
   max-width: 90%;
+}
+
+/* CADRE DIRIGEANT (Harmonisé avec services-container) */
+.dirigeant-card {
+  text-align: left;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 15px;
+  border-left: 5px solid var(--or-carte);
+  margin: 0 auto 20px auto;
+  max-width: 90%;
+  width: fit-content;
+  box-sizing: border-box;
 }
 
 .menu-trigger {
@@ -161,18 +175,6 @@ h1 {
   border-top: 3px solid var(--or-carte);
   text-align: left;
   margin-bottom: 15px;
-}
-
-/* CADRE DIRIGEANT REDUIT */
-.dirigeant-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed var(--or-carte);
-  border-radius: 10px;
-  padding: 10px 15px;
-  width: 85%;
-  max-width: 350px;
-  margin: 0 auto 20px auto;
-  box-sizing: border-box;
 }
 
 .map-container {
@@ -416,7 +418,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43890.13483669707!2d5.82877141505362!3d46.38834465495009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39366d3a95f%3A0x409ce34b313d330!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714567890123!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="http://googleusercontent.com/maps.google.com/4" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
