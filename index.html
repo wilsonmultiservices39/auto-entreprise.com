@@ -118,25 +118,26 @@ h1 {
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-/* SERVICES & DIRIGEANT (ALIGNEMENT HARMONISÉ) */
+/* MODIFICATIONS ICI : ALIGNEMENT ET TAILLE HARMONISÉE */
 .services-container, .dirigeant-card {
   text-align: left;
-  display: inline-block;
+  display: block; /* Changé pour permettre le margin auto */
   background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
   border-radius: 15px;
   border-left: 5px solid var(--or-carte);
   width: 90%;
-  max-width: 460px; /* Largeur fixée pour l'alignement vertical */
+  max-width: 400px; /* Taille réduite et identique pour les deux */
+  margin: 0 auto 20px auto; /* Centrage automatique */
   box-sizing: border-box;
 }
 
 .dirigeant-card {
-  margin: 0 auto 20px auto;
+  padding: 12px 20px; /* Padding un peu plus fin pour le dirigeant */
 }
 
 .services-container {
-  margin: 20px auto 10px auto;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .menu-trigger {
@@ -339,11 +340,11 @@ footer {
       <div class="separator-bar"></div>
       
       <section class="dirigeant-card">
-        <h3 style="margin: 0; color: var(--or-carte); font-size: 1.1rem;"><i class="fas fa-user-tie"></i> Lionel Rousseau</h3>
-        <p style="margin: 2px 0; font-size: 0.8rem; font-weight: bold; color: #fff;">Dirigeant</p>
-        <div style="margin-top: 5px; font-size: 0.85rem;">
-          <span style="display: block;"><i class="fas fa-phone-alt" style="color: var(--or-carte); font-size: 0.75rem;"></i> 06.52.24.05.07</span>
-          <span style="display: block;"><i class="fas fa-envelope" style="color: var(--or-carte); font-size: 0.75rem;"></i> wilson.multi.services39@gmail.com</span>
+        <h3 style="margin: 0; color: var(--or-carte); font-size: 1rem;"><i class="fas fa-user-tie"></i> Lionel Rousseau</h3>
+        <p style="margin: 2px 0; font-size: 0.75rem; font-weight: bold; color: rgba(255,255,255,0.8);">Dirigeant</p>
+        <div style="margin-top: 5px; font-size: 0.8rem;">
+          <span style="display: block;"><i class="fas fa-phone-alt" style="color: var(--or-carte); font-size: 0.7rem;"></i> 06.52.24.05.07</span>
+          <span style="display: block;"><i class="fas fa-envelope" style="color: var(--or-carte); font-size: 0.7rem;"></i> wilson.multi.services39@gmail.com</span>
         </div>
       </section>
     </div>
