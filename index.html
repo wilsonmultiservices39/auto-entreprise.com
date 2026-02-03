@@ -118,18 +118,16 @@ h1 {
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-/* SERVICES - AJUSTÉ POUR ALIGNEMENT */
+/* SERVICES */
 .services-container {
   text-align: left;
-  display: block; /* Changé de inline-block à block pour la largeur */
+  display: inline-block;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
   border-left: 5px solid var(--or-carte);
   margin: 20px auto 10px auto;
-  width: 90%;
-  max-width: 500px; /* Aligné sur le cadre dirigeant */
-  box-sizing: border-box;
+  max-width: 90%;
 }
 
 .menu-trigger {
@@ -175,7 +173,6 @@ h1 {
   max-width: 500px;
   margin: 10px auto 20px auto;
   box-sizing: border-box;
-  text-align: left; /* Assure l'alignement texte à gauche */
 }
 
 .map-container {
@@ -198,7 +195,7 @@ h1 {
   margin: 0 auto 20px auto;
 }
 
-/* COLLAPSIBLE */
+  /* COLLAPSIBLE */
 .collapsible {
   background-color: #010363;
   color: var(--or-carte);
@@ -331,7 +328,9 @@ footer {
 </style>
 </head>
 <body class="no-select">
+
 <div class="copyright-watermark">© 2026 Wilson Multi-services</div>
+
 <header>
   <div class="header-container">
     <div class="image-container">
@@ -375,7 +374,6 @@ footer {
     
     <div class="menu-trigger" onclick="toggleMenu('jardinage-list')">✦ Jardinage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="jardinage-list" class="menu-details">• Entretien jardin<br>• Nettoyage de vos parcelles<br>• Retrait de vos déchets verts<br>• + de services à la demande</div>
-
     <div class="menu-trigger" onclick="toggleMenu('bricolage-list')">✦ Petit Bricolage <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></div>
     <div id="bricolage-list" class="menu-details">• Réparation d'objet<br>• Petite électricité<br>• Décapage bois et fer<br>• Masticage boiserie<br>• + de services à la demande</div>
     
