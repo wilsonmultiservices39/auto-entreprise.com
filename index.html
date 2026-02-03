@@ -102,7 +102,7 @@ h1 {
   background-color: var(--or-carte);
   width: 85%;
   max-width: 700px;
-  margin: 10px auto 15px auto;
+  margin: 10px auto 20px auto;
 }
 
 .horaires-box {
@@ -118,28 +118,18 @@ h1 {
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
-/* SERVICES & DIRIGEANT (ALIGNEMENT HARMONISÉ PC) */
-.services-container, .dirigeant-card {
+/* SERVICES - AJUSTÉ POUR ALIGNEMENT */
+.services-container {
   text-align: left;
+  display: block; /* Changé de inline-block à block pour la largeur */
   background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
   border-radius: 15px;
   border-left: 5px solid var(--or-carte);
+  margin: 20px auto 10px auto;
   width: 90%;
-  max-width: 460px; /* Largeur identique pour l'alignement */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 500px; /* Aligné sur le cadre dirigeant */
   box-sizing: border-box;
-}
-
-.dirigeant-card {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.services-container {
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 .menu-trigger {
@@ -173,6 +163,19 @@ h1 {
   border-top: 3px solid var(--or-carte);
   text-align: left;
   margin-bottom: 15px;
+}
+
+/* CADRE DIRIGEANT */
+.dirigeant-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed var(--or-carte);
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 10px auto 20px auto;
+  box-sizing: border-box;
+  text-align: left; /* Assure l'alignement texte à gauche */
 }
 
 .map-container {
@@ -328,9 +331,7 @@ footer {
 </style>
 </head>
 <body class="no-select">
-
 <div class="copyright-watermark">© 2026 Wilson Multi-services</div>
-
 <header>
   <div class="header-container">
     <div class="image-container">
@@ -342,11 +343,12 @@ footer {
       <div class="separator-bar"></div>
       
       <section class="dirigeant-card">
-        <h3 style="margin: 0; color: var(--or-carte); font-size: 1.1rem;"><i class="fas fa-user-tie"></i> Lionel Rousseau</h3>
-        <p style="margin: 2px 0; font-size: 0.8rem; font-weight: bold; color: #fff;">Dirigeant</p>
-        <div style="margin-top: 5px; font-size: 0.85rem;">
-          <span style="display: block;"><i class="fas fa-phone-alt" style="color: var(--or-carte); font-size: 0.75rem;"></i> 06.52.24.05.07</span>
-          <span style="display: block;"><i class="fas fa-envelope" style="color: var(--or-carte); font-size: 0.75rem;"></i> wilson.multi.services39@gmail.com</span>
+        <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--or-carte); margin-bottom: 10px;"></i>
+        <h3 style="margin: 5px 0; color: var(--or-carte); font-size: 1.4rem;">Lionel Rousseau</h3>
+        <p style="margin: 2px 0; font-weight: bold; color: #fff;">Dirigeant</p>
+        <div style="margin-top: 15px; font-size: 0.95rem; line-height: 1.8;">
+          <p><i class="fas fa-phone-alt" style="color: var(--or-carte);"></i> 06.52.24.05.07</p>
+          <p><i class="fas fa-envelope" style="color: var(--or-carte);"></i> wilson.multi.services39@gmail.com</p>
         </div>
       </section>
     </div>
@@ -416,7 +418,7 @@ footer {
   </section>
 
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43864.84752402174!2d5.825838493181829!3d46.38814755106669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf3f58a741c89%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1714480000000!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87637.36987799566!2d5.787612741913904!3d46.40277838568551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39922e9603f%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1715854483945!5m2!1sfr!2sfr" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
