@@ -35,7 +35,7 @@
 /* STYLE POUR LA GALERIE AVANT/APRÈS */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* S'adapte sur mobile */
   gap: 20px;
   padding: 10px;
   margin-bottom: 30px;
@@ -48,7 +48,7 @@
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 250px;
+  height: 250px; /* Hauteur fixe pour l'alignement */
 }
 
 .gallery-item:hover {
@@ -59,7 +59,7 @@
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* L'image remplit le cadre sans déformation */
   display: block;
 }
 
@@ -67,7 +67,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgba(2, 5, 150, 0.85);
+  background-color: rgba(2, 5, 150, 0.85); /* Bleu du site, légèrement transparent */
   color: var(--or-carte);
   padding: 5px 12px;
   border-radius: 20px;
@@ -91,6 +91,7 @@ body {
   font-display: swap;
 }
 
+/* PROTECTION DU CONTENU */
 .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
 
@@ -110,6 +111,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; u
   pointer-events: none;
 }
 
+/* MISE EN PAGE & STABILISATION CLS */
 .header-container {
   display: flex;
   flex-direction: column;
@@ -162,6 +164,7 @@ h1 {
 
 .horaires-box div { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
+/* SERVICES */
 .services-container {
   text-align: left;
   display: inline-block;
@@ -194,6 +197,7 @@ h1 {
   overflow: hidden;
 }
 
+/* SECTIONS */
 .gallery-section, .reviews-section { width: 90%; max-width: 800px; margin: 30px auto; }
 
 .review-card {
@@ -205,6 +209,7 @@ h1 {
   margin-bottom: 15px;
 }
 
+/* CADRE DIRIGEANT */
 .dirigeant-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px dashed var(--or-carte);
@@ -236,6 +241,7 @@ h1 {
   margin: 0 auto 20px auto;
 }
 
+/* COLLAPSIBLE */
 .collapsible {
   background-color: #010363;
   color: var(--or-carte);
@@ -271,50 +277,49 @@ h1 {
   line-height: 1.6;
 }
 
-/* CORRECTION TECHNIQUE : BOUTONS DANS LE FLUX NORMAL */
+/* BOUTONS FLOTTANTS */
 .main-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-bottom: 100px;
 }
 
-.footer-buttons {
+.floating-wrapper {
+  position: sticky;
+  bottom: 20px;
+  z-index: 1000;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 25px;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 0 15px;
+  pointer-events: none;
 }
+
+.btn-col-left, .btn-col-right { display: flex; flex-direction: column; gap: 10px; pointer-events: auto; }
 
 .btn-style {
   background-color: var(--or-carte);
   color: #000;
   text-decoration: none;
-  padding: 12px 25px;
+  padding: 12px 18px;
   border-radius: 50px;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   display: flex;
-  align-items: center; 
-  gap: 8px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5); 
-  white-space: nowrap; 
-  border: none; 
-  cursor: pointer;
-  transition: 0.3s;
+  align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); white-space: nowrap; border: none; cursor: pointer;
 }
 
 .btn-facebook { background-color: var(--bleu-facebook); color: white; }
 
+/* FOOTER */
 footer {
   width: 100%;
-  padding: 30px 15px;
+  padding: 25px 15px;
   font-size: 0.75rem;
   color: #ffffff;
   border-top: 1px solid rgba(239, 211, 130, 0.3);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   line-height: 1.6;
   box-sizing: border-box;
 }
@@ -327,9 +332,10 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.7rem;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
+/* MODALE */
 .modal {
   display: none;
   position: fixed;
@@ -357,6 +363,7 @@ footer {
 }
 
 .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+
 .modal-content h3 { color: var(--bleu-vif); border-bottom: 2px solid var(--or-carte); padding-bottom: 5px; margin-top: 20px; }
 
 @media (min-width: 800px) {
@@ -449,83 +456,189 @@ footer {
   </section>
 
   <section class="gallery-section">
-    <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 25px;">Nos Réalisations</h2>
-    
-    <h3 style="color: white; margin-bottom: 10px; font-size: 1.2rem; text-align: left; padding-left: 10px; border-left: 3px solid var(--or-carte);">Chantier 1 : Débarras complet & Nettoyage</h3>
-    <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 15px; padding-left: 10px;">Évacuation d'encombrants et remise au propre intégrale d'un local commercial à Saint-Claude.</p>
+  <h2 style="color: var(--or-carte); font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 25px;">Nos Réalisations</h2>
+  
+  <h3 style="color: white; margin-bottom: 10px; font-size: 1.2rem; text-align: left; padding-left: 10px; border-left: 3px solid var(--or-carte);">Chantier 1 : Débarras complet & Nettoyage</h3>
+  <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 15px; padding-left: 10px;">Évacuation d'encombrants et remise au propre intégrale d'un local commercial à Saint-Claude.</p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="debarras-avant-1.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="debarras-apres-1.jpg" alt="Après"><div class="gallery-label">Après</div></div>
-      <div class="gallery-item"><img src="debarras-avant-2.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="debarras-apres-2.jpg" alt="Après"><div class="gallery-label">Après</div></div>
-      <div class="gallery-item"><img src="debarras-avant-3.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="debarras-apres-3.jpg" alt="Après"><div class="gallery-label">Après</div></div>
+  <div class="gallery-grid">
+    <!-- Paire 1 : Pièce principale -->
+    <div class="gallery-item">
+      <img src="debarras-avant-1.jpg" alt="Pièce encombrée avant intervention">
+      <div class="gallery-label">Avant</div>
     </div>
+    <div class="gallery-item">
+      <img src="debarras-apres-1.jpg" alt="Pièce vide et propre après intervention">
+      <div class="gallery-label">Après</div>
+    </div>
+
+    <!-- Paire 2 : Cuisine -->
+    <div class="gallery-item">
+      <img src="debarras-avant-2.jpg" alt="Cuisine encombrée avant débarras">
+      <div class="gallery-label">Avant</div>
+    </div>
+    <div class="gallery-item">
+      <img src="debarras-apres-2.jpg" alt="Cuisine nettoyée par Wilson Multi-services">
+      <div class="gallery-label">Après</div>
+    </div>
+
+    <!-- Paire 3 : Couloir/Stockage -->
+    <div class="gallery-item">
+      <img src="debarras-avant-3.jpg" alt="Zone de stockage saturée">
+      <div class="gallery-label">Avant</div>
+    </div>
+    <div class="gallery-item">
+      <img src="debarras-apres-3.jpg" alt="Espace totalement dégagé">
+      <div class="gallery-label">Après</div>
+    </div>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; border: 1px dashed var(--or-carte); margin-top: 20px; margin-bottom: 40px;">
+    <p style="margin: 0; font-size: 0.95rem;">
+      <i class="fas fa-check-circle" style="color: var(--or-carte);"></i> 
+      <strong>Résultat :</strong> Un local commercial entièrement vidé, trié et prêt à être réoccupé.
+    </p>
+  </div>
 
     <h3 style="color: white; margin-top: 40px; margin-bottom: 10px; font-size: 1.2rem; text-align: left; padding-left: 10px; border-left: 3px solid var(--or-carte);">Chantier 2 : Remise en état complète d'un couloir</h3>
-    <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 15px; padding-left: 10px;">Préparation des supports, réparation des murs dégradés et mise en peinture.</p>
+  
+  <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 15px; padding-left: 10px;">
+    Préparation des supports, réparation des murs dégradés et mise en peinture (soubassement beige et partie haute blanche avec effet).
+  </p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="couloir-avant-1.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="couloir-apres-1.jpg" alt="Après"><div class="gallery-label">Après</div></div>
-      <div class="gallery-item"><img src="couloir-avant-2.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="couloir-apres-2.jpg" alt="Après"><div class="gallery-label">Après</div></div>
-      <div class="gallery-item"><img src="couloir-avant-3.jpg" alt="Avant"><div class="gallery-label">Avant</div></div>
-      <div class="gallery-item"><img src="couloir-apres-3.jpg" alt="Après"><div class="gallery-label">Après</div></div>
+  <div class="gallery-grid">
+    <!-- Paire 1 -->
+    <div class="gallery-item">
+      <img src="couloir-avant-1.jpg" alt="Couloir abîmé avant travaux">
+      <div class="gallery-label">Avant</div>
     </div>
-  </section>
+    <div class="gallery-item">
+      <img src="couloir-apres-1.jpg" alt="Couloir rénové et peint">
+      <div class="gallery-label">Après</div>
+    </div>
 
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44101.42844853097!2d5.828694936306567!3d46.38814769062325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39369974271%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1700000000000" title="Zone d'intervention" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- Paire 2 -->
+    <div class="gallery-item">
+      <img src="couloir-avant-2.jpg" alt="Mur fissuré avant rénovation">
+      <div class="gallery-label">Avant</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couloir-apres-2.jpg" alt="Finition peinture propre">
+      <div class="gallery-label">Après</div>
+    </div>
+
+    <!-- Paire 3 -->
+    <div class="gallery-item">
+      <img src="couloir-avant-3.jpg" alt="Détail mur dégradé">
+      <div class="gallery-label">Avant</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couloir-apres-3.jpg" alt="Détail mur avec effet taloché">
+      <div class="gallery-label">Après</div>
+    </div>
+  </div>
+</section>
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44101.42844853097!2d5.828694936306567!3d46.38814769062325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478cf39369974271%3A0x409ce34b313ef00!2s39200%20Saint-Claude!5e0!3m2!1sfr!2sfr!4v1700000000000" title="Zone d'intervention Jura" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   
   <div class="intervention-zone">
-    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong> et alentours (Morez, Septmoncel, etc.).
+    <i class="fas fa-map-marker-alt"></i> Interventions à <strong>Saint-Claude</strong>, Morez, Septmoncel, Villard-Saint-Sauveur, Lavans-les-Saint-Claude, Saint-Lupicin, Moirans-en-Montagne et alentours.
   </div>
 
   <button type="button" class="collapsible">▼ Description de l'établissement</button>
   <div class="content-description">
     <p style="margin-top:15px;"><strong>Bienvenue chez Wilson Multi-services</strong></p>
-    <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à Saint-Claude (39200).</p>
+    <p>Votre partenaire de confiance pour l'entretien et l'amélioration de votre habitat à <strong>Saint-Claude (39200)</strong> et ses alentours.</p>
+    <p>Dirigée par <strong>Lionel Rousseau</strong>, notre entreprise intervient avec réactivité et professionnalisme pour une large gamme de services :</p>
+    <ul>
+      <li><strong>Travaux & Peinture :</strong> rafraîchissement d'intérieur et rénovations.</li>
+      <li><strong>Jardinage :</strong> entretien de vos espaces verts.</li>
+      <li><strong>Petit Bricolage & Plomberie :</strong> interventions rapides pour vos besoins quotidiens.</li>
+      <li><strong>Agencement de meubles :</strong> montage et installation sur mesure.</li>
+    </ul>
+    <p>Nous nous engageons à vous fournir un travail soigné avec la garantie d'un <strong>devis gratuit</strong>.</p>
+    <p><strong>Contactez-nous dès aujourd'hui au <a href="tel:0652240507" style="color: var(--or-carte); text-decoration: none;">06.52.24.05.07</a> pour donner vie à vos projets !</strong></p>
+  </div>
+
+  <div class="floating-wrapper">
+    <div class="btn-col-left">
+      <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
+      <a href="contact.html" class="btn-style">📧 E-mail</a>
+    </div>
+    <div class="btn-col-right">
+      <a href="https://www.facebook.com/share/1ARKKzKSkq/" class="btn-style btn-facebook" target="_blank" rel="noopener" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+    </div>
   </div>
 </main>
 
 <footer>
-  <!-- CORRECTION : LES BOUTONS SONT PLACÉS ICI POUR ÉVITER LE CHEVAUCHEMENT -->
-  <div class="footer-buttons">
-    <a href="tel:0652240507" class="btn-style">📞 06.52.24.05.07</a>
-    <a href="contact.html" class="btn-style">📧 E-mail</a>
-    <a href="https://www.facebook.com/share/1ARKKzKSkq/?mibextid=wwXIfr" class="btn-style btn-facebook" target="_blank" rel="noopener">
-      <i class="fab fa-facebook-f"></i> Facebook
-    </a>
-  </div>
-
   Wilson-multi-services © 2026. Tous droits réservés.<br>
   <button class="btn-mentions" onclick="document.getElementById('legalModal').style.display='block'">Voir les Mentions Légales & RGPD</button>
 </footer>
 
 <div id="legalModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('legalModal').style.display='none'">×</span>
+    <span class="close" onclick="document.getElementById('legalModal').style.display='none'" aria-label="Fermer la fenêtre">×</span>
     <h2 style="text-align:center; color:var(--bleu-vif); margin-bottom:20px;">Mentions Légales & RGPD</h2>
+    
     <h3>1. Éditeur du site</h3>
-    <p><strong>Wilson Multi-services (EI)</strong> - M. Rousseau Lionel<br>19 rue du faubourg marcel, 39200 Saint-Claude<br>SIRET : 99455217200011</p>
+    <p>Le site <strong>Wilson Multi-services</strong> est édité par :<br>
+    <strong>Entreprise :</strong> Wilson Multi-services (EI)<br>
+    <strong>Responsable de publication :</strong> M. Rousseau Lionel<br>
+    <strong>Siège social :</strong> 19 rue du faubourg marcel, 39200 Saint-Claude<br>
+    <strong>SIRET :</strong> 99455217200011<br>
+    <strong>Téléphone :</strong> 06.52.24.05.07<br>
+    <strong>E-mail :</strong> wilson.multi.services39@gmail.com</p>
+    
     <h3>2. Hébergement</h3>
-    <p>GitHub Inc. / Formspree Inc.</p>
-    <h3>3. Protection des données</h3>
-    <p>Conformément au RGPD, vos données via formulaire servent uniquement aux devis.</p>
+    <p>Le site est hébergé par : <strong>GitHub Inc.</strong>, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+    <p>Le formulaire de contact est traité par : <strong>Formspree Inc.</strong>, service conforme RGPD pour la gestion des formulaires.</p>
+    
+    <h3>3. Propriété intellectuelle & Photos</h3>
+    <p>L'ensemble du contenu de ce site (textes, logo, code source) est la propriété de <strong>Wilson Multi-services</strong>.</p>
+    <p><strong>Photos de chantiers :</strong> Les photographies "Avant/Après" présentes dans la galerie sont des œuvres originales de M. Rousseau Lionel. Toute reproduction ou utilisation de ces images sans accord écrit préalable est strictement interdite.</p>
+    
+    <h3>4. Droit à l'image et respect de la vie privée</h3>
+    <p>Wilson Multi-services s'engage à ce que les photos de réalisations publiées ne permettent pas d'identifier formellement le domicile précis ou l'identité des clients (cadrage ciblé sur les travaux). Les clients disposent d'un droit de retrait des photos concernant leur chantier sur simple demande par e-mail.</p>
+
+    <h3>5. Protection des données (RGPD)</h3>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés :</p>
+    <ul>
+      <li><strong>Responsable du traitement :</strong> M. Rousseau Lionel, Wilson Multi-services</li>
+      <li><strong>Finalité :</strong> Les données collectées via le formulaire de contact sont uniquement destinées à la gestion de vos demandes de devis et à vous recontacter.</li>
+      <li><strong>Conservation :</strong> Les données sont conservées pendant 3 ans maximum à compter de votre dernier contact.</li>
+      <li><strong>Vos droits :</strong> Accès, rectification, effacement et opposition aux données personnelles vous concernant.</li>
+      <li><strong>Exercer vos droits :</strong> Pour exercer ces droits, contactez-nous par e-mail ou courrier.</li>
+    </ul>
+
+    <h3>6. Cookies et Statistiques</h3>
+    <p>Ce site utilise Google Analytics. Vous pouvez vous opposer à l'enregistrement des cookies via votre navigateur.</p>
+
+    <h3>7. Transparence des avis clients</h3>
+    <p>• Les avis reflètent des prestations réelles et font l'objet d'un contrôle de vérification avant publication.<br>
+    • Aucune contrepartie n'est fournie en échange d'un avis.</p>
+
+    <h3>8. Sécurité et lutte contre la fraude</h3>
+    <p>Les formulaires de ce site sont protégés contre le spam. Les données transmises sont sécurisées et ne sont jamais vendues à des tiers.</p>
   </div>
 </div>
 
 <script>
+  // Protection contenu
   document.addEventListener('contextmenu', e => e.preventDefault());
-  
+  document.addEventListener('keydown', e => {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) e.preventDefault();
+  });
+
+  // Menus
   function toggleMenu(id) {
     var list = document.getElementById(id);
     list.style.display = (list.style.display === "block") ? "none" : "block";
   }
   
+  // Accordéon
   var coll = document.getElementsByClassName("collapsible");
   for (var i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
@@ -541,6 +654,7 @@ footer {
     });
   }
 
+  // Modale
   window.onclick = function(event) {
     var modal = document.getElementById('legalModal');
     if (event.target == modal) { modal.style.display = "none"; }
